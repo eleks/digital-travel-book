@@ -1,0 +1,23 @@
+//
+// Prefix header for all source files of the 'Weekend In Lviv' target in the 'Weekend In Lviv' project
+//
+
+#import <Availability.h>
+
+
+#ifdef __OBJC__
+
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+#import <CoreData/CoreData.h>
+#import <CoreText/CoreText.h>
+#import <MediaPlayer/MediaPlayer.h>
+#import <QuartzCore/QuartzCore.h>
+
+
+static NSString * const kRotateNotification = @"WillRotate";
+static const float kPushAnimationDuration = 0.29f;
+#define RGB(r, g, b) [UIColor colorWithRed:(float)r / 255.0f green:(float)g / 255.0f blue:(float)b / 255.0f alpha:1.0f]
+
+#endif
+

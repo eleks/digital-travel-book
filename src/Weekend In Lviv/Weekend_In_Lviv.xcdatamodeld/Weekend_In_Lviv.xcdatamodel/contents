@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0"
+       lastSavedToolsVersion="2057" systemVersion="11G63b" minimumToolsVersion="Automatic" macOSVersion="Automatic"
+       iOSVersion="Automatic">
+    <entity name="AudioFile" representedClassName="AudioFile" syncable="YES">
+        <attribute name="locale" attributeType="String" syncable="YES"/>
+        <attribute name="path" attributeType="String" syncable="YES"/>
+        <relationship name="place" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Place"
+                      inverseName="audioFiles" inverseEntity="Place" syncable="YES"/>
+    </entity>
+    <entity name="Image" representedClassName="Image" syncable="YES">
+        <attribute name="pathToFile" attributeType="String" syncable="YES"/>
+        <attribute name="timestamp" attributeType="Date" syncable="YES"/>
+        <relationship name="place" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Place"
+                      inverseName="topImage" inverseEntity="Place" syncable="YES"/>
+        <relationship name="placeList" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Place"
+                      inverseName="listIcon" inverseEntity="Place" syncable="YES"/>
+        <relationship name="placeMenu" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Place"
+                      inverseName="menuIcon" inverseEntity="Place" syncable="YES"/>
+        <relationship name="point" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="PointOfBlock"
+                      inverseName="image" inverseEntity="PointOfBlock" syncable="YES"/>
+        <relationship name="pointBlock" optional="YES" maxCount="1" deletionRule="Nullify"
+                      destinationEntity="PointBlock" inverseName="image" inverseEntity="PointBlock" syncable="YES"/>
+        <relationship name="textBlock" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TextBlock"
+                      inverseName="images" inverseEntity="TextBlock" syncable="YES"/>
+    </entity>
+    <entity name="LocalizedText" representedClassName="LocalizedText" syncable="YES">
+        <attribute name="locale" attributeType="String" syncable="YES"/>
+        <attribute name="text" attributeType="String" syncable="YES"/>
+        <relationship name="placeText" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Place"
+                      inverseName="text" inverseEntity="Place" syncable="YES"/>
+        <relationship name="placeTitle" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Place"
+                      inverseName="titles" inverseEntity="Place" syncable="YES"/>
+        <relationship name="pointBlockMainText" optional="YES" maxCount="1" deletionRule="Nullify"
+                      destinationEntity="PointBlock" inverseName="mainText" inverseEntity="PointBlock" syncable="YES"/>
+        <relationship name="pointText" optional="YES" maxCount="1" deletionRule="Nullify"
+                      destinationEntity="PointOfBlock" inverseName="text" inverseEntity="PointOfBlock" syncable="YES"/>
+        <relationship name="textBlockSubtitle" optional="YES" maxCount="1" deletionRule="Nullify"
+                      destinationEntity="TextBlock" inverseName="subtitle" inverseEntity="TextBlock" syncable="YES"/>
+        <relationship name="textBlockText" optional="YES" maxCount="1" deletionRule="Nullify"
+                      destinationEntity="TextBlock" inverseName="texts" inverseEntity="TextBlock" syncable="YES"/>
+        <relationship name="textBlockTitle" optional="YES" maxCount="1" deletionRule="Nullify"
+                      destinationEntity="TextBlock" inverseName="titles" inverseEntity="TextBlock" syncable="YES"/>
+    </entity>
+    <entity name="Place" representedClassName="Place" syncable="YES">
+        <attribute name="favourite" attributeType="Boolean" defaultValueString="NO" syncable="YES"/>
+        <attribute name="identificator" attributeType="Double" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="audioFiles" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="AudioFile"
+                      inverseName="place" inverseEntity="AudioFile" syncable="YES"/>
+        <relationship name="blocks" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="TextBlock"
+                      inverseName="place" inverseEntity="TextBlock" syncable="YES"/>
+        <relationship name="listIcon" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="Image"
+                      inverseName="placeList" inverseEntity="Image" syncable="YES"/>
+        <relationship name="menuIcon" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="Image"
+                      inverseName="placeMenu" inverseEntity="Image" syncable="YES"/>
+        <relationship name="pointBlocks" optional="YES" toMany="YES" deletionRule="Cascade"
+                      destinationEntity="PointBlock" inverseName="place" inverseEntity="PointBlock" syncable="YES"/>
+        <relationship name="text" toMany="YES" minCount="1" deletionRule="Cascade" destinationEntity="LocalizedText"
+                      inverseName="placeText" inverseEntity="LocalizedText" syncable="YES"/>
+        <relationship name="titles" toMany="YES" minCount="1" deletionRule="Cascade" destinationEntity="LocalizedText"
+                      inverseName="placeTitle" inverseEntity="LocalizedText" syncable="YES"/>
+        <relationship name="topImage" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="Image"
+                      inverseName="place" inverseEntity="Image" syncable="YES"/>
+    </entity>
+    <entity name="PointBlock" representedClassName="PointBlock" syncable="YES">
+        <attribute name="timestamp" attributeType="Date" syncable="YES"/>
+        <relationship name="image" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="Image"
+                      inverseName="pointBlock" inverseEntity="Image" syncable="YES"/>
+        <relationship name="mainText" toMany="YES" minCount="1" deletionRule="Cascade" destinationEntity="LocalizedText"
+                      inverseName="pointBlockMainText" inverseEntity="LocalizedText" syncable="YES"/>
+        <relationship name="place" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify"
+                      destinationEntity="Place" inverseName="pointBlocks" inverseEntity="Place" syncable="YES"/>
+        <relationship name="points" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="PointOfBlock"
+                      inverseName="pointBlock" inverseEntity="PointOfBlock" syncable="YES"/>
+    </entity>
+    <entity name="PointOfBlock" representedClassName="PointOfBlock" syncable="YES">
+        <attribute name="x" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="y" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <relationship name="image" minCount="1" maxCount="1" deletionRule="Cascade" destinationEntity="Image"
+                      inverseName="point" inverseEntity="Image" syncable="YES"/>
+        <relationship name="pointBlock" optional="YES" maxCount="1" deletionRule="Nullify"
+                      destinationEntity="PointBlock" inverseName="points" inverseEntity="PointBlock" syncable="YES"/>
+        <relationship name="text" toMany="YES" minCount="1" deletionRule="Cascade" destinationEntity="LocalizedText"
+                      inverseName="pointText" inverseEntity="LocalizedText" syncable="YES"/>
+    </entity>
+    <entity name="TextBlock" representedClassName="TextBlock" syncable="YES">
+        <attribute name="timestamp" attributeType="Date" syncable="YES"/>
+        <relationship name="images" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Image"
+                      inverseName="textBlock" inverseEntity="Image" syncable="YES"/>
+        <relationship name="place" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Place"
+                      inverseName="blocks" inverseEntity="Place" syncable="YES"/>
+        <relationship name="subtitle" toMany="YES" minCount="1" deletionRule="Cascade" destinationEntity="LocalizedText"
+                      inverseName="textBlockSubtitle" inverseEntity="LocalizedText" syncable="YES"/>
+        <relationship name="texts" toMany="YES" minCount="1" deletionRule="Cascade" destinationEntity="LocalizedText"
+                      inverseName="textBlockText" inverseEntity="LocalizedText" syncable="YES"/>
+        <relationship name="titles" toMany="YES" minCount="1" deletionRule="Cascade" destinationEntity="LocalizedText"
+                      inverseName="textBlockTitle" inverseEntity="LocalizedText" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="AudioFile" positionX="540" positionY="-432" width="128" height="90"/>
+        <element name="Image" positionX="601" positionY="-27" width="128" height="165"/>
+        <element name="LocalizedText" positionX="135" positionY="-225" width="128" height="180"/>
+        <element name="Place" positionX="799" positionY="-270" width="128" height="195"/>
+        <element name="PointBlock" positionX="-74" positionY="135" width="128" height="120"/>
+        <element name="PointOfBlock" positionX="-317" positionY="-99" width="128" height="120"/>
+        <element name="TextBlock" positionX="385" positionY="-354" width="128" height="135"/>
+    </elements>
+</model>

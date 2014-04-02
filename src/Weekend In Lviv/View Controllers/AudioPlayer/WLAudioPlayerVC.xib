@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="3.0" toolsVersion="5053" systemVersion="13C64" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WLAudioPlayerVC">
+            <connections>
+                <outlet property="itemPlay" destination="S77-ve-ZFR" id="FUJ-of-QWH"/>
+                <outlet property="lblTimeElapsed" destination="nRm-9M-GLp" id="saJ-Cw-oRT"/>
+                <outlet property="lblTimeRemaining" destination="RGT-U9-ejP" id="e9Q-xy-0AP"/>
+                <outlet property="progressbar" destination="JCJ-xW-1U1" id="1Ma-ob-WWO"/>
+                <outlet property="toolbar" destination="yyB-HA-Sl8" id="fxX-eW-l9x"/>
+                <outlet property="view" destination="yyB-HA-Sl8" id="bi5-Io-Dq1"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="center" id="yyB-HA-Sl8">
+            <rect key="frame" x="0.0" y="0.0" width="408" height="44"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <items>
+                <barButtonItem width="19" id="S77-ve-ZFR">
+                    <color key="tintColor" red="1" green="0.69411766529999996" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                    <connections>
+                        <action selector="btnPlayTouch:" destination="-1" id="U4i-TA-dEQ"/>
+                    </connections>
+                </barButtonItem>
+                <barButtonItem style="plain" id="Ybt-VE-SuO">
+                    <view key="customView" contentMode="scaleToFill" id="jmc-as-dCC">
+                        <rect key="frame" x="45" y="6" width="40" height="33"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nRm-9M-GLp">
+                                <rect key="frame" x="9" y="6" width="31" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" red="1" green="0.96862751250000001" blue="0.90588241820000004" alpha="1" colorSpace="deviceRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </view>
+                </barButtonItem>
+                <barButtonItem style="plain" id="iH1-2I-kVk">
+                    <slider key="customView" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="1" id="JCJ-xW-1U1">
+                        <rect key="frame" x="95" y="6" width="220" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="minimumTrackTintColor" red="1" green="0.69411766529999996" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="maximumTrackTintColor" red="1" green="0.69411766529999996" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                        <color key="thumbTintColor" red="1" green="0.69411766529999996" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                        <connections>
+                            <action selector="changeProgress:" destination="-1" eventType="valueChanged" id="Yge-d8-Psq"/>
+                        </connections>
+                    </slider>
+                    <color key="tintColor" red="1" green="0.69411766529999996" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+                </barButtonItem>
+                <barButtonItem style="plain" id="hj4-FB-0cQ">
+                    <view key="customView" contentMode="scaleToFill" id="QEl-uP-6gb">
+                        <rect key="frame" x="325" y="6" width="60" height="33"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="RGT-U9-ejP">
+                                <rect key="frame" x="9" y="6" width="31" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" red="1" green="0.96862751250000001" blue="0.90588241820000004" alpha="1" colorSpace="deviceRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </view>
+                </barButtonItem>
+            </items>
+            <color key="tintColor" red="1" green="0.69411766529999996" blue="0.0" alpha="1" colorSpace="deviceRGB"/>
+            <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+        </toolbar>
+    </objects>
+</document>
