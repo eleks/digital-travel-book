@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>3E996685-F92F-4C80-99B7-D4F8C8D9C14E</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Weekend In Lviv</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>17475C6E-0809-4A1D-A4BA-6041502CE247</key>
+		<string>https://github.com/eleks/digital-travel-book.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>src/Weekend In Lviv.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>17475C6E-0809-4A1D-A4BA-6041502CE247</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/eleks/digital-travel-book.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>17475C6E-0809-4A1D-A4BA-6041502CE247</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>17475C6E-0809-4A1D-A4BA-6041502CE247</string>
+			<key>IDESourceControlWCCName</key>
+			<string>WeekendLviv</string>
+		</dict>
+	</array>
+</dict>
+</plist>

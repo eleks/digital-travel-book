@@ -36,3 +36,9 @@
 #define COCOAPODS_VERSION_MINOR_MMDrawerController_Subclass 5
 #define COCOAPODS_VERSION_PATCH_MMDrawerController_Subclass 3
 
+// UIImage+Additions
+#define COCOAPODS_POD_AVAILABLE_UIImage_Additions
+#define COCOAPODS_VERSION_MAJOR_UIImage_Additions 1
+#define COCOAPODS_VERSION_MINOR_UIImage_Additions 1
+#define COCOAPODS_VERSION_PATCH_UIImage_Additions 0
+
