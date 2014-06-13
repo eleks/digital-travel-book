@@ -1,0 +1,1194 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		841E990B194B11EC002B2B9A /* WLMapVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841E990A194B11EC002B2B9A /* WLMapVC.swift */; };
+		845835DA1949C1E000277879 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 845835D91949C1E000277879 /* Images.xcassets */; };
+		845835E61949C1E000277879 /* Weekend_In_LvivTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 845835E51949C1E000277879 /* Weekend_In_LvivTests.swift */; };
+		84639B43194AFF5900F6C5B8 /* WLDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84639B42194AFF5900F6C5B8 /* WLDetailVC.swift */; };
+		846E49FC1949CC6500E397EA /* WLAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846E49FB1949CC6500E397EA /* WLAppDelegate.swift */; };
+		846E4A071949DA7A00E397EA /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 846E4A061949DA7A00E397EA /* libz.dylib */; };
+		846E4B21194AF78200E397EA /* WLAboutVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 846E4B20194AF78200E397EA /* WLAboutVC.xib */; };
+		846E4B26194AF78C00E397EA /* WLArticleBlock.xib in Resources */ = {isa = PBXBuildFile; fileRef = 846E4B22194AF78C00E397EA /* WLArticleBlock.xib */; };
+		846E4B27194AF78C00E397EA /* WLArticleVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 846E4B23194AF78C00E397EA /* WLArticleVC.xib */; };
+		846E4B28194AF78C00E397EA /* WLPointBlockView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 846E4B24194AF78C00E397EA /* WLPointBlockView.xib */; };
+		846E4B29194AF78C00E397EA /* WLPointVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 846E4B25194AF78C00E397EA /* WLPointVC.xib */; };
+		846E4B2B194AF79A00E397EA /* WLAudioPlayerVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 846E4B2A194AF79A00E397EA /* WLAudioPlayerVC.xib */; };
+		846E4B2E194AF7AB00E397EA /* WLHomeItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 846E4B2C194AF7AB00E397EA /* WLHomeItem.xib */; };
+		846E4B2F194AF7AB00E397EA /* WLHomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 846E4B2D194AF7AB00E397EA /* WLHomeVC.xib */; };
+		846E4B31194AF7B500E397EA /* WLMapVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 846E4B30194AF7B500E397EA /* WLMapVC.xib */; };
+		846E4B34194AF7BF00E397EA /* WLMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 846E4B32194AF7BF00E397EA /* WLMenuCell.xib */; };
+		846E4B35194AF7BF00E397EA /* WLMenuHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 846E4B33194AF7BF00E397EA /* WLMenuHeaderView.xib */; };
+		846E4B37194AF7C700E397EA /* WLPhotoGalleryVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 846E4B36194AF7C700E397EA /* WLPhotoGalleryVC.xib */; };
+		846E4B3A194AF7D100E397EA /* WLTimeline.xib in Resources */ = {isa = PBXBuildFile; fileRef = 846E4B38194AF7D100E397EA /* WLTimeline.xib */; };
+		846E4B3B194AF7D100E397EA /* WLTopTimelineView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 846E4B39194AF7D100E397EA /* WLTopTimelineView.xib */; };
+		846F8868194B027E001717F1 /* WLAboutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846F8867194B027E001717F1 /* WLAboutVC.swift */; };
+		846F886A194B02EC001717F1 /* WLArticleBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846F8869194B02EC001717F1 /* WLArticleBlock.swift */; };
+		846F886C194B0303001717F1 /* WLArticleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846F886B194B0303001717F1 /* WLArticleVC.swift */; };
+		846F886E194B0325001717F1 /* WLPointBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846F886D194B0325001717F1 /* WLPointBlockView.swift */; };
+		846F8870194B033C001717F1 /* WLPointVCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846F886F194B033C001717F1 /* WLPointVCViewController.swift */; };
+		846F8872194B0389001717F1 /* WLAudioPlayerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846F8871194B0389001717F1 /* WLAudioPlayerVC.swift */; };
+		846F8874194B03C5001717F1 /* WLHomeItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846F8873194B03C5001717F1 /* WLHomeItem.swift */; };
+		846F887C194B046B001717F1 /* WLMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846F887B194B046B001717F1 /* WLMenuCell.swift */; };
+		846F887E194B0497001717F1 /* WLMenuHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846F887D194B0497001717F1 /* WLMenuHeaderView.swift */; };
+		846F8882194B04EB001717F1 /* WLMenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846F8881194B04EB001717F1 /* WLMenuVC.swift */; };
+		846F8884194B0515001717F1 /* WLPhotoGalleryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846F8883194B0515001717F1 /* WLPhotoGalleryVC.swift */; };
+		846F8886194B0539001717F1 /* WLTimeline.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846F8885194B0539001717F1 /* WLTimeline.swift */; };
+		846F8888194B0557001717F1 /* WLTopTimelineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846F8887194B0557001717F1 /* WLTopTimelineView.swift */; };
+		846F888A194B05CC001717F1 /* WLHomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846F8889194B05CC001717F1 /* WLHomeVC.swift */; };
+		8484EF20194B1E40005C07A7 /* WLFontManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8484EF1F194B1E40005C07A7 /* WLFontManager.swift */; };
+		8484EF35194B2E23005C07A7 /* Weekend_In_Lviv.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8484EF33194B2E23005C07A7 /* Weekend_In_Lviv.xcdatamodeld */; };
+		8484EF3F194B2E8A005C07A7 /* MMDrawerBarButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 8484EF37194B2E8A005C07A7 /* MMDrawerBarButtonItem.m */; };
+		8484EF40194B2E8A005C07A7 /* MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8484EF39194B2E8A005C07A7 /* MMDrawerController.m */; };
+		8484EF41194B2E8A005C07A7 /* MMDrawerVisualState.m in Sources */ = {isa = PBXBuildFile; fileRef = 8484EF3C194B2E8A005C07A7 /* MMDrawerVisualState.m */; };
+		8484EF42194B2E8A005C07A7 /* UIViewController+MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8484EF3E194B2E8A005C07A7 /* UIViewController+MMDrawerController.m */; };
+		8484EF45194B2E98005C07A7 /* UIImage+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8484EF44194B2E98005C07A7 /* UIImage+Additions.m */; };
+		8484EF47194B2EC1005C07A7 /* Root.json in Resources */ = {isa = PBXBuildFile; fileRef = 8484EF46194B2EC1005C07A7 /* Root.json */; };
+		8484EF5B194B2ED3005C07A7 /* apteka-2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8484EF48194B2ED3005C07A7 /* apteka-2.jpg */; };
+		8484EF5C194B2ED3005C07A7 /* apteka.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 8484EF49194B2ED3005C07A7 /* apteka.JPG */; };
+		8484EF5D194B2ED3005C07A7 /* chorna_kamjanycja1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8484EF4A194B2ED3005C07A7 /* chorna_kamjanycja1.jpg */; };
+		8484EF5E194B2ED3005C07A7 /* chorna_kamjanycja3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8484EF4B194B2ED3005C07A7 /* chorna_kamjanycja3.jpg */; };
+		8484EF5F194B2ED3005C07A7 /* chorna_kamjanycja4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8484EF4C194B2ED3005C07A7 /* chorna_kamjanycja4.jpg */; };
+		8484EF60194B2ED3005C07A7 /* gepner_2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8484EF4D194B2ED3005C07A7 /* gepner_2.jpg */; };
+		8484EF61194B2ED3005C07A7 /* gepner.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8484EF4E194B2ED3005C07A7 /* gepner.jpg */; };
+		8484EF62194B2ED3005C07A7 /* italiyskyy_dvoryk_3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8484EF4F194B2ED3005C07A7 /* italiyskyy_dvoryk_3.jpg */; };
+		8484EF63194B2ED3005C07A7 /* italiyskyy_dvoryk_5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8484EF50194B2ED3005C07A7 /* italiyskyy_dvoryk_5.jpg */; };
+		8484EF64194B2ED3005C07A7 /* Item1.json in Resources */ = {isa = PBXBuildFile; fileRef = 8484EF51194B2ED3005C07A7 /* Item1.json */; };
+		8484EF65194B2ED3005C07A7 /* Lviv3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8484EF52194B2ED3005C07A7 /* Lviv3.mp3 */; };
+		8484EF66194B2ED3005C07A7 /* lyubomyrskyy.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8484EF53194B2ED3005C07A7 /* lyubomyrskyy.jpg */; };
+		8484EF67194B2ED3005C07A7 /* lyumoyrskyy_2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8484EF54194B2ED3005C07A7 /* lyumoyrskyy_2.jpg */; };
+		8484EF68194B2ED3005C07A7 /* prynok_panorama.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8484EF55194B2ED3005C07A7 /* prynok_panorama.jpg */; };
+		8484EF69194B2ED3005C07A7 /* rynok_big.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8484EF56194B2ED3005C07A7 /* rynok_big.jpg */; };
+		8484EF6A194B2ED3005C07A7 /* rynok_medium.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8484EF57194B2ED3005C07A7 /* rynok_medium.jpg */; };
+		8484EF6B194B2ED3005C07A7 /* rynok_small.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8484EF58194B2ED3005C07A7 /* rynok_small.jpg */; };
+		8484EF6C194B2ED3005C07A7 /* veneziyska_kamyanytsya_2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8484EF59194B2ED3005C07A7 /* veneziyska_kamyanytsya_2.jpg */; };
+		8484EF6D194B2ED3005C07A7 /* veneziyska_kamyanytsya.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8484EF5A194B2ED3005C07A7 /* veneziyska_kamyanytsya.jpg */; };
+		8484EF88194B2EEA005C07A7 /* aksonometria katedra.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8484EF6E194B2EEA005C07A7 /* aksonometria katedra.jpg */; };
+		8484EF89194B2EEA005C07A7 /* aksonometria_1.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 8484EF6F194B2EEA005C07A7 /* aksonometria_1.JPG */; };
+		8484EF8A194B2EEA005C07A7 /* aksonometria_2.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 8484EF70194B2EEA005C07A7 /* aksonometria_2.JPG */; };
+		8484EF8B194B2EEA005C07A7 /* aksonometria_3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8484EF71194B2EEA005C07A7 /* aksonometria_3.jpg */; };
+		8484EF8C194B2EEA005C07A7 /* aksonometria_4.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 8484EF72194B2EEA005C07A7 /* aksonometria_4.JPG */; };
+		8484EF8D194B2EEA005C07A7 /* aksonometria_5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8484EF73194B2EEA005C07A7 /* aksonometria_5.jpg */; };
+		8484EF8E194B2EEA005C07A7 /* aksonometria_6.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8484EF74194B2EEA005C07A7 /* aksonometria_6.jpg */; };
+		8484EF8F194B2EEA005C07A7 /* aksonometria_7.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8484EF75194B2EEA005C07A7 /* aksonometria_7.jpg */; };
+		8484EF90194B2EEA005C07A7 /* cover2katedra_big.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8484EF76194B2EEA005C07A7 /* cover2katedra_big.jpg */; };
+		8484EF91194B2EEA005C07A7 /* cover2katedra_medium.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8484EF77194B2EEA005C07A7 /* cover2katedra_medium.jpg */; };
+		8484EF92194B2EEA005C07A7 /* cover2katedra_small.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8484EF78194B2EEA005C07A7 /* cover2katedra_small.jpg */; };
+		8484EF93194B2EEA005C07A7 /* dominikanka.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8484EF79194B2EEA005C07A7 /* dominikanka.jpg */; };
+		8484EF94194B2EEA005C07A7 /* dominikanka2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8484EF7A194B2EEA005C07A7 /* dominikanka2.jpg */; };
+		8484EF95194B2EEA005C07A7 /* dominikanka3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8484EF7B194B2EEA005C07A7 /* dominikanka3.jpg */; };
+		8484EF96194B2EEA005C07A7 /* Item2.json in Resources */ = {isa = PBXBuildFile; fileRef = 8484EF7C194B2EEA005C07A7 /* Item2.json */; };
+		8484EF97194B2EEA005C07A7 /* Lviv2.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8484EF7D194B2EEA005C07A7 /* Lviv2.mp3 */; };
+		8484EF98194B2EEA005C07A7 /* preobrajenka.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8484EF7E194B2EEA005C07A7 /* preobrajenka.jpg */; };
+		8484EF99194B2EEA005C07A7 /* preobrajenka2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8484EF7F194B2EEA005C07A7 /* preobrajenka2.jpg */; };
+		8484EF9A194B2EEA005C07A7 /* preobrajenka3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8484EF80194B2EEA005C07A7 /* preobrajenka3.jpg */; };
+		8484EF9B194B2EEA005C07A7 /* uspenska_veja.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8484EF81194B2EEA005C07A7 /* uspenska_veja.jpg */; };
+		8484EF9C194B2EEA005C07A7 /* uspenska_veja2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8484EF82194B2EEA005C07A7 /* uspenska_veja2.jpg */; };
+		8484EF9D194B2EEA005C07A7 /* virmenka1_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8484EF83194B2EEA005C07A7 /* virmenka1_1.jpg */; };
+		8484EF9E194B2EEA005C07A7 /* virmenka1_2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8484EF84194B2EEA005C07A7 /* virmenka1_2.jpg */; };
+		8484EF9F194B2EEA005C07A7 /* virmenka1_3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8484EF85194B2EEA005C07A7 /* virmenka1_3.jpg */; };
+		8484EFA0194B2EEA005C07A7 /* virmenka2_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8484EF86194B2EEA005C07A7 /* virmenka2_1.jpg */; };
+		8484EFA1194B2EEA005C07A7 /* virmenka2_2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8484EF87194B2EEA005C07A7 /* virmenka2_2.jpg */; };
+		8484EFA6194B2EFA005C07A7 /* Item3.json in Resources */ = {isa = PBXBuildFile; fileRef = 8484EFA2194B2EFA005C07A7 /* Item3.json */; };
+		8484EFA7194B2EFA005C07A7 /* prospekt_svobody_staryy_big.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8484EFA3194B2EFA005C07A7 /* prospekt_svobody_staryy_big.jpg */; };
+		8484EFA8194B2EFA005C07A7 /* prospekt_svobody_staryy_medium.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8484EFA4194B2EFA005C07A7 /* prospekt_svobody_staryy_medium.jpg */; };
+		8484EFA9194B2EFA005C07A7 /* prospekt_svobody_staryy_small.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8484EFA5194B2EFA005C07A7 /* prospekt_svobody_staryy_small.jpg */; };
+		8484EFAE194B2F08005C07A7 /* Item4.json in Resources */ = {isa = PBXBuildFile; fileRef = 8484EFAA194B2F08005C07A7 /* Item4.json */; };
+		8484EFAF194B2F08005C07A7 /* palats_pototskyh_big.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8484EFAB194B2F08005C07A7 /* palats_pototskyh_big.jpg */; };
+		8484EFB0194B2F08005C07A7 /* palats_pototskyh_medium.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8484EFAC194B2F08005C07A7 /* palats_pototskyh_medium.jpg */; };
+		8484EFB1194B2F08005C07A7 /* palats_pototskyh_small.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8484EFAD194B2F08005C07A7 /* palats_pototskyh_small.jpg */; };
+		8484EFC9194B2F2B005C07A7 /* _budynok_vchenyh_3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8484EFB2194B2F2B005C07A7 /* _budynok_vchenyh_3.jpg */; };
+		8484EFCA194B2F2B005C07A7 /* _budynok_vchenyh.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8484EFB3194B2F2B005C07A7 /* _budynok_vchenyh.jpg */; };
+		8484EFCB194B2F2B005C07A7 /* _budynok_vchenyh1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8484EFB4194B2F2B005C07A7 /* _budynok_vchenyh1.jpg */; };
+		8484EFCC194B2F2B005C07A7 /* _budynok_vchenyh2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8484EFB5194B2F2B005C07A7 /* _budynok_vchenyh2.jpg */; };
+		8484EFCD194B2F2B005C07A7 /* _politech_0.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8484EFB6194B2F2B005C07A7 /* _politech_0.jpg */; };
+		8484EFCE194B2F2B005C07A7 /* _politech_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8484EFB7194B2F2B005C07A7 /* _politech_1.jpg */; };
+		8484EFCF194B2F2B005C07A7 /* _univer_old.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8484EFB8194B2F2B005C07A7 /* _univer_old.jpg */; };
+		8484EFD0194B2F2B005C07A7 /* _univer.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8484EFB9194B2F2B005C07A7 /* _univer.jpg */; };
+		8484EFD1194B2F2B005C07A7 /* _vokzal_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8484EFBA194B2F2B005C07A7 /* _vokzal_1.jpg */; };
+		8484EFD2194B2F2B005C07A7 /* _vokzal.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8484EFBB194B2F2B005C07A7 /* _vokzal.jpg */; };
+		8484EFD3194B2F2B005C07A7 /* _yelyzavety_2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8484EFBC194B2F2B005C07A7 /* _yelyzavety_2.jpg */; };
+		8484EFD4194B2F2B005C07A7 /* _yelyzavety_3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8484EFBD194B2F2B005C07A7 /* _yelyzavety_3.jpg */; };
+		8484EFD5194B2F2B005C07A7 /* _yelyzavety_4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8484EFBE194B2F2B005C07A7 /* _yelyzavety_4.jpg */; };
+		8484EFD6194B2F2B005C07A7 /* _yelyzavety.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8484EFBF194B2F2B005C07A7 /* _yelyzavety.jpg */; };
+		8484EFD7194B2F2B005C07A7 /* _yura_1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8484EFC0194B2F2B005C07A7 /* _yura_1.jpg */; };
+		8484EFD8194B2F2B005C07A7 /* _yura_2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8484EFC1194B2F2B005C07A7 /* _yura_2.jpg */; };
+		8484EFD9194B2F2B005C07A7 /* _yura_3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8484EFC2194B2F2B005C07A7 /* _yura_3.jpg */; };
+		8484EFDA194B2F2B005C07A7 /* Item1AudioDe.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8484EFC3194B2F2B005C07A7 /* Item1AudioDe.mp3 */; };
+		8484EFDB194B2F2B005C07A7 /* Item5.json in Resources */ = {isa = PBXBuildFile; fileRef = 8484EFC4194B2F2B005C07A7 /* Item5.json */; };
+		8484EFDC194B2F2B005C07A7 /* Lviv1.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8484EFC5194B2F2B005C07A7 /* Lviv1.mp3 */; };
+		8484EFDD194B2F2B005C07A7 /* yura_big.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8484EFC6194B2F2B005C07A7 /* yura_big.jpg */; };
+		8484EFDE194B2F2B005C07A7 /* yura_medium.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8484EFC7194B2F2B005C07A7 /* yura_medium.jpg */; };
+		8484EFDF194B2F2B005C07A7 /* yura_small.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8484EFC8194B2F2B005C07A7 /* yura_small.jpg */; };
+		8484EFE4194B2F3D005C07A7 /* hatka_big.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8484EFE0194B2F3D005C07A7 /* hatka_big.jpg */; };
+		8484EFE5194B2F3D005C07A7 /* hatka_medium.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8484EFE1194B2F3D005C07A7 /* hatka_medium.jpg */; };
+		8484EFE6194B2F3D005C07A7 /* hatka_small.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8484EFE2194B2F3D005C07A7 /* hatka_small.jpg */; };
+		8484EFE7194B2F3D005C07A7 /* Item6.json in Resources */ = {isa = PBXBuildFile; fileRef = 8484EFE3194B2F3D005C07A7 /* Item6.json */; };
+		8484EFEF194B2F4C005C07A7 /* BebasNeue.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8484EFE8194B2F4C005C07A7 /* BebasNeue.otf */; };
+		8484EFF0194B2F4C005C07A7 /* GenBkBasB.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8484EFE9194B2F4C005C07A7 /* GenBkBasB.ttf */; };
+		8484EFF1194B2F4C005C07A7 /* GenBkBasBI.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8484EFEA194B2F4C005C07A7 /* GenBkBasBI.ttf */; };
+		8484EFF2194B2F4C005C07A7 /* GenBkBasI.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8484EFEB194B2F4C005C07A7 /* GenBkBasI.ttf */; };
+		8484EFF3194B2F4C005C07A7 /* GenBkBasR.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8484EFEC194B2F4C005C07A7 /* GenBkBasR.ttf */; };
+		8484EFF4194B2F4C005C07A7 /* Palatino Linotype Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8484EFED194B2F4C005C07A7 /* Palatino Linotype Italic.ttf */; };
+		8484EFF5194B2F4C005C07A7 /* Palatino Linotype.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8484EFEE194B2F4C005C07A7 /* Palatino Linotype.ttf */; };
+		8484EFF7194B369C005C07A7 /* WLColumnLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8484EFF6194B369C005C07A7 /* WLColumnLabel.swift */; };
+		8484EFF9194B36C3005C07A7 /* WLCoreTextLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8484EFF8194B36C3005C07A7 /* WLCoreTextLabel.swift */; };
+		8484EFFB194B36EC005C07A7 /* WLImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8484EFFA194B36EC005C07A7 /* WLImageView.swift */; };
+		8484EFFD194B3707005C07A7 /* WLTimelineImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8484EFFC194B3707005C07A7 /* WLTimelineImageView.swift */; };
+		8484EFFF194B372D005C07A7 /* WLNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8484EFFE194B372D005C07A7 /* WLNavigationController.swift */; };
+		8484F001194B3759005C07A7 /* WLMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8484F000194B3759005C07A7 /* WLMenuButton.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		845835E01949C1E000277879 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 845835C71949C1E000277879 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 845835CE1949C1E000277879;
+			remoteInfo = "Weekend In Lviv";
+		};
+		846E49E31949CB1900E397EA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 845835C71949C1E000277879 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 845835CE1949C1E000277879;
+			remoteInfo = "Weekend In Lviv";
+		};
+		846E49E51949CB1900E397EA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 845835C71949C1E000277879 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 845835CE1949C1E000277879;
+			remoteInfo = "Weekend In Lviv";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		841E990A194B11EC002B2B9A /* WLMapVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WLMapVC.swift; path = ViewControllers/Map/WLMapVC.swift; sourceTree = "<group>"; };
+		845835CF1949C1E000277879 /* Weekend In Lviv.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Weekend In Lviv.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		845835D31949C1E000277879 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		845835D91949C1E000277879 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		845835DF1949C1E000277879 /* Weekend In LvivTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Weekend In LvivTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		845835E41949C1E000277879 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		845835E51949C1E000277879 /* Weekend_In_LvivTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weekend_In_LvivTests.swift; sourceTree = "<group>"; };
+		84639B42194AFF5900F6C5B8 /* WLDetailVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WLDetailVC.swift; path = ViewControllers/Detail/WLDetailVC.swift; sourceTree = "<group>"; };
+		846E49FB1949CC6500E397EA /* WLAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WLAppDelegate.swift; sourceTree = "<group>"; };
+		846E4A031949D80C00E397EA /* Weekend In Lviv.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Weekend In Lviv.pch"; sourceTree = SOURCE_ROOT; };
+		846E4A061949DA7A00E397EA /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		846E4A6D194AF0B000E397EA /* Weekend_In_Lviv-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Weekend_In_Lviv-Bridging-Header.h"; path = "Libs-obj-с/Weekend_In_Lviv-Bridging-Header.h"; sourceTree = "<group>"; };
+		846E4B20194AF78200E397EA /* WLAboutVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WLAboutVC.xib; path = ViewControllers/About/WLAboutVC.xib; sourceTree = "<group>"; };
+		846E4B22194AF78C00E397EA /* WLArticleBlock.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WLArticleBlock.xib; path = ViewControllers/Article/WLArticleBlock.xib; sourceTree = "<group>"; };
+		846E4B23194AF78C00E397EA /* WLArticleVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WLArticleVC.xib; path = ViewControllers/Article/WLArticleVC.xib; sourceTree = "<group>"; };
+		846E4B24194AF78C00E397EA /* WLPointBlockView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WLPointBlockView.xib; path = ViewControllers/Article/WLPointBlockView.xib; sourceTree = "<group>"; };
+		846E4B25194AF78C00E397EA /* WLPointVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WLPointVC.xib; path = ViewControllers/Article/WLPointVC.xib; sourceTree = "<group>"; };
+		846E4B2A194AF79A00E397EA /* WLAudioPlayerVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WLAudioPlayerVC.xib; path = ViewControllers/AudioPlayer/WLAudioPlayerVC.xib; sourceTree = "<group>"; };
+		846E4B2C194AF7AB00E397EA /* WLHomeItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WLHomeItem.xib; path = ViewControllers/Home/WLHomeItem.xib; sourceTree = "<group>"; };
+		846E4B2D194AF7AB00E397EA /* WLHomeVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WLHomeVC.xib; path = ViewControllers/Home/WLHomeVC.xib; sourceTree = "<group>"; };
+		846E4B30194AF7B500E397EA /* WLMapVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WLMapVC.xib; path = ViewControllers/Map/WLMapVC.xib; sourceTree = "<group>"; };
+		846E4B32194AF7BF00E397EA /* WLMenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WLMenuCell.xib; path = ViewControllers/Menu/WLMenuCell.xib; sourceTree = "<group>"; };
+		846E4B33194AF7BF00E397EA /* WLMenuHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WLMenuHeaderView.xib; path = ViewControllers/Menu/WLMenuHeaderView.xib; sourceTree = "<group>"; };
+		846E4B36194AF7C700E397EA /* WLPhotoGalleryVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WLPhotoGalleryVC.xib; path = "ViewControllers/Photo Gallery/WLPhotoGalleryVC.xib"; sourceTree = "<group>"; };
+		846E4B38194AF7D100E397EA /* WLTimeline.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WLTimeline.xib; path = ViewControllers/Timeline/WLTimeline.xib; sourceTree = "<group>"; };
+		846E4B39194AF7D100E397EA /* WLTopTimelineView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WLTopTimelineView.xib; path = ViewControllers/Timeline/WLTopTimelineView.xib; sourceTree = "<group>"; };
+		846F8867194B027E001717F1 /* WLAboutVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WLAboutVC.swift; path = ViewControllers/About/WLAboutVC.swift; sourceTree = "<group>"; };
+		846F8869194B02EC001717F1 /* WLArticleBlock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WLArticleBlock.swift; path = ViewControllers/Article/WLArticleBlock.swift; sourceTree = "<group>"; };
+		846F886B194B0303001717F1 /* WLArticleVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WLArticleVC.swift; path = ViewControllers/Article/WLArticleVC.swift; sourceTree = "<group>"; };
+		846F886D194B0325001717F1 /* WLPointBlockView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WLPointBlockView.swift; path = ViewControllers/Article/WLPointBlockView.swift; sourceTree = "<group>"; };
+		846F886F194B033C001717F1 /* WLPointVCViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WLPointVCViewController.swift; path = ViewControllers/Article/WLPointVCViewController.swift; sourceTree = "<group>"; };
+		846F8871194B0389001717F1 /* WLAudioPlayerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WLAudioPlayerVC.swift; path = ViewControllers/AudioPlayer/WLAudioPlayerVC.swift; sourceTree = "<group>"; };
+		846F8873194B03C5001717F1 /* WLHomeItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WLHomeItem.swift; path = ViewControllers/Home/WLHomeItem.swift; sourceTree = "<group>"; };
+		846F887B194B046B001717F1 /* WLMenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WLMenuCell.swift; path = ViewControllers/Menu/WLMenuCell.swift; sourceTree = "<group>"; };
+		846F887D194B0497001717F1 /* WLMenuHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WLMenuHeaderView.swift; path = ViewControllers/Menu/WLMenuHeaderView.swift; sourceTree = "<group>"; };
+		846F8881194B04EB001717F1 /* WLMenuVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WLMenuVC.swift; path = ViewControllers/Menu/WLMenuVC.swift; sourceTree = "<group>"; };
+		846F8883194B0515001717F1 /* WLPhotoGalleryVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WLPhotoGalleryVC.swift; path = "ViewControllers/Photo Gallery/WLPhotoGalleryVC.swift"; sourceTree = "<group>"; };
+		846F8885194B0539001717F1 /* WLTimeline.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WLTimeline.swift; path = ViewControllers/Timeline/WLTimeline.swift; sourceTree = "<group>"; };
+		846F8887194B0557001717F1 /* WLTopTimelineView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WLTopTimelineView.swift; path = ViewControllers/Timeline/WLTopTimelineView.swift; sourceTree = "<group>"; };
+		846F8889194B05CC001717F1 /* WLHomeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WLHomeVC.swift; path = ViewControllers/Home/WLHomeVC.swift; sourceTree = "<group>"; };
+		8484EF1F194B1E40005C07A7 /* WLFontManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WLFontManager.swift; path = "Custom Classes/WLFontManager.swift"; sourceTree = "<group>"; };
+		8484EF34194B2E23005C07A7 /* Weekend_In_Lviv.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Weekend_In_Lviv.xcdatamodel; sourceTree = "<group>"; };
+		8484EF36194B2E8A005C07A7 /* MMDrawerBarButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MMDrawerBarButtonItem.h; path = ../../Pods/MMDrawerController/MMDrawerController/MMDrawerBarButtonItem.h; sourceTree = "<group>"; };
+		8484EF37194B2E8A005C07A7 /* MMDrawerBarButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MMDrawerBarButtonItem.m; path = ../../Pods/MMDrawerController/MMDrawerController/MMDrawerBarButtonItem.m; sourceTree = "<group>"; };
+		8484EF38194B2E8A005C07A7 /* MMDrawerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MMDrawerController.h; path = ../../Pods/MMDrawerController/MMDrawerController/MMDrawerController.h; sourceTree = "<group>"; };
+		8484EF39194B2E8A005C07A7 /* MMDrawerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MMDrawerController.m; path = ../../Pods/MMDrawerController/MMDrawerController/MMDrawerController.m; sourceTree = "<group>"; };
+		8484EF3A194B2E8A005C07A7 /* MMDrawerController+Subclass.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "MMDrawerController+Subclass.h"; path = "../../Pods/MMDrawerController/MMDrawerController/MMDrawerController+Subclass.h"; sourceTree = "<group>"; };
+		8484EF3B194B2E8A005C07A7 /* MMDrawerVisualState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MMDrawerVisualState.h; path = ../../Pods/MMDrawerController/MMDrawerController/MMDrawerVisualState.h; sourceTree = "<group>"; };
+		8484EF3C194B2E8A005C07A7 /* MMDrawerVisualState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MMDrawerVisualState.m; path = ../../Pods/MMDrawerController/MMDrawerController/MMDrawerVisualState.m; sourceTree = "<group>"; };
+		8484EF3D194B2E8A005C07A7 /* UIViewController+MMDrawerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIViewController+MMDrawerController.h"; path = "../../Pods/MMDrawerController/MMDrawerController/UIViewController+MMDrawerController.h"; sourceTree = "<group>"; };
+		8484EF3E194B2E8A005C07A7 /* UIViewController+MMDrawerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+MMDrawerController.m"; path = "../../Pods/MMDrawerController/MMDrawerController/UIViewController+MMDrawerController.m"; sourceTree = "<group>"; };
+		8484EF43194B2E98005C07A7 /* UIImage+Additions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+Additions.h"; path = "../../Pods/UIImage+Additions/UIImage+Additions.h"; sourceTree = "<group>"; };
+		8484EF44194B2E98005C07A7 /* UIImage+Additions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+Additions.m"; path = "../../Pods/UIImage+Additions/UIImage+Additions.m"; sourceTree = "<group>"; };
+		8484EF46194B2EC1005C07A7 /* Root.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Root.json; path = "../../Weekend In Lviv/Content/Root.json"; sourceTree = "<group>"; };
+		8484EF48194B2ED3005C07A7 /* apteka-2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "apteka-2.jpg"; path = "../../Weekend In Lviv/Content/Item1/apteka-2.jpg"; sourceTree = "<group>"; };
+		8484EF49194B2ED3005C07A7 /* apteka.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = apteka.JPG; path = "../../Weekend In Lviv/Content/Item1/apteka.JPG"; sourceTree = "<group>"; };
+		8484EF4A194B2ED3005C07A7 /* chorna_kamjanycja1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = chorna_kamjanycja1.jpg; path = "../../Weekend In Lviv/Content/Item1/chorna_kamjanycja1.jpg"; sourceTree = "<group>"; };
+		8484EF4B194B2ED3005C07A7 /* chorna_kamjanycja3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = chorna_kamjanycja3.jpg; path = "../../Weekend In Lviv/Content/Item1/chorna_kamjanycja3.jpg"; sourceTree = "<group>"; };
+		8484EF4C194B2ED3005C07A7 /* chorna_kamjanycja4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = chorna_kamjanycja4.jpg; path = "../../Weekend In Lviv/Content/Item1/chorna_kamjanycja4.jpg"; sourceTree = "<group>"; };
+		8484EF4D194B2ED3005C07A7 /* gepner_2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = gepner_2.jpg; path = "../../Weekend In Lviv/Content/Item1/gepner_2.jpg"; sourceTree = "<group>"; };
+		8484EF4E194B2ED3005C07A7 /* gepner.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = gepner.jpg; path = "../../Weekend In Lviv/Content/Item1/gepner.jpg"; sourceTree = "<group>"; };
+		8484EF4F194B2ED3005C07A7 /* italiyskyy_dvoryk_3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = italiyskyy_dvoryk_3.jpg; path = "../../Weekend In Lviv/Content/Item1/italiyskyy_dvoryk_3.jpg"; sourceTree = "<group>"; };
+		8484EF50194B2ED3005C07A7 /* italiyskyy_dvoryk_5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = italiyskyy_dvoryk_5.jpg; path = "../../Weekend In Lviv/Content/Item1/italiyskyy_dvoryk_5.jpg"; sourceTree = "<group>"; };
+		8484EF51194B2ED3005C07A7 /* Item1.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Item1.json; path = "../../Weekend In Lviv/Content/Item1/Item1.json"; sourceTree = "<group>"; };
+		8484EF52194B2ED3005C07A7 /* Lviv3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Lviv3.mp3; path = "../../Weekend In Lviv/Content/Item1/Lviv3.mp3"; sourceTree = "<group>"; };
+		8484EF53194B2ED3005C07A7 /* lyubomyrskyy.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = lyubomyrskyy.jpg; path = "../../Weekend In Lviv/Content/Item1/lyubomyrskyy.jpg"; sourceTree = "<group>"; };
+		8484EF54194B2ED3005C07A7 /* lyumoyrskyy_2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = lyumoyrskyy_2.jpg; path = "../../Weekend In Lviv/Content/Item1/lyumoyrskyy_2.jpg"; sourceTree = "<group>"; };
+		8484EF55194B2ED3005C07A7 /* prynok_panorama.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = prynok_panorama.jpg; path = "../../Weekend In Lviv/Content/Item1/prynok_panorama.jpg"; sourceTree = "<group>"; };
+		8484EF56194B2ED3005C07A7 /* rynok_big.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = rynok_big.jpg; path = "../../Weekend In Lviv/Content/Item1/rynok_big.jpg"; sourceTree = "<group>"; };
+		8484EF57194B2ED3005C07A7 /* rynok_medium.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = rynok_medium.jpg; path = "../../Weekend In Lviv/Content/Item1/rynok_medium.jpg"; sourceTree = "<group>"; };
+		8484EF58194B2ED3005C07A7 /* rynok_small.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = rynok_small.jpg; path = "../../Weekend In Lviv/Content/Item1/rynok_small.jpg"; sourceTree = "<group>"; };
+		8484EF59194B2ED3005C07A7 /* veneziyska_kamyanytsya_2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = veneziyska_kamyanytsya_2.jpg; path = "../../Weekend In Lviv/Content/Item1/veneziyska_kamyanytsya_2.jpg"; sourceTree = "<group>"; };
+		8484EF5A194B2ED3005C07A7 /* veneziyska_kamyanytsya.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = veneziyska_kamyanytsya.jpg; path = "../../Weekend In Lviv/Content/Item1/veneziyska_kamyanytsya.jpg"; sourceTree = "<group>"; };
+		8484EF6E194B2EEA005C07A7 /* aksonometria katedra.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "aksonometria katedra.jpg"; path = "../../Weekend In Lviv/Content/Item2/aksonometria katedra.jpg"; sourceTree = "<group>"; };
+		8484EF6F194B2EEA005C07A7 /* aksonometria_1.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = aksonometria_1.JPG; path = "../../Weekend In Lviv/Content/Item2/aksonometria_1.JPG"; sourceTree = "<group>"; };
+		8484EF70194B2EEA005C07A7 /* aksonometria_2.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = aksonometria_2.JPG; path = "../../Weekend In Lviv/Content/Item2/aksonometria_2.JPG"; sourceTree = "<group>"; };
+		8484EF71194B2EEA005C07A7 /* aksonometria_3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = aksonometria_3.jpg; path = "../../Weekend In Lviv/Content/Item2/aksonometria_3.jpg"; sourceTree = "<group>"; };
+		8484EF72194B2EEA005C07A7 /* aksonometria_4.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = aksonometria_4.JPG; path = "../../Weekend In Lviv/Content/Item2/aksonometria_4.JPG"; sourceTree = "<group>"; };
+		8484EF73194B2EEA005C07A7 /* aksonometria_5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = aksonometria_5.jpg; path = "../../Weekend In Lviv/Content/Item2/aksonometria_5.jpg"; sourceTree = "<group>"; };
+		8484EF74194B2EEA005C07A7 /* aksonometria_6.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = aksonometria_6.jpg; path = "../../Weekend In Lviv/Content/Item2/aksonometria_6.jpg"; sourceTree = "<group>"; };
+		8484EF75194B2EEA005C07A7 /* aksonometria_7.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = aksonometria_7.jpg; path = "../../Weekend In Lviv/Content/Item2/aksonometria_7.jpg"; sourceTree = "<group>"; };
+		8484EF76194B2EEA005C07A7 /* cover2katedra_big.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = cover2katedra_big.jpg; path = "../../Weekend In Lviv/Content/Item2/cover2katedra_big.jpg"; sourceTree = "<group>"; };
+		8484EF77194B2EEA005C07A7 /* cover2katedra_medium.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = cover2katedra_medium.jpg; path = "../../Weekend In Lviv/Content/Item2/cover2katedra_medium.jpg"; sourceTree = "<group>"; };
+		8484EF78194B2EEA005C07A7 /* cover2katedra_small.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = cover2katedra_small.jpg; path = "../../Weekend In Lviv/Content/Item2/cover2katedra_small.jpg"; sourceTree = "<group>"; };
+		8484EF79194B2EEA005C07A7 /* dominikanka.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = dominikanka.jpg; path = "../../Weekend In Lviv/Content/Item2/dominikanka.jpg"; sourceTree = "<group>"; };
+		8484EF7A194B2EEA005C07A7 /* dominikanka2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = dominikanka2.jpg; path = "../../Weekend In Lviv/Content/Item2/dominikanka2.jpg"; sourceTree = "<group>"; };
+		8484EF7B194B2EEA005C07A7 /* dominikanka3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = dominikanka3.jpg; path = "../../Weekend In Lviv/Content/Item2/dominikanka3.jpg"; sourceTree = "<group>"; };
+		8484EF7C194B2EEA005C07A7 /* Item2.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Item2.json; path = "../../Weekend In Lviv/Content/Item2/Item2.json"; sourceTree = "<group>"; };
+		8484EF7D194B2EEA005C07A7 /* Lviv2.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Lviv2.mp3; path = "../../Weekend In Lviv/Content/Item2/Lviv2.mp3"; sourceTree = "<group>"; };
+		8484EF7E194B2EEA005C07A7 /* preobrajenka.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = preobrajenka.jpg; path = "../../Weekend In Lviv/Content/Item2/preobrajenka.jpg"; sourceTree = "<group>"; };
+		8484EF7F194B2EEA005C07A7 /* preobrajenka2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = preobrajenka2.jpg; path = "../../Weekend In Lviv/Content/Item2/preobrajenka2.jpg"; sourceTree = "<group>"; };
+		8484EF80194B2EEA005C07A7 /* preobrajenka3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = preobrajenka3.jpg; path = "../../Weekend In Lviv/Content/Item2/preobrajenka3.jpg"; sourceTree = "<group>"; };
+		8484EF81194B2EEA005C07A7 /* uspenska_veja.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = uspenska_veja.jpg; path = "../../Weekend In Lviv/Content/Item2/uspenska_veja.jpg"; sourceTree = "<group>"; };
+		8484EF82194B2EEA005C07A7 /* uspenska_veja2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = uspenska_veja2.jpg; path = "../../Weekend In Lviv/Content/Item2/uspenska_veja2.jpg"; sourceTree = "<group>"; };
+		8484EF83194B2EEA005C07A7 /* virmenka1_1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = virmenka1_1.jpg; path = "../../Weekend In Lviv/Content/Item2/virmenka1_1.jpg"; sourceTree = "<group>"; };
+		8484EF84194B2EEA005C07A7 /* virmenka1_2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = virmenka1_2.jpg; path = "../../Weekend In Lviv/Content/Item2/virmenka1_2.jpg"; sourceTree = "<group>"; };
+		8484EF85194B2EEA005C07A7 /* virmenka1_3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = virmenka1_3.jpg; path = "../../Weekend In Lviv/Content/Item2/virmenka1_3.jpg"; sourceTree = "<group>"; };
+		8484EF86194B2EEA005C07A7 /* virmenka2_1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = virmenka2_1.jpg; path = "../../Weekend In Lviv/Content/Item2/virmenka2_1.jpg"; sourceTree = "<group>"; };
+		8484EF87194B2EEA005C07A7 /* virmenka2_2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = virmenka2_2.jpg; path = "../../Weekend In Lviv/Content/Item2/virmenka2_2.jpg"; sourceTree = "<group>"; };
+		8484EFA2194B2EFA005C07A7 /* Item3.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Item3.json; path = "../../Weekend In Lviv/Content/Item3/Item3.json"; sourceTree = "<group>"; };
+		8484EFA3194B2EFA005C07A7 /* prospekt_svobody_staryy_big.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = prospekt_svobody_staryy_big.jpg; path = "../../Weekend In Lviv/Content/Item3/prospekt_svobody_staryy_big.jpg"; sourceTree = "<group>"; };
+		8484EFA4194B2EFA005C07A7 /* prospekt_svobody_staryy_medium.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = prospekt_svobody_staryy_medium.jpg; path = "../../Weekend In Lviv/Content/Item3/prospekt_svobody_staryy_medium.jpg"; sourceTree = "<group>"; };
+		8484EFA5194B2EFA005C07A7 /* prospekt_svobody_staryy_small.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = prospekt_svobody_staryy_small.jpg; path = "../../Weekend In Lviv/Content/Item3/prospekt_svobody_staryy_small.jpg"; sourceTree = "<group>"; };
+		8484EFAA194B2F08005C07A7 /* Item4.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Item4.json; path = "../../Weekend In Lviv/Content/Item4/Item4.json"; sourceTree = "<group>"; };
+		8484EFAB194B2F08005C07A7 /* palats_pototskyh_big.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = palats_pototskyh_big.jpg; path = "../../Weekend In Lviv/Content/Item4/palats_pototskyh_big.jpg"; sourceTree = "<group>"; };
+		8484EFAC194B2F08005C07A7 /* palats_pototskyh_medium.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = palats_pototskyh_medium.jpg; path = "../../Weekend In Lviv/Content/Item4/palats_pototskyh_medium.jpg"; sourceTree = "<group>"; };
+		8484EFAD194B2F08005C07A7 /* palats_pototskyh_small.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = palats_pototskyh_small.jpg; path = "../../Weekend In Lviv/Content/Item4/palats_pototskyh_small.jpg"; sourceTree = "<group>"; };
+		8484EFB2194B2F2B005C07A7 /* _budynok_vchenyh_3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = _budynok_vchenyh_3.jpg; path = "../../Weekend In Lviv/Content/Item5/_budynok_vchenyh_3.jpg"; sourceTree = "<group>"; };
+		8484EFB3194B2F2B005C07A7 /* _budynok_vchenyh.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = _budynok_vchenyh.jpg; path = "../../Weekend In Lviv/Content/Item5/_budynok_vchenyh.jpg"; sourceTree = "<group>"; };
+		8484EFB4194B2F2B005C07A7 /* _budynok_vchenyh1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = _budynok_vchenyh1.jpg; path = "../../Weekend In Lviv/Content/Item5/_budynok_vchenyh1.jpg"; sourceTree = "<group>"; };
+		8484EFB5194B2F2B005C07A7 /* _budynok_vchenyh2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = _budynok_vchenyh2.jpg; path = "../../Weekend In Lviv/Content/Item5/_budynok_vchenyh2.jpg"; sourceTree = "<group>"; };
+		8484EFB6194B2F2B005C07A7 /* _politech_0.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = _politech_0.jpg; path = "../../Weekend In Lviv/Content/Item5/_politech_0.jpg"; sourceTree = "<group>"; };
+		8484EFB7194B2F2B005C07A7 /* _politech_1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = _politech_1.jpg; path = "../../Weekend In Lviv/Content/Item5/_politech_1.jpg"; sourceTree = "<group>"; };
+		8484EFB8194B2F2B005C07A7 /* _univer_old.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = _univer_old.jpg; path = "../../Weekend In Lviv/Content/Item5/_univer_old.jpg"; sourceTree = "<group>"; };
+		8484EFB9194B2F2B005C07A7 /* _univer.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = _univer.jpg; path = "../../Weekend In Lviv/Content/Item5/_univer.jpg"; sourceTree = "<group>"; };
+		8484EFBA194B2F2B005C07A7 /* _vokzal_1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = _vokzal_1.jpg; path = "../../Weekend In Lviv/Content/Item5/_vokzal_1.jpg"; sourceTree = "<group>"; };
+		8484EFBB194B2F2B005C07A7 /* _vokzal.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = _vokzal.jpg; path = "../../Weekend In Lviv/Content/Item5/_vokzal.jpg"; sourceTree = "<group>"; };
+		8484EFBC194B2F2B005C07A7 /* _yelyzavety_2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = _yelyzavety_2.jpg; path = "../../Weekend In Lviv/Content/Item5/_yelyzavety_2.jpg"; sourceTree = "<group>"; };
+		8484EFBD194B2F2B005C07A7 /* _yelyzavety_3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = _yelyzavety_3.jpg; path = "../../Weekend In Lviv/Content/Item5/_yelyzavety_3.jpg"; sourceTree = "<group>"; };
+		8484EFBE194B2F2B005C07A7 /* _yelyzavety_4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = _yelyzavety_4.jpg; path = "../../Weekend In Lviv/Content/Item5/_yelyzavety_4.jpg"; sourceTree = "<group>"; };
+		8484EFBF194B2F2B005C07A7 /* _yelyzavety.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = _yelyzavety.jpg; path = "../../Weekend In Lviv/Content/Item5/_yelyzavety.jpg"; sourceTree = "<group>"; };
+		8484EFC0194B2F2B005C07A7 /* _yura_1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = _yura_1.jpg; path = "../../Weekend In Lviv/Content/Item5/_yura_1.jpg"; sourceTree = "<group>"; };
+		8484EFC1194B2F2B005C07A7 /* _yura_2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = _yura_2.jpg; path = "../../Weekend In Lviv/Content/Item5/_yura_2.jpg"; sourceTree = "<group>"; };
+		8484EFC2194B2F2B005C07A7 /* _yura_3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = _yura_3.jpg; path = "../../Weekend In Lviv/Content/Item5/_yura_3.jpg"; sourceTree = "<group>"; };
+		8484EFC3194B2F2B005C07A7 /* Item1AudioDe.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Item1AudioDe.mp3; path = "../../Weekend In Lviv/Content/Item5/Item1AudioDe.mp3"; sourceTree = "<group>"; };
+		8484EFC4194B2F2B005C07A7 /* Item5.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Item5.json; path = "../../Weekend In Lviv/Content/Item5/Item5.json"; sourceTree = "<group>"; };
+		8484EFC5194B2F2B005C07A7 /* Lviv1.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = Lviv1.mp3; path = "../../Weekend In Lviv/Content/Item5/Lviv1.mp3"; sourceTree = "<group>"; };
+		8484EFC6194B2F2B005C07A7 /* yura_big.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = yura_big.jpg; path = "../../Weekend In Lviv/Content/Item5/yura_big.jpg"; sourceTree = "<group>"; };
+		8484EFC7194B2F2B005C07A7 /* yura_medium.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = yura_medium.jpg; path = "../../Weekend In Lviv/Content/Item5/yura_medium.jpg"; sourceTree = "<group>"; };
+		8484EFC8194B2F2B005C07A7 /* yura_small.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = yura_small.jpg; path = "../../Weekend In Lviv/Content/Item5/yura_small.jpg"; sourceTree = "<group>"; };
+		8484EFE0194B2F3D005C07A7 /* hatka_big.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = hatka_big.jpg; path = "../../Weekend In Lviv/Content/Item6/hatka_big.jpg"; sourceTree = "<group>"; };
+		8484EFE1194B2F3D005C07A7 /* hatka_medium.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = hatka_medium.jpg; path = "../../Weekend In Lviv/Content/Item6/hatka_medium.jpg"; sourceTree = "<group>"; };
+		8484EFE2194B2F3D005C07A7 /* hatka_small.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = hatka_small.jpg; path = "../../Weekend In Lviv/Content/Item6/hatka_small.jpg"; sourceTree = "<group>"; };
+		8484EFE3194B2F3D005C07A7 /* Item6.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = Item6.json; path = "../../Weekend In Lviv/Content/Item6/Item6.json"; sourceTree = "<group>"; };
+		8484EFE8194B2F4C005C07A7 /* BebasNeue.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = BebasNeue.otf; path = "../../Weekend In Lviv/Fonts/BebasNeue.otf"; sourceTree = "<group>"; };
+		8484EFE9194B2F4C005C07A7 /* GenBkBasB.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = GenBkBasB.ttf; path = "../../Weekend In Lviv/Fonts/GenBkBasB.ttf"; sourceTree = "<group>"; };
+		8484EFEA194B2F4C005C07A7 /* GenBkBasBI.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = GenBkBasBI.ttf; path = "../../Weekend In Lviv/Fonts/GenBkBasBI.ttf"; sourceTree = "<group>"; };
+		8484EFEB194B2F4C005C07A7 /* GenBkBasI.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = GenBkBasI.ttf; path = "../../Weekend In Lviv/Fonts/GenBkBasI.ttf"; sourceTree = "<group>"; };
+		8484EFEC194B2F4C005C07A7 /* GenBkBasR.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = GenBkBasR.ttf; path = "../../Weekend In Lviv/Fonts/GenBkBasR.ttf"; sourceTree = "<group>"; };
+		8484EFED194B2F4C005C07A7 /* Palatino Linotype Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Palatino Linotype Italic.ttf"; path = "../../Weekend In Lviv/Fonts/Palatino Linotype Italic.ttf"; sourceTree = "<group>"; };
+		8484EFEE194B2F4C005C07A7 /* Palatino Linotype.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Palatino Linotype.ttf"; path = "../../Weekend In Lviv/Fonts/Palatino Linotype.ttf"; sourceTree = "<group>"; };
+		8484EFF6194B369C005C07A7 /* WLColumnLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WLColumnLabel.swift; path = "Custom Classes/WLColumnLabel.swift"; sourceTree = "<group>"; };
+		8484EFF8194B36C3005C07A7 /* WLCoreTextLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WLCoreTextLabel.swift; path = "Custom Classes/WLCoreTextLabel.swift"; sourceTree = "<group>"; };
+		8484EFFA194B36EC005C07A7 /* WLImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WLImageView.swift; path = "Custom Classes/WLImageView.swift"; sourceTree = "<group>"; };
+		8484EFFC194B3707005C07A7 /* WLTimelineImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WLTimelineImageView.swift; path = "Custom Classes/WLTimelineImageView.swift"; sourceTree = "<group>"; };
+		8484EFFE194B372D005C07A7 /* WLNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WLNavigationController.swift; path = "Custom Classes/WLNavigationController.swift"; sourceTree = "<group>"; };
+		8484F000194B3759005C07A7 /* WLMenuButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WLMenuButton.swift; path = "Custom Classes/WLMenuButton.swift"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		845835CC1949C1E000277879 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				846E4A071949DA7A00E397EA /* libz.dylib in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		845835DC1949C1E000277879 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		845835C61949C1E000277879 = {
+			isa = PBXGroup;
+			children = (
+				845835D11949C1E000277879 /* Weekend In Lviv */,
+				845835E21949C1E000277879 /* Weekend In LvivTests */,
+				845835D01949C1E000277879 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		845835D01949C1E000277879 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				845835CF1949C1E000277879 /* Weekend In Lviv.app */,
+				845835DF1949C1E000277879 /* Weekend In LvivTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		845835D11949C1E000277879 /* Weekend In Lviv */ = {
+			isa = PBXGroup;
+			children = (
+				8484EF33194B2E23005C07A7 /* Weekend_In_Lviv.xcdatamodeld */,
+				846E49FD1949CDC000E397EA /* DataModel */,
+				846E49FE1949CDCB00E397EA /* ViewControllers */,
+				846E49FF1949CDEA00E397EA /* CustomClasses */,
+				846E4A011949CE1100E397EA /* Categories */,
+				846E4A0A1949FBAD00E397EA /* Libs-obj-с */,
+				846E49FB1949CC6500E397EA /* WLAppDelegate.swift */,
+				846E4A031949D80C00E397EA /* Weekend In Lviv.pch */,
+				845835D21949C1E000277879 /* Supporting Files */,
+			);
+			path = "Weekend In Lviv";
+			sourceTree = "<group>";
+		};
+		845835D21949C1E000277879 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				846E4A001949CE0400E397EA /* Content */,
+				846E49E91949CB6F00E397EA /* Fonts */,
+				846E4A021949CE2700E397EA /* Images */,
+				846E4A061949DA7A00E397EA /* libz.dylib */,
+				845835D31949C1E000277879 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		845835E21949C1E000277879 /* Weekend In LvivTests */ = {
+			isa = PBXGroup;
+			children = (
+				845835E51949C1E000277879 /* Weekend_In_LvivTests.swift */,
+				845835E31949C1E000277879 /* Supporting Files */,
+			);
+			path = "Weekend In LvivTests";
+			sourceTree = "<group>";
+		};
+		845835E31949C1E000277879 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				845835E41949C1E000277879 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		846E49E91949CB6F00E397EA /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				8484EFE8194B2F4C005C07A7 /* BebasNeue.otf */,
+				8484EFE9194B2F4C005C07A7 /* GenBkBasB.ttf */,
+				8484EFEA194B2F4C005C07A7 /* GenBkBasBI.ttf */,
+				8484EFEB194B2F4C005C07A7 /* GenBkBasI.ttf */,
+				8484EFEC194B2F4C005C07A7 /* GenBkBasR.ttf */,
+				8484EFED194B2F4C005C07A7 /* Palatino Linotype Italic.ttf */,
+				8484EFEE194B2F4C005C07A7 /* Palatino Linotype.ttf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
+		846E49FD1949CDC000E397EA /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = DataModel;
+			sourceTree = "<group>";
+		};
+		846E49FE1949CDCB00E397EA /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				846E4B1F194AF76B00E397EA /* About */,
+				846E4B1E194AF76300E397EA /* Article */,
+				846E4B1D194AF75900E397EA /* AudioPlayer */,
+				846E4B1C194AF75200E397EA /* Detail */,
+				846E4B1B194AF74800E397EA /* Home */,
+				846E4B1A194AF74400E397EA /* Map */,
+				846E4B19194AF73D00E397EA /* Menu */,
+				846E4B18194AF72C00E397EA /* Photo Gallery */,
+				846E4B17194AF72500E397EA /* Timeline */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		846E49FF1949CDEA00E397EA /* CustomClasses */ = {
+			isa = PBXGroup;
+			children = (
+				8484EF1F194B1E40005C07A7 /* WLFontManager.swift */,
+				8484EFF6194B369C005C07A7 /* WLColumnLabel.swift */,
+				8484EFF8194B36C3005C07A7 /* WLCoreTextLabel.swift */,
+				8484EFFA194B36EC005C07A7 /* WLImageView.swift */,
+				8484EFFC194B3707005C07A7 /* WLTimelineImageView.swift */,
+				8484EFFE194B372D005C07A7 /* WLNavigationController.swift */,
+				8484F000194B3759005C07A7 /* WLMenuButton.swift */,
+			);
+			name = CustomClasses;
+			sourceTree = "<group>";
+		};
+		846E4A001949CE0400E397EA /* Content */ = {
+			isa = PBXGroup;
+			children = (
+				8484EF46194B2EC1005C07A7 /* Root.json */,
+				846E4A6F194AF51900E397EA /* Item1 */,
+				846E4A70194AF52000E397EA /* Item2 */,
+				846E4A71194AF52500E397EA /* Item3 */,
+				846E4A72194AF52900E397EA /* Item4 */,
+				846E4A73194AF52F00E397EA /* Item5 */,
+				846E4B0E194AF5A400E397EA /* Item6 */,
+			);
+			name = Content;
+			sourceTree = "<group>";
+		};
+		846E4A011949CE1100E397EA /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		846E4A021949CE2700E397EA /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				845835D91949C1E000277879 /* Images.xcassets */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
+		846E4A0A1949FBAD00E397EA /* Libs-obj-с */ = {
+			isa = PBXGroup;
+			children = (
+				846E4A6D194AF0B000E397EA /* Weekend_In_Lviv-Bridging-Header.h */,
+				846E4A57194AEA6F00E397EA /* MMDrawerController */,
+				846E4A56194AEA6C00E397EA /* UIImage+Additions */,
+			);
+			name = "Libs-obj-с";
+			sourceTree = "<group>";
+		};
+		846E4A56194AEA6C00E397EA /* UIImage+Additions */ = {
+			isa = PBXGroup;
+			children = (
+				8484EF43194B2E98005C07A7 /* UIImage+Additions.h */,
+				8484EF44194B2E98005C07A7 /* UIImage+Additions.m */,
+			);
+			name = "UIImage+Additions";
+			sourceTree = "<group>";
+		};
+		846E4A57194AEA6F00E397EA /* MMDrawerController */ = {
+			isa = PBXGroup;
+			children = (
+				8484EF36194B2E8A005C07A7 /* MMDrawerBarButtonItem.h */,
+				8484EF37194B2E8A005C07A7 /* MMDrawerBarButtonItem.m */,
+				8484EF38194B2E8A005C07A7 /* MMDrawerController.h */,
+				8484EF39194B2E8A005C07A7 /* MMDrawerController.m */,
+				8484EF3A194B2E8A005C07A7 /* MMDrawerController+Subclass.h */,
+				8484EF3B194B2E8A005C07A7 /* MMDrawerVisualState.h */,
+				8484EF3C194B2E8A005C07A7 /* MMDrawerVisualState.m */,
+				8484EF3D194B2E8A005C07A7 /* UIViewController+MMDrawerController.h */,
+				8484EF3E194B2E8A005C07A7 /* UIViewController+MMDrawerController.m */,
+			);
+			name = MMDrawerController;
+			sourceTree = "<group>";
+		};
+		846E4A6F194AF51900E397EA /* Item1 */ = {
+			isa = PBXGroup;
+			children = (
+				8484EF48194B2ED3005C07A7 /* apteka-2.jpg */,
+				8484EF49194B2ED3005C07A7 /* apteka.JPG */,
+				8484EF4A194B2ED3005C07A7 /* chorna_kamjanycja1.jpg */,
+				8484EF4B194B2ED3005C07A7 /* chorna_kamjanycja3.jpg */,
+				8484EF4C194B2ED3005C07A7 /* chorna_kamjanycja4.jpg */,
+				8484EF4D194B2ED3005C07A7 /* gepner_2.jpg */,
+				8484EF4E194B2ED3005C07A7 /* gepner.jpg */,
+				8484EF4F194B2ED3005C07A7 /* italiyskyy_dvoryk_3.jpg */,
+				8484EF50194B2ED3005C07A7 /* italiyskyy_dvoryk_5.jpg */,
+				8484EF51194B2ED3005C07A7 /* Item1.json */,
+				8484EF52194B2ED3005C07A7 /* Lviv3.mp3 */,
+				8484EF53194B2ED3005C07A7 /* lyubomyrskyy.jpg */,
+				8484EF54194B2ED3005C07A7 /* lyumoyrskyy_2.jpg */,
+				8484EF55194B2ED3005C07A7 /* prynok_panorama.jpg */,
+				8484EF56194B2ED3005C07A7 /* rynok_big.jpg */,
+				8484EF57194B2ED3005C07A7 /* rynok_medium.jpg */,
+				8484EF58194B2ED3005C07A7 /* rynok_small.jpg */,
+				8484EF59194B2ED3005C07A7 /* veneziyska_kamyanytsya_2.jpg */,
+				8484EF5A194B2ED3005C07A7 /* veneziyska_kamyanytsya.jpg */,
+			);
+			name = Item1;
+			sourceTree = "<group>";
+		};
+		846E4A70194AF52000E397EA /* Item2 */ = {
+			isa = PBXGroup;
+			children = (
+				8484EF6E194B2EEA005C07A7 /* aksonometria katedra.jpg */,
+				8484EF6F194B2EEA005C07A7 /* aksonometria_1.JPG */,
+				8484EF70194B2EEA005C07A7 /* aksonometria_2.JPG */,
+				8484EF71194B2EEA005C07A7 /* aksonometria_3.jpg */,
+				8484EF72194B2EEA005C07A7 /* aksonometria_4.JPG */,
+				8484EF73194B2EEA005C07A7 /* aksonometria_5.jpg */,
+				8484EF74194B2EEA005C07A7 /* aksonometria_6.jpg */,
+				8484EF75194B2EEA005C07A7 /* aksonometria_7.jpg */,
+				8484EF76194B2EEA005C07A7 /* cover2katedra_big.jpg */,
+				8484EF77194B2EEA005C07A7 /* cover2katedra_medium.jpg */,
+				8484EF78194B2EEA005C07A7 /* cover2katedra_small.jpg */,
+				8484EF79194B2EEA005C07A7 /* dominikanka.jpg */,
+				8484EF7A194B2EEA005C07A7 /* dominikanka2.jpg */,
+				8484EF7B194B2EEA005C07A7 /* dominikanka3.jpg */,
+				8484EF7C194B2EEA005C07A7 /* Item2.json */,
+				8484EF7D194B2EEA005C07A7 /* Lviv2.mp3 */,
+				8484EF7E194B2EEA005C07A7 /* preobrajenka.jpg */,
+				8484EF7F194B2EEA005C07A7 /* preobrajenka2.jpg */,
+				8484EF80194B2EEA005C07A7 /* preobrajenka3.jpg */,
+				8484EF81194B2EEA005C07A7 /* uspenska_veja.jpg */,
+				8484EF82194B2EEA005C07A7 /* uspenska_veja2.jpg */,
+				8484EF83194B2EEA005C07A7 /* virmenka1_1.jpg */,
+				8484EF84194B2EEA005C07A7 /* virmenka1_2.jpg */,
+				8484EF85194B2EEA005C07A7 /* virmenka1_3.jpg */,
+				8484EF86194B2EEA005C07A7 /* virmenka2_1.jpg */,
+				8484EF87194B2EEA005C07A7 /* virmenka2_2.jpg */,
+			);
+			name = Item2;
+			sourceTree = "<group>";
+		};
+		846E4A71194AF52500E397EA /* Item3 */ = {
+			isa = PBXGroup;
+			children = (
+				8484EFA2194B2EFA005C07A7 /* Item3.json */,
+				8484EFA3194B2EFA005C07A7 /* prospekt_svobody_staryy_big.jpg */,
+				8484EFA4194B2EFA005C07A7 /* prospekt_svobody_staryy_medium.jpg */,
+				8484EFA5194B2EFA005C07A7 /* prospekt_svobody_staryy_small.jpg */,
+			);
+			name = Item3;
+			sourceTree = "<group>";
+		};
+		846E4A72194AF52900E397EA /* Item4 */ = {
+			isa = PBXGroup;
+			children = (
+				8484EFAA194B2F08005C07A7 /* Item4.json */,
+				8484EFAB194B2F08005C07A7 /* palats_pototskyh_big.jpg */,
+				8484EFAC194B2F08005C07A7 /* palats_pototskyh_medium.jpg */,
+				8484EFAD194B2F08005C07A7 /* palats_pototskyh_small.jpg */,
+			);
+			name = Item4;
+			sourceTree = "<group>";
+		};
+		846E4A73194AF52F00E397EA /* Item5 */ = {
+			isa = PBXGroup;
+			children = (
+				8484EFB2194B2F2B005C07A7 /* _budynok_vchenyh_3.jpg */,
+				8484EFB3194B2F2B005C07A7 /* _budynok_vchenyh.jpg */,
+				8484EFB4194B2F2B005C07A7 /* _budynok_vchenyh1.jpg */,
+				8484EFB5194B2F2B005C07A7 /* _budynok_vchenyh2.jpg */,
+				8484EFB6194B2F2B005C07A7 /* _politech_0.jpg */,
+				8484EFB7194B2F2B005C07A7 /* _politech_1.jpg */,
+				8484EFB8194B2F2B005C07A7 /* _univer_old.jpg */,
+				8484EFB9194B2F2B005C07A7 /* _univer.jpg */,
+				8484EFBA194B2F2B005C07A7 /* _vokzal_1.jpg */,
+				8484EFBB194B2F2B005C07A7 /* _vokzal.jpg */,
+				8484EFBC194B2F2B005C07A7 /* _yelyzavety_2.jpg */,
+				8484EFBD194B2F2B005C07A7 /* _yelyzavety_3.jpg */,
+				8484EFBE194B2F2B005C07A7 /* _yelyzavety_4.jpg */,
+				8484EFBF194B2F2B005C07A7 /* _yelyzavety.jpg */,
+				8484EFC0194B2F2B005C07A7 /* _yura_1.jpg */,
+				8484EFC1194B2F2B005C07A7 /* _yura_2.jpg */,
+				8484EFC2194B2F2B005C07A7 /* _yura_3.jpg */,
+				8484EFC3194B2F2B005C07A7 /* Item1AudioDe.mp3 */,
+				8484EFC4194B2F2B005C07A7 /* Item5.json */,
+				8484EFC5194B2F2B005C07A7 /* Lviv1.mp3 */,
+				8484EFC6194B2F2B005C07A7 /* yura_big.jpg */,
+				8484EFC7194B2F2B005C07A7 /* yura_medium.jpg */,
+				8484EFC8194B2F2B005C07A7 /* yura_small.jpg */,
+			);
+			name = Item5;
+			sourceTree = "<group>";
+		};
+		846E4B0E194AF5A400E397EA /* Item6 */ = {
+			isa = PBXGroup;
+			children = (
+				8484EFE0194B2F3D005C07A7 /* hatka_big.jpg */,
+				8484EFE1194B2F3D005C07A7 /* hatka_medium.jpg */,
+				8484EFE2194B2F3D005C07A7 /* hatka_small.jpg */,
+				8484EFE3194B2F3D005C07A7 /* Item6.json */,
+			);
+			name = Item6;
+			sourceTree = "<group>";
+		};
+		846E4B17194AF72500E397EA /* Timeline */ = {
+			isa = PBXGroup;
+			children = (
+				846E4B38194AF7D100E397EA /* WLTimeline.xib */,
+				846F8885194B0539001717F1 /* WLTimeline.swift */,
+				846E4B39194AF7D100E397EA /* WLTopTimelineView.xib */,
+				846F8887194B0557001717F1 /* WLTopTimelineView.swift */,
+			);
+			name = Timeline;
+			sourceTree = "<group>";
+		};
+		846E4B18194AF72C00E397EA /* Photo Gallery */ = {
+			isa = PBXGroup;
+			children = (
+				846E4B36194AF7C700E397EA /* WLPhotoGalleryVC.xib */,
+				846F8883194B0515001717F1 /* WLPhotoGalleryVC.swift */,
+			);
+			name = "Photo Gallery";
+			sourceTree = "<group>";
+		};
+		846E4B19194AF73D00E397EA /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				846E4B32194AF7BF00E397EA /* WLMenuCell.xib */,
+				846F887B194B046B001717F1 /* WLMenuCell.swift */,
+				846E4B33194AF7BF00E397EA /* WLMenuHeaderView.xib */,
+				846F887D194B0497001717F1 /* WLMenuHeaderView.swift */,
+				846F8881194B04EB001717F1 /* WLMenuVC.swift */,
+			);
+			name = Menu;
+			sourceTree = "<group>";
+		};
+		846E4B1A194AF74400E397EA /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				846E4B30194AF7B500E397EA /* WLMapVC.xib */,
+				841E990A194B11EC002B2B9A /* WLMapVC.swift */,
+			);
+			name = Map;
+			sourceTree = "<group>";
+		};
+		846E4B1B194AF74800E397EA /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				846E4B2C194AF7AB00E397EA /* WLHomeItem.xib */,
+				846F8873194B03C5001717F1 /* WLHomeItem.swift */,
+				846E4B2D194AF7AB00E397EA /* WLHomeVC.xib */,
+				846F8889194B05CC001717F1 /* WLHomeVC.swift */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
+		846E4B1C194AF75200E397EA /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				84639B42194AFF5900F6C5B8 /* WLDetailVC.swift */,
+			);
+			name = Detail;
+			sourceTree = "<group>";
+		};
+		846E4B1D194AF75900E397EA /* AudioPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				846E4B2A194AF79A00E397EA /* WLAudioPlayerVC.xib */,
+				846F8871194B0389001717F1 /* WLAudioPlayerVC.swift */,
+			);
+			name = AudioPlayer;
+			sourceTree = "<group>";
+		};
+		846E4B1E194AF76300E397EA /* Article */ = {
+			isa = PBXGroup;
+			children = (
+				846E4B22194AF78C00E397EA /* WLArticleBlock.xib */,
+				846F8869194B02EC001717F1 /* WLArticleBlock.swift */,
+				846E4B23194AF78C00E397EA /* WLArticleVC.xib */,
+				846F886B194B0303001717F1 /* WLArticleVC.swift */,
+				846E4B24194AF78C00E397EA /* WLPointBlockView.xib */,
+				846F886D194B0325001717F1 /* WLPointBlockView.swift */,
+				846E4B25194AF78C00E397EA /* WLPointVC.xib */,
+				846F886F194B033C001717F1 /* WLPointVCViewController.swift */,
+			);
+			name = Article;
+			sourceTree = "<group>";
+		};
+		846E4B1F194AF76B00E397EA /* About */ = {
+			isa = PBXGroup;
+			children = (
+				846E4B20194AF78200E397EA /* WLAboutVC.xib */,
+				846F8867194B027E001717F1 /* WLAboutVC.swift */,
+			);
+			name = About;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		845835CE1949C1E000277879 /* Weekend In Lviv */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 845835E91949C1E000277879 /* Build configuration list for PBXNativeTarget "Weekend In Lviv" */;
+			buildPhases = (
+				845835CB1949C1E000277879 /* Sources */,
+				845835CC1949C1E000277879 /* Frameworks */,
+				845835CD1949C1E000277879 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Weekend In Lviv";
+			productName = "Weekend In Lviv";
+			productReference = 845835CF1949C1E000277879 /* Weekend In Lviv.app */;
+			productType = "com.apple.product-type.application";
+		};
+		845835DE1949C1E000277879 /* Weekend In LvivTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 845835EC1949C1E000277879 /* Build configuration list for PBXNativeTarget "Weekend In LvivTests" */;
+			buildPhases = (
+				845835DB1949C1E000277879 /* Sources */,
+				845835DC1949C1E000277879 /* Frameworks */,
+				845835DD1949C1E000277879 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				845835E11949C1E000277879 /* PBXTargetDependency */,
+				846E49E41949CB1900E397EA /* PBXTargetDependency */,
+				846E49E61949CB1900E397EA /* PBXTargetDependency */,
+			);
+			name = "Weekend In LvivTests";
+			productName = "Weekend In LvivTests";
+			productReference = 845835DF1949C1E000277879 /* Weekend In LvivTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		845835C71949C1E000277879 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = rnd;
+				TargetAttributes = {
+					845835CE1949C1E000277879 = {
+						CreatedOnToolsVersion = 6.0;
+						SystemCapabilities = {
+							com.apple.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					845835DE1949C1E000277879 = {
+						CreatedOnToolsVersion = 6.0;
+						TestTargetID = 845835CE1949C1E000277879;
+					};
+				};
+			};
+			buildConfigurationList = 845835CA1949C1E000277879 /* Build configuration list for PBXProject "Weekend In Lviv" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 845835C61949C1E000277879;
+			productRefGroup = 845835D01949C1E000277879 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				845835CE1949C1E000277879 /* Weekend In Lviv */,
+				845835DE1949C1E000277879 /* Weekend In LvivTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		845835CD1949C1E000277879 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8484EFF1194B2F4C005C07A7 /* GenBkBasBI.ttf in Resources */,
+				8484EFAE194B2F08005C07A7 /* Item4.json in Resources */,
+				8484EFE5194B2F3D005C07A7 /* hatka_medium.jpg in Resources */,
+				8484EF64194B2ED3005C07A7 /* Item1.json in Resources */,
+				846E4B2F194AF7AB00E397EA /* WLHomeVC.xib in Resources */,
+				8484EF9F194B2EEA005C07A7 /* virmenka1_3.jpg in Resources */,
+				8484EFF5194B2F4C005C07A7 /* Palatino Linotype.ttf in Resources */,
+				8484EFB1194B2F08005C07A7 /* palats_pototskyh_small.jpg in Resources */,
+				8484EFC9194B2F2B005C07A7 /* _budynok_vchenyh_3.jpg in Resources */,
+				8484EFEF194B2F4C005C07A7 /* BebasNeue.otf in Resources */,
+				8484EF91194B2EEA005C07A7 /* cover2katedra_medium.jpg in Resources */,
+				8484EFE7194B2F3D005C07A7 /* Item6.json in Resources */,
+				8484EFF2194B2F4C005C07A7 /* GenBkBasI.ttf in Resources */,
+				8484EFCD194B2F2B005C07A7 /* _politech_0.jpg in Resources */,
+				8484EFF3194B2F4C005C07A7 /* GenBkBasR.ttf in Resources */,
+				8484EFA9194B2EFA005C07A7 /* prospekt_svobody_staryy_small.jpg in Resources */,
+				8484EFF0194B2F4C005C07A7 /* GenBkBasB.ttf in Resources */,
+				8484EFD8194B2F2B005C07A7 /* _yura_2.jpg in Resources */,
+				8484EF66194B2ED3005C07A7 /* lyubomyrskyy.jpg in Resources */,
+				8484EFD1194B2F2B005C07A7 /* _vokzal_1.jpg in Resources */,
+				8484EF8A194B2EEA005C07A7 /* aksonometria_2.JPG in Resources */,
+				8484EF92194B2EEA005C07A7 /* cover2katedra_small.jpg in Resources */,
+				8484EFA1194B2EEA005C07A7 /* virmenka2_2.jpg in Resources */,
+				8484EFA7194B2EFA005C07A7 /* prospekt_svobody_staryy_big.jpg in Resources */,
+				8484EF97194B2EEA005C07A7 /* Lviv2.mp3 in Resources */,
+				8484EF6A194B2ED3005C07A7 /* rynok_medium.jpg in Resources */,
+				8484EF94194B2EEA005C07A7 /* dominikanka2.jpg in Resources */,
+				846E4B31194AF7B500E397EA /* WLMapVC.xib in Resources */,
+				8484EFDD194B2F2B005C07A7 /* yura_big.jpg in Resources */,
+				8484EF93194B2EEA005C07A7 /* dominikanka.jpg in Resources */,
+				8484EF8C194B2EEA005C07A7 /* aksonometria_4.JPG in Resources */,
+				8484EFDC194B2F2B005C07A7 /* Lviv1.mp3 in Resources */,
+				8484EFD9194B2F2B005C07A7 /* _yura_3.jpg in Resources */,
+				8484EF47194B2EC1005C07A7 /* Root.json in Resources */,
+				8484EF8F194B2EEA005C07A7 /* aksonometria_7.jpg in Resources */,
+				8484EF5C194B2ED3005C07A7 /* apteka.JPG in Resources */,
+				8484EF99194B2EEA005C07A7 /* preobrajenka2.jpg in Resources */,
+				846E4B37194AF7C700E397EA /* WLPhotoGalleryVC.xib in Resources */,
+				846E4B21194AF78200E397EA /* WLAboutVC.xib in Resources */,
+				8484EFDA194B2F2B005C07A7 /* Item1AudioDe.mp3 in Resources */,
+				8484EF6C194B2ED3005C07A7 /* veneziyska_kamyanytsya_2.jpg in Resources */,
+				8484EF96194B2EEA005C07A7 /* Item2.json in Resources */,
+				8484EF5E194B2ED3005C07A7 /* chorna_kamjanycja3.jpg in Resources */,
+				8484EFCB194B2F2B005C07A7 /* _budynok_vchenyh1.jpg in Resources */,
+				8484EFD0194B2F2B005C07A7 /* _univer.jpg in Resources */,
+				846E4B26194AF78C00E397EA /* WLArticleBlock.xib in Resources */,
+				8484EF9E194B2EEA005C07A7 /* virmenka1_2.jpg in Resources */,
+				846E4B35194AF7BF00E397EA /* WLMenuHeaderView.xib in Resources */,
+				8484EFCE194B2F2B005C07A7 /* _politech_1.jpg in Resources */,
+				846E4B3B194AF7D100E397EA /* WLTopTimelineView.xib in Resources */,
+				8484EF90194B2EEA005C07A7 /* cover2katedra_big.jpg in Resources */,
+				845835DA1949C1E000277879 /* Images.xcassets in Resources */,
+				8484EFCA194B2F2B005C07A7 /* _budynok_vchenyh.jpg in Resources */,
+				846E4B27194AF78C00E397EA /* WLArticleVC.xib in Resources */,
+				8484EF63194B2ED3005C07A7 /* italiyskyy_dvoryk_5.jpg in Resources */,
+				846E4B34194AF7BF00E397EA /* WLMenuCell.xib in Resources */,
+				8484EFD6194B2F2B005C07A7 /* _yelyzavety.jpg in Resources */,
+				846E4B28194AF78C00E397EA /* WLPointBlockView.xib in Resources */,
+				8484EF5F194B2ED3005C07A7 /* chorna_kamjanycja4.jpg in Resources */,
+				846E4B3A194AF7D100E397EA /* WLTimeline.xib in Resources */,
+				8484EF5B194B2ED3005C07A7 /* apteka-2.jpg in Resources */,
+				8484EFCF194B2F2B005C07A7 /* _univer_old.jpg in Resources */,
+				8484EF95194B2EEA005C07A7 /* dominikanka3.jpg in Resources */,
+				8484EF60194B2ED3005C07A7 /* gepner_2.jpg in Resources */,
+				8484EFDE194B2F2B005C07A7 /* yura_medium.jpg in Resources */,
+				8484EFDF194B2F2B005C07A7 /* yura_small.jpg in Resources */,
+				8484EFDB194B2F2B005C07A7 /* Item5.json in Resources */,
+				8484EF62194B2ED3005C07A7 /* italiyskyy_dvoryk_3.jpg in Resources */,
+				8484EFA0194B2EEA005C07A7 /* virmenka2_1.jpg in Resources */,
+				8484EF98194B2EEA005C07A7 /* preobrajenka.jpg in Resources */,
+				8484EF88194B2EEA005C07A7 /* aksonometria katedra.jpg in Resources */,
+				8484EFB0194B2F08005C07A7 /* palats_pototskyh_medium.jpg in Resources */,
+				8484EF61194B2ED3005C07A7 /* gepner.jpg in Resources */,
+				8484EF8B194B2EEA005C07A7 /* aksonometria_3.jpg in Resources */,
+				8484EFD4194B2F2B005C07A7 /* _yelyzavety_3.jpg in Resources */,
+				8484EF9A194B2EEA005C07A7 /* preobrajenka3.jpg in Resources */,
+				8484EFA8194B2EFA005C07A7 /* prospekt_svobody_staryy_medium.jpg in Resources */,
+				8484EFD7194B2F2B005C07A7 /* _yura_1.jpg in Resources */,
+				8484EF65194B2ED3005C07A7 /* Lviv3.mp3 in Resources */,
+				846E4B2E194AF7AB00E397EA /* WLHomeItem.xib in Resources */,
+				8484EFD5194B2F2B005C07A7 /* _yelyzavety_4.jpg in Resources */,
+				8484EF68194B2ED3005C07A7 /* prynok_panorama.jpg in Resources */,
+				8484EFD3194B2F2B005C07A7 /* _yelyzavety_2.jpg in Resources */,
+				8484EF6D194B2ED3005C07A7 /* veneziyska_kamyanytsya.jpg in Resources */,
+				8484EFA6194B2EFA005C07A7 /* Item3.json in Resources */,
+				8484EFF4194B2F4C005C07A7 /* Palatino Linotype Italic.ttf in Resources */,
+				8484EF6B194B2ED3005C07A7 /* rynok_small.jpg in Resources */,
+				8484EF5D194B2ED3005C07A7 /* chorna_kamjanycja1.jpg in Resources */,
+				846E4B29194AF78C00E397EA /* WLPointVC.xib in Resources */,
+				8484EF9D194B2EEA005C07A7 /* virmenka1_1.jpg in Resources */,
+				8484EF8E194B2EEA005C07A7 /* aksonometria_6.jpg in Resources */,
+				8484EF89194B2EEA005C07A7 /* aksonometria_1.JPG in Resources */,
+				8484EF67194B2ED3005C07A7 /* lyumoyrskyy_2.jpg in Resources */,
+				8484EF9B194B2EEA005C07A7 /* uspenska_veja.jpg in Resources */,
+				8484EFAF194B2F08005C07A7 /* palats_pototskyh_big.jpg in Resources */,
+				8484EF8D194B2EEA005C07A7 /* aksonometria_5.jpg in Resources */,
+				8484EF9C194B2EEA005C07A7 /* uspenska_veja2.jpg in Resources */,
+				8484EFE4194B2F3D005C07A7 /* hatka_big.jpg in Resources */,
+				8484EFE6194B2F3D005C07A7 /* hatka_small.jpg in Resources */,
+				8484EFD2194B2F2B005C07A7 /* _vokzal.jpg in Resources */,
+				8484EFCC194B2F2B005C07A7 /* _budynok_vchenyh2.jpg in Resources */,
+				846E4B2B194AF79A00E397EA /* WLAudioPlayerVC.xib in Resources */,
+				8484EF69194B2ED3005C07A7 /* rynok_big.jpg in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		845835DD1949C1E000277879 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		845835CB1949C1E000277879 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				846F886E194B0325001717F1 /* WLPointBlockView.swift in Sources */,
+				8484EFFB194B36EC005C07A7 /* WLImageView.swift in Sources */,
+				8484EF45194B2E98005C07A7 /* UIImage+Additions.m in Sources */,
+				8484EF20194B1E40005C07A7 /* WLFontManager.swift in Sources */,
+				8484EFF7194B369C005C07A7 /* WLColumnLabel.swift in Sources */,
+				8484EF41194B2E8A005C07A7 /* MMDrawerVisualState.m in Sources */,
+				8484EF35194B2E23005C07A7 /* Weekend_In_Lviv.xcdatamodeld in Sources */,
+				846F8874194B03C5001717F1 /* WLHomeItem.swift in Sources */,
+				846F887C194B046B001717F1 /* WLMenuCell.swift in Sources */,
+				841E990B194B11EC002B2B9A /* WLMapVC.swift in Sources */,
+				84639B43194AFF5900F6C5B8 /* WLDetailVC.swift in Sources */,
+				846F887E194B0497001717F1 /* WLMenuHeaderView.swift in Sources */,
+				846F886C194B0303001717F1 /* WLArticleVC.swift in Sources */,
+				846F8868194B027E001717F1 /* WLAboutVC.swift in Sources */,
+				846F8884194B0515001717F1 /* WLPhotoGalleryVC.swift in Sources */,
+				846F8872194B0389001717F1 /* WLAudioPlayerVC.swift in Sources */,
+				8484EFFD194B3707005C07A7 /* WLTimelineImageView.swift in Sources */,
+				846F8886194B0539001717F1 /* WLTimeline.swift in Sources */,
+				846F886A194B02EC001717F1 /* WLArticleBlock.swift in Sources */,
+				8484F001194B3759005C07A7 /* WLMenuButton.swift in Sources */,
+				846F888A194B05CC001717F1 /* WLHomeVC.swift in Sources */,
+				846F8882194B04EB001717F1 /* WLMenuVC.swift in Sources */,
+				8484EF42194B2E8A005C07A7 /* UIViewController+MMDrawerController.m in Sources */,
+				8484EF40194B2E8A005C07A7 /* MMDrawerController.m in Sources */,
+				846E49FC1949CC6500E397EA /* WLAppDelegate.swift in Sources */,
+				8484EFFF194B372D005C07A7 /* WLNavigationController.swift in Sources */,
+				8484EF3F194B2E8A005C07A7 /* MMDrawerBarButtonItem.m in Sources */,
+				846F8870194B033C001717F1 /* WLPointVCViewController.swift in Sources */,
+				846F8888194B0557001717F1 /* WLTopTimelineView.swift in Sources */,
+				8484EFF9194B36C3005C07A7 /* WLCoreTextLabel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		845835DB1949C1E000277879 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				845835E61949C1E000277879 /* Weekend_In_LvivTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		845835E11949C1E000277879 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 845835CE1949C1E000277879 /* Weekend In Lviv */;
+			targetProxy = 845835E01949C1E000277879 /* PBXContainerItemProxy */;
+		};
+		846E49E41949CB1900E397EA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 845835CE1949C1E000277879 /* Weekend In Lviv */;
+			targetProxy = 846E49E31949CB1900E397EA /* PBXContainerItemProxy */;
+		};
+		846E49E61949CB1900E397EA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 845835CE1949C1E000277879 /* Weekend In Lviv */;
+			targetProxy = 846E49E51949CB1900E397EA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		845835E71949C1E000277879 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				METAL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_INCLUDE_PATHS = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/Weekend In Lviv/Libs-obj-с/Weekend_In_Lviv-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = 2;
+			};
+			name = Debug;
+		};
+		845835E81949C1E000277879 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				METAL_ENABLE_DEBUG_INFO = NO;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+				SWIFT_INCLUDE_PATHS = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "$(PROJECT_DIR)/Weekend In Lviv/Libs-obj-с/Weekend_In_Lviv-Bridging-Header.h";
+				TARGETED_DEVICE_FAMILY = 2;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		845835EA1949C1E000277879 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = "Weekend In Lviv/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		845835EB1949C1E000277879 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = "Weekend In Lviv/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		845835ED1949C1E000277879 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Weekend In Lviv.app/Weekend In Lviv";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Weekend In LvivTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				METAL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Debug;
+		};
+		845835EE1949C1E000277879 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/Weekend In Lviv.app/Weekend In Lviv";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Weekend In LvivTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				METAL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		845835CA1949C1E000277879 /* Build configuration list for PBXProject "Weekend In Lviv" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				845835E71949C1E000277879 /* Debug */,
+				845835E81949C1E000277879 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		845835E91949C1E000277879 /* Build configuration list for PBXNativeTarget "Weekend In Lviv" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				845835EA1949C1E000277879 /* Debug */,
+				845835EB1949C1E000277879 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		845835EC1949C1E000277879 /* Build configuration list for PBXNativeTarget "Weekend In LvivTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				845835ED1949C1E000277879 /* Debug */,
+				845835EE1949C1E000277879 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		8484EF33194B2E23005C07A7 /* Weekend_In_Lviv.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				8484EF34194B2E23005C07A7 /* Weekend_In_Lviv.xcdatamodel */,
+			);
+			currentVersion = 8484EF34194B2E23005C07A7 /* Weekend_In_Lviv.xcdatamodel */;
+			name = Weekend_In_Lviv.xcdatamodeld;
+			path = "../../Weekend In Lviv/Weekend_In_Lviv.xcdatamodeld";
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 845835C71949C1E000277879 /* Project object */;
+}

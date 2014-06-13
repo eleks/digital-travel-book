@@ -836,10 +836,10 @@
 				77B0FE2718BEC44700C38637 /* WLImageView.m */,
 				77B0FE2818BEC44700C38637 /* WLTimelineImageView.h */,
 				77B0FE2918BEC44700C38637 /* WLTimelineImageView.m */,
-				CF55E6A86233AED87B89B71A /* WLNavigationController.m */,
 				CF55EBB9C87EDCCB3B14F82B /* WLNavigationController.h */,
-				CF55EB719A70DC5781C64DA9 /* WLMenuButton.m */,
+				CF55E6A86233AED87B89B71A /* WLNavigationController.m */,
 				CF55EDDAC6D263EF82B98994 /* WLMenuButton.h */,
+				CF55EB719A70DC5781C64DA9 /* WLMenuButton.m */,
 			);
 			path = "Custom Classes";
 			sourceTree = "<group>";
