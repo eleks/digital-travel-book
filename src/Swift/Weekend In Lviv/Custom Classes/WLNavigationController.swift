@@ -8,33 +8,62 @@
 
 import UIKit
 
-class WLNavigationController: UINavigationController {
+class WLNavigationController: UINavigationController, UINavigationControllerDelegate{
 
-    init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
+    // Instance variables
+    var completionBlock:dispatch_block_t? = nil
+    var pushedVC:UIViewController? = nil
+    
+    
+    // Instance methods
+    init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?)
+    {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         // Custom initialization
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        self.delegate = self
     }
     
-
-    /*
-    // #pragma mark - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue?, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+    override func preferredStatusBarStyle() -> UIStatusBarStyle
+    {
+        return UIStatusBarStyle.LightContent
     }
-    */
+
+    func navigationController(navigationController: UINavigationController!,
+        didShowViewController viewController: UIViewController!,
+        animated: Bool)
+    {
+        if self.completionBlock && self.pushedVC {
+            
+            self.completionBlock!()
+            self.completionBlock = nil
+            self.pushedVC = nil
+        }
+        else if self.completionBlock && viewController == self.viewControllers[0] as UIViewController {
+            
+            self.completionBlock!()
+            self.completionBlock = nil
+        }
+    }
+    
+    func navigationController(navigationController: UINavigationController!,
+                                willShowViewController viewController: UIViewController!,
+                                animated: Bool)
+    {
+        if self.pushedVC != viewController && viewController != self.viewControllers[0] as UIViewController {
+            
+            self.pushedVC = nil
+            self.completionBlock = nil
+        }
+    }
+    
+    func pushViewController(#viewController:UINavigationController,
+                            animated:Bool,
+                            completion:dispatch_block_t)
+    {
+        
+        self.pushedVC = viewController
+        self.completionBlock = completion
+        self.pushViewController(viewController, animated: animated)
+    }
 
 }
