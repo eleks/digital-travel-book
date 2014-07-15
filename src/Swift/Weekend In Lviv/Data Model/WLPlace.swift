@@ -10,15 +10,15 @@ import Foundation
 
 class WLPlace : NSObject {
     
-    var title:String                = ""
-    var placeText:String            = ""
-    var placeTopImagePath:String    = ""
-    var placeMenuImagePath:String   = ""
-    var listImagePath:String        = ""
-    var placesTextBlocks:String     = ""
-    var placesPointBlocks:String    = ""
-    var placeAudioPath:String       = ""
-    var placeFavourite:Bool         = false
-    var moIdentificator:Int         = 0
+    var title:String                        = ""
+    var placeText:String                    = ""
+    var placeTopImagePath:String            = ""
+    var placeMenuImagePath:String           = ""
+    var listImagePath:String                = ""
+    var placesTextBlocks:WLTextBlock[]      = []
+    var placesPointBlocks:WLPointBlock[]    = []
+    var placeAudioPath:String               = ""
+    var placeFavourite:Bool                 = false
+    var moIdentificator:NSNumber            = 0
     
 }

@@ -23,6 +23,11 @@ class WLNavigationController: UINavigationController, UINavigationControllerDele
         self.delegate = self
     }
     
+    init(rootViewController: UIViewController!)
+    {
+        super.init(rootViewController: rootViewController)
+    }
+    
     override func preferredStatusBarStyle() -> UIStatusBarStyle
     {
         return UIStatusBarStyle.LightContent

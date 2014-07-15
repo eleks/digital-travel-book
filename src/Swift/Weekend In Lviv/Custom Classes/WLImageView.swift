@@ -10,13 +10,6 @@ import UIKit
 
 class WLImageView: UIImageView {
 
-    var imagePath:String?
-    
-    
-    init(frame: CGRect)
-    {
-        super.init(frame: frame)
-        // Initialization code
-    }
+    var imagePath:String? = nil
 
 }

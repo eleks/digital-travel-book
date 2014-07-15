@@ -18,11 +18,24 @@ class WLAppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: NSDictionary?) -> Bool
     {
-        self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
-        // Override point for customization after application launch.
-        self.window!.backgroundColor = UIColor.whiteColor()
-        self.window!.makeKeyAndVisible()     
+        self.checkContentUpdate()
         
+        var homeVC = WLHomeVCSw(nibName:"WLHomeVC",  bundle:nil)
+        var detailNavigation = WLNavigationController(rootViewController: homeVC)
+        UINavigationBar.appearance()!.barTintColor = RGB(48, 23, 0)
+        
+        var menuVC = WLMenuVCSw(style: UITableViewStyle.Plain)
+        var menuNavigation = WLNavigationController(rootViewController: menuVC)
+        menuVC.detailView = homeVC
+        
+        var drawerController = MMDrawerController(centerViewController: detailNavigation, leftDrawerViewController: menuNavigation)
+        drawerController.closeDrawerGestureModeMask = MMCloseDrawerGestureMode.All
+        drawerController.maximumLeftDrawerWidth = 320
+        
+        self.window = UIWindow(frame: UIScreen.mainScreen()!.bounds)
+        self.window!.rootViewController = drawerController
+        self.window!.makeKeyAndVisible()
+
         return true
     }
 
@@ -58,7 +71,7 @@ class WLAppDelegate: UIResponder, UIApplicationDelegate {
     func saveContext ()
     {
         var error: NSError? = nil
-        let managedObjectContext = self.managedObjectContext
+        var managedObjectContext = self.managedObjectContext
         if managedObjectContext != nil {
             if managedObjectContext.hasChanges && !managedObjectContext.save(&error) {
                 // Replace this implementation with code to handle the error appropriately.
@@ -147,53 +160,50 @@ class WLAppDelegate: UIResponder, UIApplicationDelegate {
         return urls[urls.endIndex-1] as NSURL
     }
     
-    // TO DO !!!!
     func checkContentUpdate()
     {
-        //
+        let rootFilePath:String = NSBundle.mainBundle().pathForResource("Root", ofType:"json")
+        var jsonData:NSData     = NSData.dataWithContentsOfFile(rootFilePath, options: nil, error: nil)
+        var error:NSError?      = nil
+        var rootDict:Dictionary<String, AnyObject> = NSJSONSerialization.JSONObjectWithData(jsonData, options:NSJSONReadingOptions.MutableContainers, error:&error) as Dictionary<String, AnyObject>
+
+        if error {
+            println("App delegate: root file parsing error:error")
+        }
+        else if ((NSUserDefaults.standardUserDefaults().floatForKey("currentVersion")) != rootDict["version"]!.floatValue) {
+            
+            println("App delegate: update content")
+            WLDataManager.sharedManager.clearPlacesData()
+            var fileNames:NSArray = rootDict["files"] as NSArray
+            
+            for fileName : AnyObject in fileNames {
+                let pathToFile:String? = NSBundle.mainBundle()!.pathForResource(fileName as String, ofType: "json")
+                if let pathToFile_ = pathToFile {
+                    
+                    var fileData:NSData = NSData(contentsOfFile: pathToFile)
+                    var fileDict:Dictionary<String, AnyObject> = NSJSONSerialization.JSONObjectWithData(fileData,
+                                                                                                        options:NSJSONReadingOptions.MutableContainers,
+                                                                                                        error:&error) as Dictionary<String, AnyObject>
+                    if error {
+                        println("App delegate: File parsing error: \(error) \nFile name: \(fileName).json")
+                    }
+                    else {
+                        WLDataManager.sharedManager.addPlaceWithOptions(fileDict)
+                    }
+                }
+                else {
+                    NSLog("App delegate: file not found:%@", fileName as String)
+                }
+            }
+            WLDataManager.sharedManager.saveContext()
+            NSUserDefaults.standardUserDefaults().setFloat(rootDict["version"]!.floatValue, forKey: "currentVersion")
+            
+            NSUserDefaults.standardUserDefaults().synchronize()
+        }
+        
+        WLDataManager.sharedManager.fillPlacesList()
     }
 }
-
-/*
-- (void)checkContentUpdate {
-NSString *rootFilePath = [[NSBundle mainBundle] pathForResource:@"Root" ofType:@"json"];
-NSData *jsonData = [NSData dataWithContentsOfFile:rootFilePath];
-NSError *error = nil;
-NSDictionary *rootDict = [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:&error];
-if (error) {
-NSLog(@"Root file parsing error:%@", error.localizedDescription);
-}
-else if ([[NSUserDefaults standardUserDefaults] floatForKey:@"currentVersion"] != [rootDict[@"version"] floatValue]) {
-NSLog(@"Update content");
-[[WLDataManager sharedManager] clearPlacesData];
-NSArray *fileNames = rootDict[@"files"];
-for (NSString *fileName in fileNames) {
-NSString *pathToFile = [[NSBundle mainBundle] pathForResource:fileName ofType:@"json"];
-if (!pathToFile) {
-NSLog(@"File not found:%@", fileName);
-}
-else {
-NSData *fileData = [NSData dataWithContentsOfFile:pathToFile];
-NSDictionary *fileDict = [NSJSONSerialization JSONObjectWithData:fileData options:NSJSONReadingMutableContainers error:&error];
-if (error) {
-NSLog(@"File parsing error: %@ \nFile name: %@.json", error.localizedDescription, fileName);
-error = nil;
-}
-else {
-
-[[WLDataManager sharedManager] addPlaceWithOptions:fileDict];
-}
-}
-}
-[[WLDataManager sharedManager] saveContext];
-[[NSUserDefaults standardUserDefaults] setFloat:[rootDict[@"version"] floatValue] forKey:@"currentVersion"];
-[[NSUserDefaults standardUserDefaults] synchronize];
-}
-
-[[WLDataManager sharedManager] fillPlacesList];
-}
-*/
-
 
 
 

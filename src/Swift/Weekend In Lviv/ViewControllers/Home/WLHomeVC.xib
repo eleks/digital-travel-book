@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6153.11"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WLHomeVC">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WLHomeVCSw" customModule="Weekend_In_Lviv" customModuleProvider="target">
             <connections>
                 <outlet property="imgHeaderImage" destination="12" id="22"/>
                 <outlet property="imgMainTitle" destination="13" id="25"/>
@@ -18,12 +18,12 @@
                 <outlet property="viewTimeLine" destination="16" id="27"/>
                 <outlet property="viewTimelineLeft" destination="42" id="50"/>
                 <outlet property="viewTimelineRight" destination="33" id="51"/>
-                <outletCollection property="yearPoints" destination="48" id="h0S-ug-40n"/>
-                <outletCollection property="yearPoints" destination="47" id="O37-2J-Ads"/>
-                <outletCollection property="yearPoints" destination="46" id="3kW-hb-ASi"/>
-                <outletCollection property="yearPointsRight" destination="39" id="cik-DX-eYv"/>
-                <outletCollection property="yearPointsRight" destination="38" id="1Dr-eB-Lzj"/>
-                <outletCollection property="yearPointsRight" destination="37" id="Obt-NR-etQ"/>
+                <outlet property="yearPointRight1867" destination="37" id="fcS-i4-ego"/>
+                <outlet property="yearPointRight1941" destination="38" id="5vN-gF-Aq8"/>
+                <outlet property="yearPointRight1992" destination="39" id="G8v-vY-18t"/>
+                <outlet property="yearPoints1642" destination="48" id="s8Q-Nq-xdy"/>
+                <outlet property="yearPoints1721" destination="47" id="S9h-I1-Qcs"/>
+                <outlet property="yearPoints1841" destination="46" id="G7u-Wc-wlb"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -181,13 +181,6 @@
                                             <color key="textColor" red="0.34901960780000002" green="0.26274509800000001" blue="0.20000000000000001" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="8Oi-Cm-1m5" userLabel="Button 1642">
-                                            <rect key="frame" x="0.0" y="0.0" width="122" height="135"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal">
-                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                            </state>
-                                        </button>
                                         <button hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="Bva-MK-DMm" userLabel="Button 1721">
                                             <rect key="frame" x="122" y="0.0" width="122" height="135"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -197,6 +190,13 @@
                                         </button>
                                         <button hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="6ud-hf-dax" userLabel="Button 1841">
                                             <rect key="frame" x="244" y="0.0" width="120" height="135"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                        </button>
+                                        <button hidden="YES" opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="8Oi-Cm-1m5" userLabel="Button 1642">
+                                            <rect key="frame" x="0.0" y="0.0" width="122" height="135"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal">
                                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>

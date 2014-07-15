@@ -15,15 +15,15 @@ extension UIImage {
     // This method ignores the image's imageOrientation setting.
     func croppedImage(#bounds:CGRect) -> UIImage
     {
-        let imageRef:CGImageRef = CGImageCreateWithImageInRect(self.CGImage, bounds)
-        let croppedImage:UIImage = UIImage(CGImage:imageRef)
-        CGImageRelease(imageRef)
-        return croppedImage
+        let imageRef:CGImageRef? = CGImageCreateWithImageInRect(self.CGImage, bounds)
+        let croppedImage:UIImage? = UIImage(CGImage:imageRef!)
+        //CGImageRelease(imageRef!)
+        return croppedImage!
     }
     
     // Returns a rescaled copy of the image, taking into account its orientation
     // The image will be scaled disproportionately if necessary to fit the bounds specified by the parameter
-    func resizeImage(#newSize:CGSize, interpolationQuality quality:CGInterpolationQuality) -> UIImage
+    func resizeImage(#newSize:CGSize, interpolationQuality quality:CGInterpolationQuality) -> UIImage?
     {
         var drawTransposed:Bool = false
         
@@ -41,7 +41,7 @@ extension UIImage {
     }
     
     // Resizes the image according to the given content mode, taking into account the image's orientation
-    func resizeImageWithContentMode(#contentMode:UIViewContentMode, bounds:CGSize, interpolationQuality quality:CGInterpolationQuality) -> UIImage
+    func resizeImageWithContentMode(#contentMode:UIViewContentMode, bounds:CGSize, interpolationQuality quality:CGInterpolationQuality) -> UIImage?
     {
         let horizontalRatio:CGFloat = bounds.width / self.size.width
         let verticalRatio:CGFloat   = bounds.height / self.size.height
@@ -55,9 +55,10 @@ extension UIImage {
             ratio = min(horizontalRatio, verticalRatio)
             
         default:
-            NSException.raise(NSInvalidArgumentException,
-                format: "Unsupported content mode: \(contentMode)",
-                arguments: CVaListPointer(fromUnsafePointer: UnsafePointer()))
+            /*NSException.raise(NSInvalidArgumentException,
+                format: "Unsupported content mode: \(CLong(contentMode))",
+                arguments: CVaListPointer(fromUnsafePointer: UnsafePointer()))*/
+            NSException.raise(NSInvalidArgumentException, format: "Unsupported content mode: %@", arguments: CVaListPointer(fromUnsafePointer: UnsafePointer()))
         }
         let newSize:CGSize = CGSizeMake(self.size.width * ratio, self.size.height * ratio)
         
@@ -67,39 +68,41 @@ extension UIImage {
     // Returns a copy of the image that has been transformed using the given affine transform and scaled to the new size
     // The new image's orientation will be UIImageOrientationUp, regardless of the current image's orientation
     // If the new size is not integral, it will be rounded up
-    func resizeImage(#newSize:CGSize, transform:CGAffineTransform, drawTransposed transpose:Bool, interpolationQuality quality:CGInterpolationQuality) -> UIImage
+    func resizeImage(#newSize:CGSize, transform:CGAffineTransform, drawTransposed transpose:Bool, interpolationQuality quality:CGInterpolationQuality) -> UIImage?
     {
-        let newRect:CGRect = CGRectIntegral(CGRectMake(0, 0, newSize.width, newSize.height))
-        let transposedRect:CGRect = CGRectMake(0, 0, newRect.size.height, newRect.size.width)
-        let imageRef:CGImageRef = self.CGImage
+        var newRect:CGRect = CGRectIntegral(CGRectMake(0, 0, newSize.width, newSize.height))
+        var transposedRect:CGRect = CGRectMake(0, 0, newRect.size.height, newRect.size.width)
+        var imageRef:CGImageRef = self.CGImage!
         
-        let colorSpace:CGColorSpaceRef = CGColorSpaceCreateDeviceRGB()
+        var colorSpace:CGColorSpaceRef = CGColorSpaceCreateDeviceRGB()
         let bytesPerPixel:CGFloat = 4
         let bytesPerRow:Int = Int(ceilf(bytesPerPixel * newRect.size.width))
         let bitsPerComponent:Int = 8
-        let bitmap:CGContextRef = CGBitmapContextCreate(nil,
-                                                        UInt(newRect.size.width), UInt(newRect.size.height),
+        
+        var bitmap:CGContextRef? = CGBitmapContextCreate(nil,
+                                                        UInt(newRect.size.width),
+                                                        UInt(newRect.size.height),
                                                         UInt(bitsPerComponent),
                                                         UInt(bytesPerRow),
                                                         colorSpace,
-                                                        CGBitmapInfo.ByteOrder32Big/* | kCGImageAlphaPremultipliedLast*/)
+                                                        CGBitmapInfo(CGBitmapInfo.ByteOrder32Big.toRaw() | CGImageAlphaInfo.PremultipliedLast.toRaw()))
         // Rotate and/or flip the image if required by its orientation
-        CGContextConcatCTM(bitmap, transform)
+        CGContextConcatCTM(bitmap!, transform)
         
         // Set the quality level to use when rescaling
-        CGContextSetInterpolationQuality(bitmap, quality)
+        CGContextSetInterpolationQuality(bitmap!, quality)
         
         // Draw into the context; this scales the image
-        CGContextDrawImage(bitmap, transpose ? transposedRect : newRect, imageRef)
+        CGContextDrawImage(bitmap!, transpose ? transposedRect : newRect, imageRef)
         
         // Get the resized image from the context and a UIImage
-        let newImageRef:CGImageRef = CGBitmapContextCreateImage(bitmap)
-        let newImage:UIImage = UIImage(CGImage:newImageRef)
+        var newImageRef:CGImageRef? = CGBitmapContextCreateImage(bitmap!)
+        var newImage:UIImage? = UIImage(CGImage:newImageRef!)
         
         // Clean up
-        CGContextRelease(bitmap)
-        CGImageRelease(newImageRef)
-        CGColorSpaceRelease(colorSpace)
+        //CGContextRelease(bitmap!)
+        //CGImageRelease(newImageRef!)
+        //CGColorSpaceRelease(colorSpace)
         
         return newImage
     }

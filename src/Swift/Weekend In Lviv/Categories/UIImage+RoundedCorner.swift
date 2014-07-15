@@ -47,7 +47,7 @@ extension UIImage {
         
         // Create a UIImage from the CGImage
         let roundedImage:UIImage = UIImage(CGImage:clippedImage)
-        CGImageRelease(clippedImage)
+        //CGImageRelease(clippedImage)
         
         return roundedImage
     }

@@ -13,8 +13,8 @@ class WLMenuButton: UIBarButtonItem {
     // Designited initializer
     init(target:AnyObject, action:Selector)
     {
-        var buttonBackground:UIImage = UIImage(named: "BtnMenuBkg")
-        var buttonView:UIButton = UIButton(frame: CGRectMake(0, 0, buttonBackground.size.width, buttonBackground.size.height))
+        var buttonBackground = UIImage(named: "BtnMenuBkg")
+        var buttonView = UIButton(frame: CGRectMake(0, 0, buttonBackground.size.width, buttonBackground.size.height))
         
         super.init()
         
@@ -28,8 +28,7 @@ class WLMenuButton: UIBarButtonItem {
 
     func touchUpInside(sender:AnyObject)
     {
-        var timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: self.action, userInfo: nil, repeats: false)
-        //replaced => self.target.performSelector(self.action, withObject: sender)
+        var timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self.target, selector: self.action, userInfo: nil, repeats: false)
     }
 
     // Class method

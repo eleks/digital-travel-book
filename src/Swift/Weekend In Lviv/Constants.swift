@@ -18,13 +18,13 @@ import QuartzCore/QuartzCore
 */
 
 // Global definitions
-let kRotateNotification:String      = "WillRotate"
-let kPushAnimationDuration:Float    = 0.29
+let kRotateNotification:String              = "WillRotate"
+let kPushAnimationDuration:NSTimeInterval   = 0.29
 
 func RGB(r:Float, g:Float, b:Float) -> UIColor
 {
     
-    return UIColor(red: r, green: g, blue: b, alpha: 1.0)
+    return UIColor(red: r/255, green: g/255, blue: b/255, alpha: 1.0)
 }
 
 // Drawing constants

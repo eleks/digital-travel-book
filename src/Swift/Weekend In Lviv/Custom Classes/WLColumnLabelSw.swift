@@ -8,11 +8,17 @@
 
 import UIKit
 
-class WLColumnLabel: UILabel {
+class WLColumnLabelSw: UILabel {
 
     init(frame: CGRect)
     {
         super.init(frame: frame)
+        // Initialization code
+    }
+    
+    init(coder aDecoder: NSCoder!)
+    {
+        super.init(coder: aDecoder)
         // Initialization code
     }
     

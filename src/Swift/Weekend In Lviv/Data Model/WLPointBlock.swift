@@ -8,10 +8,10 @@
 
 import Foundation
 
-class WLPointOfBlock : NSObject {
+class WLPointBlock : NSObject {
     
     var blockText:String            = ""
     var blockImagePath:String       = ""
-    var blockPoints:PointOfBlock[]  = []
+    var blockPoints:WLPoint[]  = []
     
 }

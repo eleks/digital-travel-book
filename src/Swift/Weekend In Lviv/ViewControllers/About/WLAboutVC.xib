@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="3.0" toolsVersion="6154.17" systemVersion="13D65" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none">
     <dependencies>
+        <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6153.11"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WLAboutVC">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WLAboutVCSw" customModule="Weekend_In_Lviv" customModuleProvider="target">
             <connections>
                 <outlet property="imgAbout" destination="EEo-1V-Mke" id="zyo-hq-rCi"/>
                 <outlet property="imgDemo" destination="Jy6-hP-zUW" id="3qg-zj-Ieh"/>
@@ -35,7 +36,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Free_demo" id="Jy6-hP-zUW">
-                            <rect key="frame" x="679" y="337" width="90" height="89"/>
+                            <rect key="frame" x="678" y="337" width="90" height="89"/>
                             <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxY="YES"/>
                         </imageView>
                         <webView contentMode="scaleToFill" id="xKs-9t-icy">

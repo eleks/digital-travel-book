@@ -22,6 +22,16 @@
 	<string>1.10</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>UIAppFonts</key>
+	<array>
+		<string>BebasNeue.otf</string>
+		<string>GenBkBasB.ttf</string>
+		<string>GenBkBasBI.ttf</string>
+		<string>GenBkBasI.ttf</string>
+		<string>GenBkBasR.ttf</string>
+		<string>Palatino Linotype Italic.ttf</string>
+		<string>Palatino Linotype.ttf</string>
+	</array>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>

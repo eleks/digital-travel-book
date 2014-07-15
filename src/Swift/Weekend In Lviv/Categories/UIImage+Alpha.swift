@@ -39,8 +39,8 @@ extension UIImage {
         let imageWithAlpha:UIImage = UIImage(CGImage:imageRefWithAlpha)
     
         // Clean up
-        CGContextRelease(offscreenContext);
-        CGImageRelease(imageRefWithAlpha);
+        //CGContextRelease(offscreenContext)
+        //CGImageRelease(imageRefWithAlpha)
         
         return imageWithAlpha;
     }
@@ -69,10 +69,10 @@ extension UIImage {
         let transparentBorderImage:UIImage = UIImage(CGImage:transparentBorderImageRef)
         
         // Clean up
-        CGContextRelease(bitmap)
+        /*CGContextRelease(bitmap)
         CGImageRelease(borderImageRef)
         CGImageRelease(maskImageRef)
-        CGImageRelease(transparentBorderImageRef)
+        CGImageRelease(transparentBorderImageRef)*/
         
         return transparentBorderImage
     }
@@ -104,8 +104,8 @@ extension UIImage {
         let maskImageRef:CGImageRef = CGBitmapContextCreateImage(maskContext)
         
         // Clean up
-        CGContextRelease(maskContext);
-        CGColorSpaceRelease(colorSpace);
+        /*CGContextRelease(maskContext)
+        CGColorSpaceRelease(colorSpace)*/
         
         return maskImageRef;
     }
