@@ -23,8 +23,7 @@ let kPushAnimationDuration:NSTimeInterval   = 0.29
 
 func RGB(r:Float, g:Float, b:Float) -> UIColor
 {
-    
-    return UIColor(red: r/255, green: g/255, blue: b/255, alpha: 1.0)
+    return UIColor(red: CGFloat(r/255), green: CGFloat(g/255), blue: CGFloat(b/255), alpha: CGFloat(1.0))
 }
 
 // Drawing constants

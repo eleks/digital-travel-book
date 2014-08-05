@@ -13,20 +13,25 @@ class WLDetailVCSw: UIViewController, UIPageViewControllerDataSource, UIPageView
     // Instance variables
     var viewControllersCache:NSCache
     var pageController:UIPageViewController? = nil
-    var currentIndex:UInt
+    var currentIndex:UInt = 0
     
-    
-    
-    // Designated initializers
-    init(itemIndex index:UInt)
+    // Designated initializer
+    init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!)
     {
         self.viewControllersCache = NSCache()
         self.pageController = UIPageViewController(transitionStyle: UIPageViewControllerTransitionStyle.Scroll,
-                                                    navigationOrientation: UIPageViewControllerNavigationOrientation.Horizontal,
-                                                    options: [UIPageViewControllerOptionInterPageSpacingKey : 30])
-        self.currentIndex = index
+            navigationOrientation: UIPageViewControllerNavigationOrientation.Horizontal,
+            options: [UIPageViewControllerOptionInterPageSpacingKey : 30])
         
-        super.init(nibName: nil, bundle: nil)
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
+    
+    // Convenience initializer
+    convenience init(itemIndex index:UInt)
+    {
+        self.init(nibName: nil, bundle: nil)
+        
+        self.currentIndex = index
     }
     
 
@@ -43,7 +48,7 @@ class WLDetailVCSw: UIViewController, UIPageViewControllerDataSource, UIPageView
         self.pageController!.delegate = self
         self.pageController!.view!.frame = self.view!.bounds
     
-        var initialViewController:WLArticleVCSw = self.viewControllerAtIndex(self.currentIndex)
+        var initialViewController:WLArticleVCSw = self.viewControllerAtIndex(Int(self.currentIndex))!
     
         self.pageController!.setViewControllers([initialViewController], direction:UIPageViewControllerNavigationDirection.Forward, animated:false, completion:nil)
 
@@ -67,62 +72,78 @@ class WLDetailVCSw: UIViewController, UIPageViewControllerDataSource, UIPageView
         NSNotificationCenter.defaultCenter()!.postNotificationName("Toggled drawer", object:nil)
     }
     
-    func switchToViewControllerWithIndex(#index:UInt, animated:Bool)
+    func switchToViewControllerWithIndex(#index:Int, animated:Bool)
     {
-        if (self.currentIndex == index) {
-            return;
-        }
-        if index < UInt(WLDataManager.sharedManager.placesList.count) {
+        if index != Int(self.currentIndex) && index >= 0  {
             
-            var controller:UIViewController = self.viewControllerAtIndex(index)
-            
-            var direction:UIPageViewControllerNavigationDirection = (index > self.currentIndex) ? UIPageViewControllerNavigationDirection.Forward : UIPageViewControllerNavigationDirection.Reverse
-            var blockSafeSelf:WLDetailVCSw = self
-            
-            self.pageController!.setViewControllers([controller],
-                                                    direction: UIPageViewControllerNavigationDirection.Forward,
-                                                    animated:false,
-                completion:{(finished: Bool) in
+            if index < Int(WLDataManager.sharedManager.placesList.count) {
+                
+                var controller:UIViewController? = self.viewControllerAtIndex(index)
+                
+                var direction:UIPageViewControllerNavigationDirection = (index > Int(self.currentIndex)) ? UIPageViewControllerNavigationDirection.Forward : UIPageViewControllerNavigationDirection.Reverse
+                var blockSafeSelf:WLDetailVCSw = self
+                
+                if let controller_ = controller? {
                     
-                    if finished {
-                        dispatch_async(dispatch_get_main_queue()!, {
-                            blockSafeSelf.pageController!.setViewControllers([controller],
-                                                                            direction:UIPageViewControllerNavigationDirection.Forward,
-                                                                            animated:false,
-                                                                            completion:nil)// bug fix for uipageview controller
-                            })
-                    }
-                })
-            self.currentIndex = index
+                    self.pageController!.setViewControllers([controller!],
+                        direction: UIPageViewControllerNavigationDirection.Forward,
+                        animated:false,
+                        completion:{(finished: Bool) in
+                            
+                            if finished {
+                                dispatch_async(dispatch_get_main_queue()!, {
+                                    blockSafeSelf.pageController!.setViewControllers([controller!],
+                                        direction:UIPageViewControllerNavigationDirection.Forward,
+                                        animated:false,
+                                        completion:nil)// bug fix for uipageview controller
+                                    })
+                            }
+                        })
+                }
+                
+                self.currentIndex = UInt(index)
+            }
         }
     }
     
     // UIPageViewControllerDataSource
-    func viewControllerAtIndex(index:UInt) -> WLArticleVCSw
-    {/*
-        var detailVC:WLArticleVCSw = self.viewControllersCache.objectForKey(index) as WLArticleVCSw
-        
-        if index < UInt(WLDataManager.sharedManager.placesList.count) {
+    func viewControllerAtIndex(index:Int) -> WLArticleVCSw?
+    {
+        var detailVC:WLArticleVCSw? = self.viewControllersCache.objectForKey(index) as? WLArticleVCSw
+
+        if index >= 0 && index < WLDataManager.sharedManager.placesList.count {
             
             var place:WLPlace = (WLDataManager.sharedManager.placesList)[Int(index)]
-            detailVC = WLArticleVCSw(nibName: "WLArticleVC", bundle: nil)
-            detailVC.place = place;
-            self.viewControllersCache.setObject(detailVC, forKey:index)
+            detailVC = WLArticleVCSw(nibName: "WLArticleVCSw", bundle: nil)
+            detailVC!.place = place
+            self.viewControllersCache.setObject(detailVC!, forKey:index)
         }
-        return detailVC*/
-        return WLArticleVCSw()
-    }
-    
-    func pageViewController(pageViewController: UIPageViewController!, viewControllerAfterViewController viewController: UIViewController!) -> UIViewController!
-    {
-        let index:Int = WLDataManager.sharedManager.placesList.bridgeToObjectiveC().indexOfObject((viewController as WLArticleVCSw).place!)
-        return self.viewControllerAtIndex(UInt(index - 1))
+
+        return detailVC
     }
     
     func pageViewController(pageViewController: UIPageViewController!, viewControllerBeforeViewController viewController: UIViewController!) -> UIViewController!
     {
         let index:Int = WLDataManager.sharedManager.placesList.bridgeToObjectiveC().indexOfObject((viewController as WLArticleVCSw).place!)
-        return self.viewControllerAtIndex(UInt(index + 1))
+     
+        if let vc_ = self.viewControllerAtIndex(index - 1)? {
+            return vc_
+        }
+        else{
+            return nil
+        }
+    }
+    
+    func pageViewController(pageViewController: UIPageViewController!, viewControllerAfterViewController viewController: UIViewController!) -> UIViewController!
+    {
+        let index:Int = WLDataManager.sharedManager.placesList.bridgeToObjectiveC().indexOfObject((viewController as WLArticleVCSw).place!)
+     
+        if let vc_ = self.viewControllerAtIndex(index + 1)? {
+            return vc_
+        }
+        else{
+            return nil
+        }
     }
     
     // UIPageViewControllerDelegate
@@ -137,13 +158,13 @@ class WLDetailVCSw: UIViewController, UIPageViewControllerDataSource, UIPageView
     
     func switchToPreviousViewControllerAnimated(animated:Bool)
     {
-        self.switchToViewControllerWithIndex(index: self.currentIndex - 1, animated:animated)
+        self.switchToViewControllerWithIndex(index: Int(self.currentIndex) - 1, animated:animated)
     }
     
     
     func switchToNextViewControllerAnimated(animated:Bool)
     {
-        self.switchToViewControllerWithIndex(index: self.currentIndex + 1, animated:animated)
+        self.switchToViewControllerWithIndex(index: Int(self.currentIndex) + 1, animated:animated)
     }
     
 }

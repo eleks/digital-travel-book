@@ -543,8 +543,8 @@ class WLDataManager : NSObject {
         var point:WLPoint = WLPoint()
         
         point.imagePath = pointOfBlock.image.pathToFile
-        point.x = pointOfBlock.x.floatValue
-        point.y = pointOfBlock.y.floatValue
+        point.x = CGFloat(pointOfBlock.x.floatValue)
+        point.y = CGFloat(pointOfBlock.y.floatValue)
         point.text = self.pointTextWithLocale(locale:locale, point:pointOfBlock)
         
         return point

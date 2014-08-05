@@ -17,6 +17,8 @@ class WLTopTimelineViewSw: UIView {
     // Instance methods
     override func awakeFromNib()
     {
+        super.awakeFromNib()
+        
         for i:Int in 1...24 {
             var lbl = self.viewWithTag(i) as UILabel
             

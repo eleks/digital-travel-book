@@ -36,7 +36,7 @@ class WLHomeVCSw: UIViewController {
     
     
     // Instance variables
-    var itemViews:Dictionary<Int, WLHomeItemSw?> = Dictionary<Int, WLHomeItemSw?>()
+    var itemViews:Dictionary<Int, WLHomeItemSw> = Dictionary<Int, WLHomeItemSw>()
     var detailShowing:Bool = false
     var detailVC:WLDetailVCSw? = nil
     
@@ -158,7 +158,7 @@ class WLHomeVCSw: UIViewController {
                                                     self.viewTimeLine.frame.size.width,
                                                     self.viewTimeLine.frame.size.height)
         self.setTimelineLayer()
-    
+        
         let itemCount:Int = WLDataManager.sharedManager.placesList.count
     
         // Space between each thumbnail
@@ -176,9 +176,9 @@ class WLHomeVCSw: UIViewController {
                 itemView = itemView_
             }
             else{
-                itemView = NSBundle.mainBundle()!.loadNibNamed("WLHomeItem", owner:nil, options:nil)[0] as? WLHomeItemSw
+                itemView = NSBundle.mainBundle()!.loadNibNamed("WLHomeItemSw", owner:nil, options:nil)[0] as? WLHomeItemSw
                 itemView!.imgPhoto!.image = WLDataManager.sharedManager.imageWithPath(place.listImagePath)
-                self.itemViews[i] = itemView
+                self.itemViews[i] = itemView!
             }
             itemView!.lblCategory!.text = "Architecture"
             itemView!.lblTitle!.text = place.title
@@ -236,7 +236,7 @@ class WLHomeVCSw: UIViewController {
                                                     self.viewTimeLine.frame.size.width - (self.lblTimelineTitle.frame.origin.x + self.lblTimelineTitle.frame.size.width + 20),
                                                     self.viewTimelineRight.frame.size.height)
     }
-    
+
     func tapOnItem(sender:UITapGestureRecognizer)
     {
         if sender.state == UIGestureRecognizerState.Ended && !self.detailShowing {
@@ -251,7 +251,7 @@ class WLHomeVCSw: UIViewController {
     func tapOnTimeline(sender:UITapGestureRecognizer)
     {
         if sender.state == UIGestureRecognizerState.Ended {
-            let timelineVC = WLTimelineSw(nibName:"WLTimeline", bundle:nil)
+            let timelineVC = WLTimelineSw(nibName:"WLTimelineSw", bundle:nil)
             (self.navigationController! as WLNavigationController).pushViewController(timelineVC, animated:true)
         }
     }
@@ -282,7 +282,7 @@ class WLHomeVCSw: UIViewController {
             },
             completion: {(value: Bool) in
                
-                let strongSelf = weakSelf
+                var strongSelf = weakSelf
                 let viewTransform   = transitionView.layer.transform
                 let controllerScale = CATransform3DMakeScale(transitionView.frame.size.width / controller.view.frame.size.width,
                                                              transitionView.frame.size.height / controller.view.frame.size.height, 0)
@@ -308,8 +308,8 @@ class WLHomeVCSw: UIViewController {
                         controller.view.layer.transform = CATransform3DIdentity
                     },
                     completion: {(value: Bool) in
-                
-                        (strongSelf! as WLNavigationController).navigationController!.pushViewController(controller, animated:false)
+
+                        strongSelf!.navigationController!.pushViewController(controller, animated:false)// Without casting !!!
                         strongSelf!.view!.userInteractionEnabled = true
                         strongSelf!.detailShowing = false
                         view.hidden = false
@@ -320,14 +320,14 @@ class WLHomeVCSw: UIViewController {
     
     func switchToViewControllerWithIndex(#index:UInt, animated:Bool)
     {
-        if let detailVC_ = self.detailVC {
-            self.navigationController!.popToViewController(detailVC_, animated:false)
-            detailVC_.switchToViewControllerWithIndex(index:index, animated:animated)
+        if let detailVC_ = self.detailVC? {
+            self.navigationController.popToViewController(detailVC_, animated:false)
+            detailVC_.switchToViewControllerWithIndex(index:Int(index), animated:animated)
         }
         else{
             self.view!.userInteractionEnabled = false
-            let sender:WLHomeItemSw? = self.itemViews[Int(index)] as? WLHomeItemSw
-            self.detailVC = WLDetailVCSw(itemIndex:index)
+            var sender:WLHomeItemSw? = self.itemViews[Int(index+1)] as WLHomeItemSw?
+            self.detailVC = WLDetailVCSw(itemIndex:index)            
             self.pushControllerWithAnimation(controller: self.detailVC!, fromView:sender!)
         }
     }

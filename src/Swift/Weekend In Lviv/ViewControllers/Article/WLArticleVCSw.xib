@@ -4,17 +4,17 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6153.11"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WLArticleVCSw" customModule="Weekend_In_Lviv" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WLArticleVCSw" customModule="Weekend_In_Lviv">
             <connections>
-                <outlet property="btnAddToFavourites" destination="14" id="Pv1-ir-yZP"/>
-                <outlet property="btnPlayAudio" destination="s9q-UO-VME" id="YnI-6M-iaz"/>
-                <outlet property="imgTop" destination="11" id="32"/>
-                <outlet property="lblFirst" destination="18" id="20"/>
-                <outlet property="lblPlaceTitle" destination="12" id="33"/>
-                <outlet property="lblSwipe" destination="28" id="30"/>
-                <outlet property="scrollDetail" destination="9" id="15"/>
-                <outlet property="swipeLayer" destination="25" id="29"/>
-                <outlet property="view" destination="2" id="3"/>
+                <outlet property="btnAddToFavourites" destination="14" id="VVb-1b-b10"/>
+                <outlet property="btnPlayAudio" destination="s9q-UO-VME" id="Oy4-7E-uz2"/>
+                <outlet property="imgTop" destination="11" id="l24-Hk-YkS"/>
+                <outlet property="lblFirst" destination="18" id="ngH-lb-5f2"/>
+                <outlet property="lblPlaceTitle" destination="12" id="Yqi-oD-2fA"/>
+                <outlet property="lblSwipe" destination="28" id="fnN-Tg-IcJ"/>
+                <outlet property="scrollDetail" destination="9" id="Z2I-WO-z5Y"/>
+                <outlet property="swipeLayer" destination="25" id="Xde-sp-4AB"/>
+                <outlet property="view" destination="2" id="nSW-3B-cQj"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -51,10 +51,10 @@
                                 <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
-                                <action selector="btnAddToFavouriteTouch:" destination="-1" eventType="touchUpInside" id="36"/>
+                                <action selector="btnAddToFavouriteTouch:" destination="-1" eventType="touchUpInside" id="mHu-dE-EVo"/>
                             </connections>
                         </button>
-                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="333" contentMode="left" text="Column 1" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="18" customClass="WLCoreTextLabel">
+                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="333" contentMode="left" text="Column 1" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="18" customClass="WLCoreTextLabelSw" customModule="Weekend_In_Lviv">
                             <rect key="frame" x="40" y="492" width="944" height="90"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" name="Palatino-Italic" family="Palatino" pointSize="20"/>
@@ -79,7 +79,7 @@
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
                                     <connections>
-                                        <action selector="btnForwardTouch:" destination="-1" eventType="touchUpInside" id="vFL-wj-4hg"/>
+                                        <action selector="btnForwardTouch:" destination="-1" eventType="touchUpInside" id="QGR-hh-P0A"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="aLT-BC-8qW">
@@ -89,7 +89,7 @@
                                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                     </state>
                                     <connections>
-                                        <action selector="btnBackwardTouch:" destination="-1" eventType="touchUpInside" id="5d3-GF-hiB"/>
+                                        <action selector="btnBackwardTouch:" destination="-1" eventType="touchUpInside" id="7Rw-mB-M5S"/>
                                     </connections>
                                 </button>
                             </subviews>
@@ -104,7 +104,7 @@
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
-                                <action selector="btnPlayAudioTouch:" destination="-1" eventType="touchUpInside" id="SLb-DY-ih2"/>
+                                <action selector="btnPlayAudioTouch:" destination="-1" eventType="touchUpInside" id="QfO-4v-SJs"/>
                             </connections>
                         </button>
                     </subviews>

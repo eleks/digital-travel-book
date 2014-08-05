@@ -20,7 +20,7 @@ class WLAppDelegate: UIResponder, UIApplicationDelegate {
     {
         self.checkContentUpdate()
         
-        var homeVC = WLHomeVCSw(nibName:"WLHomeVC",  bundle:nil)
+        var homeVC = WLHomeVCSw(nibName:"WLHomeVCSw",  bundle:nil)
         var detailNavigation = WLNavigationController(rootViewController: homeVC)
         UINavigationBar.appearance()!.barTintColor = RGB(48, 23, 0)
         

@@ -76,7 +76,7 @@ extension UIImage {
         
         var colorSpace:CGColorSpaceRef = CGColorSpaceCreateDeviceRGB()
         let bytesPerPixel:CGFloat = 4
-        let bytesPerRow:Int = Int(ceilf(bytesPerPixel * newRect.size.width))
+        let bytesPerRow:Int = Int(ceilf(CFloat(bytesPerPixel * newRect.size.width)))
         let bitsPerComponent:Int = 8
         
         var bitmap:CGContextRef? = CGBitmapContextCreate(nil,

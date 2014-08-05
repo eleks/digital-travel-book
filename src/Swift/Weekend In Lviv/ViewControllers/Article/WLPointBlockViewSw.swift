@@ -1,5 +1,5 @@
 //
-//  WLPointBlockView.swift
+//  WLPointBlockViewSw.swift
 //  Weekend In Lviv
 //
 //  Created by Admin on 13.06.14.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WLPointBlockView: UIView, UIPopoverControllerDelegate {
+class WLPointBlockViewSw: UIView, UIPopoverControllerDelegate {
 
     // Outlets
     @IBOutlet weak var imgMain:UIImageView
@@ -27,6 +27,8 @@ class WLPointBlockView: UIView, UIPopoverControllerDelegate {
     // Instance methods
     override func awakeFromNib()
     {
+        super.awakeFromNib()
+        
         imgBtnNormal = UIImage(named: "btnPointNormal.png")
         imgBtnHighlighted = UIImage(named: "btnPointHightlight.png")
         imgBtnSelected = UIImage(named: "btnPointSelected.png")
@@ -43,10 +45,12 @@ class WLPointBlockView: UIView, UIPopoverControllerDelegate {
         self.layout()
     }
     
-    
     func dismissPopover()
     {
-        self.popover!.dismissPopoverAnimated(true)
+        if self.popover {
+            self.popover!.dismissPopoverAnimated(true)
+        }
+        
         self.popover = nil
         for i:Int in 0..self.currentBlock!.blockPoints.count {
             var btn:UIButton? = (self.viewWithTag(100 + i)) as? UIButton
@@ -56,7 +60,6 @@ class WLPointBlockView: UIView, UIPopoverControllerDelegate {
         }
         pointShowing = false
     }
-    
     
     func willRotate(notification:NSNotification)
     {
@@ -74,7 +77,6 @@ class WLPointBlockView: UIView, UIPopoverControllerDelegate {
         }
         pointShowing = false
     }
-    
     
     func btnTouch(sender:UIButton)
     {
@@ -94,7 +96,7 @@ class WLPointBlockView: UIView, UIPopoverControllerDelegate {
                 }
             }
             let point:WLPoint = (self.currentBlock!.blockPoints)[(sender.tag - 100) as Int]
-            let pointVC:WLPointVCSw = WLPointVCSw(nibName: "WLPointVC", bundle: nil)
+            let pointVC:WLPointVCSw = WLPointVCSw(nibName: "WLPointVCSw", bundle: nil)
     
             self.popover = UIPopoverController(contentViewController: pointVC)
             self.popover!.delegate = self
@@ -127,7 +129,6 @@ class WLPointBlockView: UIView, UIPopoverControllerDelegate {
         self.popover = nil
     }
     
-    
     func setDescriptionText(text:String)
     {
         if (text.bridgeToObjectiveC().length > 0) {
@@ -138,8 +139,8 @@ class WLPointBlockView: UIView, UIPopoverControllerDelegate {
             else {
                 lblWidth = 688
             }
-    
-            let firstSize:CGSize = text.bridgeToObjectiveC().boundingRectWithSize(CGSizeMake(lblWidth / 2 - 40, MAXFLOAT),
+
+            let firstSize:CGSize = text.bridgeToObjectiveC().boundingRectWithSize(CGSizeMake(lblWidth / 2 - 40, CGFloat(MAXFLOAT)),
                                                                                     options:NSStringDrawingOptions.UsesLineFragmentOrigin,
                                                                                     attributes:[NSFontAttributeName : self.lblFirst.font],
                                                                                     context:nil).size

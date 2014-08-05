@@ -8,7 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		841E990B194B11EC002B2B9A /* WLMapVCSw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 841E990A194B11EC002B2B9A /* WLMapVCSw.swift */; };
-		842328DD1962AA510047C24F /* WLAboutVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 842328DC1962AA510047C24F /* WLAboutVC.xib */; };
+		842328DD1962AA510047C24F /* WLAboutVCSw.xib in Resources */ = {isa = PBXBuildFile; fileRef = 842328DC1962AA510047C24F /* WLAboutVCSw.xib */; };
+		843486681979447500E467E8 /* WLArticleBlockSw.xib in Resources */ = {isa = PBXBuildFile; fileRef = 843486641979447500E467E8 /* WLArticleBlockSw.xib */; };
+		843486691979447500E467E8 /* WLArticleVCSw.xib in Resources */ = {isa = PBXBuildFile; fileRef = 843486651979447500E467E8 /* WLArticleVCSw.xib */; };
+		8434866A1979447500E467E8 /* WLPointBlockViewSw.xib in Resources */ = {isa = PBXBuildFile; fileRef = 843486661979447500E467E8 /* WLPointBlockViewSw.xib */; };
+		8434866B1979447500E467E8 /* WLPointVCSw.xib in Resources */ = {isa = PBXBuildFile; fileRef = 843486671979447500E467E8 /* WLPointVCSw.xib */; };
+		8449A665197955FD003752D2 /* WLCoreTextLabelSw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8484EFF8194B36C3005C07A7 /* WLCoreTextLabelSw.swift */; };
+		8449A66719795647003752D2 /* WLTimelineImageViewSw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8484EFFC194B3707005C07A7 /* WLTimelineImageViewSw.swift */; };
 		844D6F37196547610071278D /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 844D6F36196547610071278D /* MediaPlayer.framework */; };
 		844D6F39196547980071278D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 844D6F38196547980071278D /* CoreGraphics.framework */; };
 		844D6F3B196547A80071278D /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 844D6F3A196547A80071278D /* CoreData.framework */; };
@@ -19,23 +25,19 @@
 		84639B43194AFF5900F6C5B8 /* WLDetailVCSw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84639B42194AFF5900F6C5B8 /* WLDetailVCSw.swift */; };
 		846E49FC1949CC6500E397EA /* WLAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846E49FB1949CC6500E397EA /* WLAppDelegate.swift */; };
 		846E4A071949DA7A00E397EA /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 846E4A061949DA7A00E397EA /* libz.dylib */; };
-		846E4B26194AF78C00E397EA /* WLArticleBlock.xib in Resources */ = {isa = PBXBuildFile; fileRef = 846E4B22194AF78C00E397EA /* WLArticleBlock.xib */; };
-		846E4B27194AF78C00E397EA /* WLArticleVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 846E4B23194AF78C00E397EA /* WLArticleVC.xib */; };
-		846E4B28194AF78C00E397EA /* WLPointBlockView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 846E4B24194AF78C00E397EA /* WLPointBlockView.xib */; };
-		846E4B29194AF78C00E397EA /* WLPointVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 846E4B25194AF78C00E397EA /* WLPointVC.xib */; };
-		846E4B2B194AF79A00E397EA /* WLAudioPlayerVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 846E4B2A194AF79A00E397EA /* WLAudioPlayerVC.xib */; };
-		846E4B2E194AF7AB00E397EA /* WLHomeItem.xib in Resources */ = {isa = PBXBuildFile; fileRef = 846E4B2C194AF7AB00E397EA /* WLHomeItem.xib */; };
-		846E4B2F194AF7AB00E397EA /* WLHomeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 846E4B2D194AF7AB00E397EA /* WLHomeVC.xib */; };
-		846E4B31194AF7B500E397EA /* WLMapVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 846E4B30194AF7B500E397EA /* WLMapVC.xib */; };
-		846E4B34194AF7BF00E397EA /* WLMenuCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 846E4B32194AF7BF00E397EA /* WLMenuCell.xib */; };
-		846E4B35194AF7BF00E397EA /* WLMenuHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 846E4B33194AF7BF00E397EA /* WLMenuHeaderView.xib */; };
-		846E4B37194AF7C700E397EA /* WLPhotoGalleryVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 846E4B36194AF7C700E397EA /* WLPhotoGalleryVC.xib */; };
-		846E4B3A194AF7D100E397EA /* WLTimeline.xib in Resources */ = {isa = PBXBuildFile; fileRef = 846E4B38194AF7D100E397EA /* WLTimeline.xib */; };
-		846E4B3B194AF7D100E397EA /* WLTopTimelineView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 846E4B39194AF7D100E397EA /* WLTopTimelineView.xib */; };
+		846E4B2B194AF79A00E397EA /* WLAudioPlayerVCSw.xib in Resources */ = {isa = PBXBuildFile; fileRef = 846E4B2A194AF79A00E397EA /* WLAudioPlayerVCSw.xib */; };
+		846E4B2E194AF7AB00E397EA /* WLHomeItemSw.xib in Resources */ = {isa = PBXBuildFile; fileRef = 846E4B2C194AF7AB00E397EA /* WLHomeItemSw.xib */; };
+		846E4B2F194AF7AB00E397EA /* WLHomeVCSw.xib in Resources */ = {isa = PBXBuildFile; fileRef = 846E4B2D194AF7AB00E397EA /* WLHomeVCSw.xib */; };
+		846E4B31194AF7B500E397EA /* WLMapVCSw.xib in Resources */ = {isa = PBXBuildFile; fileRef = 846E4B30194AF7B500E397EA /* WLMapVCSw.xib */; };
+		846E4B34194AF7BF00E397EA /* WLMenuCellSw.xib in Resources */ = {isa = PBXBuildFile; fileRef = 846E4B32194AF7BF00E397EA /* WLMenuCellSw.xib */; };
+		846E4B35194AF7BF00E397EA /* WLMenuHeaderViewSw.xib in Resources */ = {isa = PBXBuildFile; fileRef = 846E4B33194AF7BF00E397EA /* WLMenuHeaderViewSw.xib */; };
+		846E4B37194AF7C700E397EA /* WLPhotoGalleryVCSw.xib in Resources */ = {isa = PBXBuildFile; fileRef = 846E4B36194AF7C700E397EA /* WLPhotoGalleryVCSw.xib */; };
+		846E4B3A194AF7D100E397EA /* WLTimelineSw.xib in Resources */ = {isa = PBXBuildFile; fileRef = 846E4B38194AF7D100E397EA /* WLTimelineSw.xib */; };
+		846E4B3B194AF7D100E397EA /* WLTopTimelineViewSw.xib in Resources */ = {isa = PBXBuildFile; fileRef = 846E4B39194AF7D100E397EA /* WLTopTimelineViewSw.xib */; };
 		846F8868194B027E001717F1 /* WLAboutVCSw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846F8867194B027E001717F1 /* WLAboutVCSw.swift */; };
 		846F886A194B02EC001717F1 /* WLArticleBlockSw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846F8869194B02EC001717F1 /* WLArticleBlockSw.swift */; };
 		846F886C194B0303001717F1 /* WLArticleVCSw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846F886B194B0303001717F1 /* WLArticleVCSw.swift */; };
-		846F886E194B0325001717F1 /* WLPointBlockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846F886D194B0325001717F1 /* WLPointBlockView.swift */; };
+		846F886E194B0325001717F1 /* WLPointBlockViewSw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846F886D194B0325001717F1 /* WLPointBlockViewSw.swift */; };
 		846F8870194B033C001717F1 /* WLPointVCSw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846F886F194B033C001717F1 /* WLPointVCSw.swift */; };
 		846F8872194B0389001717F1 /* WLAudioPlayerVCSw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846F8871194B0389001717F1 /* WLAudioPlayerVCSw.swift */; };
 		846F8874194B03C5001717F1 /* WLHomeItemSw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 846F8873194B03C5001717F1 /* WLHomeItemSw.swift */; };
@@ -52,7 +54,6 @@
 		8484EF40194B2E8A005C07A7 /* MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8484EF39194B2E8A005C07A7 /* MMDrawerController.m */; };
 		8484EF41194B2E8A005C07A7 /* MMDrawerVisualState.m in Sources */ = {isa = PBXBuildFile; fileRef = 8484EF3C194B2E8A005C07A7 /* MMDrawerVisualState.m */; };
 		8484EF42194B2E8A005C07A7 /* UIViewController+MMDrawerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8484EF3E194B2E8A005C07A7 /* UIViewController+MMDrawerController.m */; };
-		8484EF45194B2E98005C07A7 /* UIImage+Additions.m in Sources */ = {isa = PBXBuildFile; fileRef = 8484EF44194B2E98005C07A7 /* UIImage+Additions.m */; };
 		8484EF47194B2EC1005C07A7 /* Root.json in Resources */ = {isa = PBXBuildFile; fileRef = 8484EF46194B2EC1005C07A7 /* Root.json */; };
 		8484EF5B194B2ED3005C07A7 /* apteka-2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8484EF48194B2ED3005C07A7 /* apteka-2.jpg */; };
 		8484EF5C194B2ED3005C07A7 /* apteka.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 8484EF49194B2ED3005C07A7 /* apteka.JPG */; };
@@ -142,14 +143,11 @@
 		8484EFF4194B2F4C005C07A7 /* Palatino Linotype Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8484EFED194B2F4C005C07A7 /* Palatino Linotype Italic.ttf */; };
 		8484EFF5194B2F4C005C07A7 /* Palatino Linotype.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8484EFEE194B2F4C005C07A7 /* Palatino Linotype.ttf */; };
 		8484EFF7194B369C005C07A7 /* WLColumnLabelSw.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8484EFF6194B369C005C07A7 /* WLColumnLabelSw.swift */; };
-		8484EFF9194B36C3005C07A7 /* WLCoreTextLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8484EFF8194B36C3005C07A7 /* WLCoreTextLabel.swift */; };
 		8484EFFB194B36EC005C07A7 /* WLImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8484EFFA194B36EC005C07A7 /* WLImageView.swift */; };
-		8484EFFD194B3707005C07A7 /* WLTimelineImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8484EFFC194B3707005C07A7 /* WLTimelineImageView.swift */; };
 		8484EFFF194B372D005C07A7 /* WLNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8484EFFE194B372D005C07A7 /* WLNavigationController.swift */; };
 		8484F001194B3759005C07A7 /* WLMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8484F000194B3759005C07A7 /* WLMenuButton.swift */; };
 		8489E26A19503F5500B47916 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8489E26919503F5500B47916 /* Constants.swift */; };
 		8489E26C1950906200B47916 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8489E26B1950906200B47916 /* CoreText.framework */; };
-		84991E5A196EAED700433FA0 /* AudioFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 84991E4D196EAED700433FA0 /* AudioFile.m */; };
 		84991E5B196EAED700433FA0 /* Image.m in Sources */ = {isa = PBXBuildFile; fileRef = 84991E4F196EAED700433FA0 /* Image.m */; };
 		84991E5C196EAED700433FA0 /* LocalizedText.m in Sources */ = {isa = PBXBuildFile; fileRef = 84991E51196EAED700433FA0 /* LocalizedText.m */; };
 		84991E5D196EAED700433FA0 /* Place.m in Sources */ = {isa = PBXBuildFile; fileRef = 84991E53196EAED700433FA0 /* Place.m */; };
@@ -161,10 +159,12 @@
 		84CFBB7A19531670000D0267 /* WLPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CFBB7919531670000D0267 /* WLPoint.swift */; };
 		84CFBB7C195316B9000D0267 /* WLPointBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CFBB7B195316B9000D0267 /* WLPointBlock.swift */; };
 		84CFBB7E195316CB000D0267 /* WLTextBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84CFBB7D195316CB000D0267 /* WLTextBlock.swift */; };
+		84D0C9C419796DAD00EFA1EE /* AudioFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 84991E4D196EAED700433FA0 /* AudioFile.m */; };
 		84D141761951B99F0080CBD8 /* UIImage+Alpha.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D141751951B99F0080CBD8 /* UIImage+Alpha.swift */; };
 		84D1417A1951BA290080CBD8 /* UIImage+RoundedCorner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D141791951BA290080CBD8 /* UIImage+RoundedCorner.swift */; };
 		84D1417C1951BA3E0080CBD8 /* UIImage+Resize.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D1417B1951BA3E0080CBD8 /* UIImage+Resize.swift */; };
 		84D1417E1951BA540080CBD8 /* UIScreen+SSToolkitAdditions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84D1417D1951BA540080CBD8 /* UIScreen+SSToolkitAdditions.swift */; };
+		84F124551979281C006BB3F7 /* about.html in Resources */ = {isa = PBXBuildFile; fileRef = 84F124541979281C006BB3F7 /* about.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -193,7 +193,11 @@
 
 /* Begin PBXFileReference section */
 		841E990A194B11EC002B2B9A /* WLMapVCSw.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WLMapVCSw.swift; path = ViewControllers/Map/WLMapVCSw.swift; sourceTree = "<group>"; };
-		842328DC1962AA510047C24F /* WLAboutVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WLAboutVC.xib; path = ViewControllers/About/WLAboutVC.xib; sourceTree = "<group>"; };
+		842328DC1962AA510047C24F /* WLAboutVCSw.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WLAboutVCSw.xib; path = ViewControllers/About/WLAboutVCSw.xib; sourceTree = "<group>"; };
+		843486641979447500E467E8 /* WLArticleBlockSw.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WLArticleBlockSw.xib; path = ViewControllers/Article/WLArticleBlockSw.xib; sourceTree = "<group>"; };
+		843486651979447500E467E8 /* WLArticleVCSw.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WLArticleVCSw.xib; path = ViewControllers/Article/WLArticleVCSw.xib; sourceTree = "<group>"; };
+		843486661979447500E467E8 /* WLPointBlockViewSw.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WLPointBlockViewSw.xib; path = ViewControllers/Article/WLPointBlockViewSw.xib; sourceTree = "<group>"; };
+		843486671979447500E467E8 /* WLPointVCSw.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WLPointVCSw.xib; path = ViewControllers/Article/WLPointVCSw.xib; sourceTree = "<group>"; };
 		844D6F36196547610071278D /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		844D6F38196547980071278D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		844D6F3A196547A80071278D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -209,23 +213,19 @@
 		846E49FB1949CC6500E397EA /* WLAppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WLAppDelegate.swift; sourceTree = "<group>"; };
 		846E4A061949DA7A00E397EA /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		846E4A6D194AF0B000E397EA /* Weekend_In_Lviv-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Weekend_In_Lviv-Bridging-Header.h"; path = "Libs-obj-с/Weekend_In_Lviv-Bridging-Header.h"; sourceTree = "<group>"; };
-		846E4B22194AF78C00E397EA /* WLArticleBlock.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WLArticleBlock.xib; path = ViewControllers/Article/WLArticleBlock.xib; sourceTree = "<group>"; };
-		846E4B23194AF78C00E397EA /* WLArticleVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WLArticleVC.xib; path = ViewControllers/Article/WLArticleVC.xib; sourceTree = "<group>"; };
-		846E4B24194AF78C00E397EA /* WLPointBlockView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WLPointBlockView.xib; path = ViewControllers/Article/WLPointBlockView.xib; sourceTree = "<group>"; };
-		846E4B25194AF78C00E397EA /* WLPointVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WLPointVC.xib; path = ViewControllers/Article/WLPointVC.xib; sourceTree = "<group>"; };
-		846E4B2A194AF79A00E397EA /* WLAudioPlayerVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WLAudioPlayerVC.xib; path = ViewControllers/AudioPlayer/WLAudioPlayerVC.xib; sourceTree = "<group>"; };
-		846E4B2C194AF7AB00E397EA /* WLHomeItem.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WLHomeItem.xib; path = ViewControllers/Home/WLHomeItem.xib; sourceTree = "<group>"; };
-		846E4B2D194AF7AB00E397EA /* WLHomeVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WLHomeVC.xib; path = ViewControllers/Home/WLHomeVC.xib; sourceTree = "<group>"; };
-		846E4B30194AF7B500E397EA /* WLMapVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WLMapVC.xib; path = ViewControllers/Map/WLMapVC.xib; sourceTree = "<group>"; };
-		846E4B32194AF7BF00E397EA /* WLMenuCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WLMenuCell.xib; path = ViewControllers/Menu/WLMenuCell.xib; sourceTree = "<group>"; };
-		846E4B33194AF7BF00E397EA /* WLMenuHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WLMenuHeaderView.xib; path = ViewControllers/Menu/WLMenuHeaderView.xib; sourceTree = "<group>"; };
-		846E4B36194AF7C700E397EA /* WLPhotoGalleryVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WLPhotoGalleryVC.xib; path = "ViewControllers/Photo Gallery/WLPhotoGalleryVC.xib"; sourceTree = "<group>"; };
-		846E4B38194AF7D100E397EA /* WLTimeline.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WLTimeline.xib; path = ViewControllers/Timeline/WLTimeline.xib; sourceTree = "<group>"; };
-		846E4B39194AF7D100E397EA /* WLTopTimelineView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WLTopTimelineView.xib; path = ViewControllers/Timeline/WLTopTimelineView.xib; sourceTree = "<group>"; };
+		846E4B2A194AF79A00E397EA /* WLAudioPlayerVCSw.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WLAudioPlayerVCSw.xib; path = ViewControllers/AudioPlayer/WLAudioPlayerVCSw.xib; sourceTree = "<group>"; };
+		846E4B2C194AF7AB00E397EA /* WLHomeItemSw.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WLHomeItemSw.xib; path = ViewControllers/Home/WLHomeItemSw.xib; sourceTree = "<group>"; };
+		846E4B2D194AF7AB00E397EA /* WLHomeVCSw.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WLHomeVCSw.xib; path = ViewControllers/Home/WLHomeVCSw.xib; sourceTree = "<group>"; };
+		846E4B30194AF7B500E397EA /* WLMapVCSw.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WLMapVCSw.xib; path = ViewControllers/Map/WLMapVCSw.xib; sourceTree = "<group>"; };
+		846E4B32194AF7BF00E397EA /* WLMenuCellSw.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WLMenuCellSw.xib; path = ViewControllers/Menu/WLMenuCellSw.xib; sourceTree = "<group>"; };
+		846E4B33194AF7BF00E397EA /* WLMenuHeaderViewSw.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WLMenuHeaderViewSw.xib; path = ViewControllers/Menu/WLMenuHeaderViewSw.xib; sourceTree = "<group>"; };
+		846E4B36194AF7C700E397EA /* WLPhotoGalleryVCSw.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WLPhotoGalleryVCSw.xib; path = "ViewControllers/Photo Gallery/WLPhotoGalleryVCSw.xib"; sourceTree = "<group>"; };
+		846E4B38194AF7D100E397EA /* WLTimelineSw.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WLTimelineSw.xib; path = ViewControllers/Timeline/WLTimelineSw.xib; sourceTree = "<group>"; };
+		846E4B39194AF7D100E397EA /* WLTopTimelineViewSw.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = WLTopTimelineViewSw.xib; path = ViewControllers/Timeline/WLTopTimelineViewSw.xib; sourceTree = "<group>"; };
 		846F8867194B027E001717F1 /* WLAboutVCSw.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WLAboutVCSw.swift; path = ViewControllers/About/WLAboutVCSw.swift; sourceTree = "<group>"; };
 		846F8869194B02EC001717F1 /* WLArticleBlockSw.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WLArticleBlockSw.swift; path = ViewControllers/Article/WLArticleBlockSw.swift; sourceTree = "<group>"; };
 		846F886B194B0303001717F1 /* WLArticleVCSw.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WLArticleVCSw.swift; path = ViewControllers/Article/WLArticleVCSw.swift; sourceTree = "<group>"; };
-		846F886D194B0325001717F1 /* WLPointBlockView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WLPointBlockView.swift; path = ViewControllers/Article/WLPointBlockView.swift; sourceTree = "<group>"; };
+		846F886D194B0325001717F1 /* WLPointBlockViewSw.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WLPointBlockViewSw.swift; path = ViewControllers/Article/WLPointBlockViewSw.swift; sourceTree = "<group>"; };
 		846F886F194B033C001717F1 /* WLPointVCSw.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WLPointVCSw.swift; path = ViewControllers/Article/WLPointVCSw.swift; sourceTree = "<group>"; };
 		846F8871194B0389001717F1 /* WLAudioPlayerVCSw.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WLAudioPlayerVCSw.swift; path = ViewControllers/AudioPlayer/WLAudioPlayerVCSw.swift; sourceTree = "<group>"; };
 		846F8873194B03C5001717F1 /* WLHomeItemSw.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WLHomeItemSw.swift; path = ViewControllers/Home/WLHomeItemSw.swift; sourceTree = "<group>"; };
@@ -338,9 +338,9 @@
 		8484EFED194B2F4C005C07A7 /* Palatino Linotype Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Palatino Linotype Italic.ttf"; path = "../../Weekend In Lviv/Fonts/Palatino Linotype Italic.ttf"; sourceTree = "<group>"; };
 		8484EFEE194B2F4C005C07A7 /* Palatino Linotype.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "Palatino Linotype.ttf"; path = "../../Weekend In Lviv/Fonts/Palatino Linotype.ttf"; sourceTree = "<group>"; };
 		8484EFF6194B369C005C07A7 /* WLColumnLabelSw.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WLColumnLabelSw.swift; path = "Custom Classes/WLColumnLabelSw.swift"; sourceTree = "<group>"; };
-		8484EFF8194B36C3005C07A7 /* WLCoreTextLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WLCoreTextLabel.swift; path = "Custom Classes/WLCoreTextLabel.swift"; sourceTree = "<group>"; };
+		8484EFF8194B36C3005C07A7 /* WLCoreTextLabelSw.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WLCoreTextLabelSw.swift; path = "Custom Classes/WLCoreTextLabelSw.swift"; sourceTree = "<group>"; };
 		8484EFFA194B36EC005C07A7 /* WLImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WLImageView.swift; path = "Custom Classes/WLImageView.swift"; sourceTree = "<group>"; };
-		8484EFFC194B3707005C07A7 /* WLTimelineImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WLTimelineImageView.swift; path = "Custom Classes/WLTimelineImageView.swift"; sourceTree = "<group>"; };
+		8484EFFC194B3707005C07A7 /* WLTimelineImageViewSw.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WLTimelineImageViewSw.swift; path = "Custom Classes/WLTimelineImageViewSw.swift"; sourceTree = "<group>"; };
 		8484EFFE194B372D005C07A7 /* WLNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WLNavigationController.swift; path = "Custom Classes/WLNavigationController.swift"; sourceTree = "<group>"; };
 		8484F000194B3759005C07A7 /* WLMenuButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WLMenuButton.swift; path = "Custom Classes/WLMenuButton.swift"; sourceTree = "<group>"; };
 		8489E26919503F5500B47916 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -368,6 +368,7 @@
 		84D141791951BA290080CBD8 /* UIImage+RoundedCorner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImage+RoundedCorner.swift"; path = "Categories/UIImage+RoundedCorner.swift"; sourceTree = "<group>"; };
 		84D1417B1951BA3E0080CBD8 /* UIImage+Resize.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIImage+Resize.swift"; path = "Categories/UIImage+Resize.swift"; sourceTree = "<group>"; };
 		84D1417D1951BA540080CBD8 /* UIScreen+SSToolkitAdditions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UIScreen+SSToolkitAdditions.swift"; path = "Categories/UIScreen+SSToolkitAdditions.swift"; sourceTree = "<group>"; };
+		84F124541979281C006BB3F7 /* about.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; name = about.html; path = "../../Weekend In Lviv/about.html"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -452,6 +453,7 @@
 		845835D21949C1E000277879 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				84F124541979281C006BB3F7 /* about.html */,
 				844D6F3E196547D30071278D /* MapKit.framework */,
 				844D6F3C196547CC0071278D /* QuartzCore.framework */,
 				844D6F3A196547A80071278D /* CoreData.framework */,
@@ -531,12 +533,12 @@
 			isa = PBXGroup;
 			children = (
 				8484EFF6194B369C005C07A7 /* WLColumnLabelSw.swift */,
-				8484EFF8194B36C3005C07A7 /* WLCoreTextLabel.swift */,
+				8484EFF8194B36C3005C07A7 /* WLCoreTextLabelSw.swift */,
 				8484EF1F194B1E40005C07A7 /* WLFontManager.swift */,
 				8484EFFA194B36EC005C07A7 /* WLImageView.swift */,
 				8484EFFE194B372D005C07A7 /* WLNavigationController.swift */,
 				8484F000194B3759005C07A7 /* WLMenuButton.swift */,
-				8484EFFC194B3707005C07A7 /* WLTimelineImageView.swift */,
+				8484EFFC194B3707005C07A7 /* WLTimelineImageViewSw.swift */,
 			);
 			name = CustomClasses;
 			sourceTree = "<group>";
@@ -735,9 +737,9 @@
 		846E4B17194AF72500E397EA /* Timeline */ = {
 			isa = PBXGroup;
 			children = (
-				846E4B38194AF7D100E397EA /* WLTimeline.xib */,
+				846E4B38194AF7D100E397EA /* WLTimelineSw.xib */,
 				846F8885194B0539001717F1 /* WLTimelineSw.swift */,
-				846E4B39194AF7D100E397EA /* WLTopTimelineView.xib */,
+				846E4B39194AF7D100E397EA /* WLTopTimelineViewSw.xib */,
 				846F8887194B0557001717F1 /* WLTopTimelineViewSw.swift */,
 			);
 			name = Timeline;
@@ -746,7 +748,7 @@
 		846E4B18194AF72C00E397EA /* Photo Gallery */ = {
 			isa = PBXGroup;
 			children = (
-				846E4B36194AF7C700E397EA /* WLPhotoGalleryVC.xib */,
+				846E4B36194AF7C700E397EA /* WLPhotoGalleryVCSw.xib */,
 				846F8883194B0515001717F1 /* WLPhotoGalleryVCSw.swift */,
 			);
 			name = "Photo Gallery";
@@ -755,9 +757,9 @@
 		846E4B19194AF73D00E397EA /* Menu */ = {
 			isa = PBXGroup;
 			children = (
-				846E4B32194AF7BF00E397EA /* WLMenuCell.xib */,
+				846E4B32194AF7BF00E397EA /* WLMenuCellSw.xib */,
 				846F887B194B046B001717F1 /* WLMenuCellSw.swift */,
-				846E4B33194AF7BF00E397EA /* WLMenuHeaderView.xib */,
+				846E4B33194AF7BF00E397EA /* WLMenuHeaderViewSw.xib */,
 				846F887D194B0497001717F1 /* WLMenuHeaderViewSw.swift */,
 				846F8881194B04EB001717F1 /* WLMenuVCSw.swift */,
 			);
@@ -767,7 +769,7 @@
 		846E4B1A194AF74400E397EA /* Map */ = {
 			isa = PBXGroup;
 			children = (
-				846E4B30194AF7B500E397EA /* WLMapVC.xib */,
+				846E4B30194AF7B500E397EA /* WLMapVCSw.xib */,
 				841E990A194B11EC002B2B9A /* WLMapVCSw.swift */,
 			);
 			name = Map;
@@ -776,9 +778,9 @@
 		846E4B1B194AF74800E397EA /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				846E4B2C194AF7AB00E397EA /* WLHomeItem.xib */,
+				846E4B2C194AF7AB00E397EA /* WLHomeItemSw.xib */,
 				846F8873194B03C5001717F1 /* WLHomeItemSw.swift */,
-				846E4B2D194AF7AB00E397EA /* WLHomeVC.xib */,
+				846E4B2D194AF7AB00E397EA /* WLHomeVCSw.xib */,
 				846F8889194B05CC001717F1 /* WLHomeVCSw.swift */,
 			);
 			name = Home;
@@ -795,7 +797,7 @@
 		846E4B1D194AF75900E397EA /* AudioPlayer */ = {
 			isa = PBXGroup;
 			children = (
-				846E4B2A194AF79A00E397EA /* WLAudioPlayerVC.xib */,
+				846E4B2A194AF79A00E397EA /* WLAudioPlayerVCSw.xib */,
 				846F8871194B0389001717F1 /* WLAudioPlayerVCSw.swift */,
 			);
 			name = AudioPlayer;
@@ -804,13 +806,13 @@
 		846E4B1E194AF76300E397EA /* Article */ = {
 			isa = PBXGroup;
 			children = (
-				846E4B22194AF78C00E397EA /* WLArticleBlock.xib */,
+				843486641979447500E467E8 /* WLArticleBlockSw.xib */,
 				846F8869194B02EC001717F1 /* WLArticleBlockSw.swift */,
-				846E4B23194AF78C00E397EA /* WLArticleVC.xib */,
+				843486651979447500E467E8 /* WLArticleVCSw.xib */,
 				846F886B194B0303001717F1 /* WLArticleVCSw.swift */,
-				846E4B24194AF78C00E397EA /* WLPointBlockView.xib */,
-				846F886D194B0325001717F1 /* WLPointBlockView.swift */,
-				846E4B25194AF78C00E397EA /* WLPointVC.xib */,
+				843486661979447500E467E8 /* WLPointBlockViewSw.xib */,
+				846F886D194B0325001717F1 /* WLPointBlockViewSw.swift */,
+				843486671979447500E467E8 /* WLPointVCSw.xib */,
 				846F886F194B033C001717F1 /* WLPointVCSw.swift */,
 			);
 			name = Article;
@@ -819,7 +821,7 @@
 		846E4B1F194AF76B00E397EA /* About */ = {
 			isa = PBXGroup;
 			children = (
-				842328DC1962AA510047C24F /* WLAboutVC.xib */,
+				842328DC1962AA510047C24F /* WLAboutVCSw.xib */,
 				846F8867194B027E001717F1 /* WLAboutVCSw.swift */,
 			);
 			name = About;
@@ -915,7 +917,7 @@
 				8484EFAE194B2F08005C07A7 /* Item4.json in Resources */,
 				8484EFE5194B2F3D005C07A7 /* hatka_medium.jpg in Resources */,
 				8484EF64194B2ED3005C07A7 /* Item1.json in Resources */,
-				846E4B2F194AF7AB00E397EA /* WLHomeVC.xib in Resources */,
+				846E4B2F194AF7AB00E397EA /* WLHomeVCSw.xib in Resources */,
 				8484EF9F194B2EEA005C07A7 /* virmenka1_3.jpg in Resources */,
 				8484EFF5194B2F4C005C07A7 /* Palatino Linotype.ttf in Resources */,
 				8484EFB1194B2F08005C07A7 /* palats_pototskyh_small.jpg in Resources */,
@@ -936,11 +938,12 @@
 				8484EFA1194B2EEA005C07A7 /* virmenka2_2.jpg in Resources */,
 				8484EFA7194B2EFA005C07A7 /* prospekt_svobody_staryy_big.jpg in Resources */,
 				8484EF97194B2EEA005C07A7 /* Lviv2.mp3 in Resources */,
-				842328DD1962AA510047C24F /* WLAboutVC.xib in Resources */,
+				842328DD1962AA510047C24F /* WLAboutVCSw.xib in Resources */,
 				8484EF6A194B2ED3005C07A7 /* rynok_medium.jpg in Resources */,
 				8484EF94194B2EEA005C07A7 /* dominikanka2.jpg in Resources */,
-				846E4B31194AF7B500E397EA /* WLMapVC.xib in Resources */,
+				846E4B31194AF7B500E397EA /* WLMapVCSw.xib in Resources */,
 				8484EFDD194B2F2B005C07A7 /* yura_big.jpg in Resources */,
+				84F124551979281C006BB3F7 /* about.html in Resources */,
 				8484EF93194B2EEA005C07A7 /* dominikanka.jpg in Resources */,
 				8484EF8C194B2EEA005C07A7 /* aksonometria_4.JPG in Resources */,
 				8484EFDC194B2F2B005C07A7 /* Lviv1.mp3 in Resources */,
@@ -949,31 +952,29 @@
 				8484EF8F194B2EEA005C07A7 /* aksonometria_7.jpg in Resources */,
 				8484EF5C194B2ED3005C07A7 /* apteka.JPG in Resources */,
 				8484EF99194B2EEA005C07A7 /* preobrajenka2.jpg in Resources */,
-				846E4B37194AF7C700E397EA /* WLPhotoGalleryVC.xib in Resources */,
+				846E4B37194AF7C700E397EA /* WLPhotoGalleryVCSw.xib in Resources */,
 				8484EFDA194B2F2B005C07A7 /* Item1AudioDe.mp3 in Resources */,
 				8484EF6C194B2ED3005C07A7 /* veneziyska_kamyanytsya_2.jpg in Resources */,
 				8484EF96194B2EEA005C07A7 /* Item2.json in Resources */,
 				8484EF5E194B2ED3005C07A7 /* chorna_kamjanycja3.jpg in Resources */,
 				8484EFCB194B2F2B005C07A7 /* _budynok_vchenyh1.jpg in Resources */,
 				8484EFD0194B2F2B005C07A7 /* _univer.jpg in Resources */,
-				846E4B26194AF78C00E397EA /* WLArticleBlock.xib in Resources */,
 				8484EF9E194B2EEA005C07A7 /* virmenka1_2.jpg in Resources */,
-				846E4B35194AF7BF00E397EA /* WLMenuHeaderView.xib in Resources */,
+				846E4B35194AF7BF00E397EA /* WLMenuHeaderViewSw.xib in Resources */,
 				8484EFCE194B2F2B005C07A7 /* _politech_1.jpg in Resources */,
-				846E4B3B194AF7D100E397EA /* WLTopTimelineView.xib in Resources */,
+				846E4B3B194AF7D100E397EA /* WLTopTimelineViewSw.xib in Resources */,
 				8484EF90194B2EEA005C07A7 /* cover2katedra_big.jpg in Resources */,
 				845835DA1949C1E000277879 /* Images.xcassets in Resources */,
 				8484EFCA194B2F2B005C07A7 /* _budynok_vchenyh.jpg in Resources */,
-				846E4B27194AF78C00E397EA /* WLArticleVC.xib in Resources */,
 				8484EF63194B2ED3005C07A7 /* italiyskyy_dvoryk_5.jpg in Resources */,
-				846E4B34194AF7BF00E397EA /* WLMenuCell.xib in Resources */,
+				846E4B34194AF7BF00E397EA /* WLMenuCellSw.xib in Resources */,
 				8484EFD6194B2F2B005C07A7 /* _yelyzavety.jpg in Resources */,
-				846E4B28194AF78C00E397EA /* WLPointBlockView.xib in Resources */,
 				8484EF5F194B2ED3005C07A7 /* chorna_kamjanycja4.jpg in Resources */,
-				846E4B3A194AF7D100E397EA /* WLTimeline.xib in Resources */,
+				846E4B3A194AF7D100E397EA /* WLTimelineSw.xib in Resources */,
 				8484EF5B194B2ED3005C07A7 /* apteka-2.jpg in Resources */,
 				8484EFCF194B2F2B005C07A7 /* _univer_old.jpg in Resources */,
 				8484EF95194B2EEA005C07A7 /* dominikanka3.jpg in Resources */,
+				843486681979447500E467E8 /* WLArticleBlockSw.xib in Resources */,
 				8484EF60194B2ED3005C07A7 /* gepner_2.jpg in Resources */,
 				8484EFDE194B2F2B005C07A7 /* yura_medium.jpg in Resources */,
 				8484EFDF194B2F2B005C07A7 /* yura_small.jpg in Resources */,
@@ -988,10 +989,12 @@
 				8484EFD4194B2F2B005C07A7 /* _yelyzavety_3.jpg in Resources */,
 				8484EF9A194B2EEA005C07A7 /* preobrajenka3.jpg in Resources */,
 				8484EFA8194B2EFA005C07A7 /* prospekt_svobody_staryy_medium.jpg in Resources */,
+				843486691979447500E467E8 /* WLArticleVCSw.xib in Resources */,
 				8484EFD7194B2F2B005C07A7 /* _yura_1.jpg in Resources */,
 				8484EF65194B2ED3005C07A7 /* Lviv3.mp3 in Resources */,
-				846E4B2E194AF7AB00E397EA /* WLHomeItem.xib in Resources */,
+				846E4B2E194AF7AB00E397EA /* WLHomeItemSw.xib in Resources */,
 				8484EFD5194B2F2B005C07A7 /* _yelyzavety_4.jpg in Resources */,
+				8434866B1979447500E467E8 /* WLPointVCSw.xib in Resources */,
 				8484EF68194B2ED3005C07A7 /* prynok_panorama.jpg in Resources */,
 				8484EFD3194B2F2B005C07A7 /* _yelyzavety_2.jpg in Resources */,
 				8484EF6D194B2ED3005C07A7 /* veneziyska_kamyanytsya.jpg in Resources */,
@@ -999,9 +1002,9 @@
 				8484EFF4194B2F4C005C07A7 /* Palatino Linotype Italic.ttf in Resources */,
 				8484EF6B194B2ED3005C07A7 /* rynok_small.jpg in Resources */,
 				8484EF5D194B2ED3005C07A7 /* chorna_kamjanycja1.jpg in Resources */,
-				846E4B29194AF78C00E397EA /* WLPointVC.xib in Resources */,
 				8484EF9D194B2EEA005C07A7 /* virmenka1_1.jpg in Resources */,
 				8484EF8E194B2EEA005C07A7 /* aksonometria_6.jpg in Resources */,
+				8434866A1979447500E467E8 /* WLPointBlockViewSw.xib in Resources */,
 				8484EF89194B2EEA005C07A7 /* aksonometria_1.JPG in Resources */,
 				8484EF67194B2ED3005C07A7 /* lyumoyrskyy_2.jpg in Resources */,
 				8484EF9B194B2EEA005C07A7 /* uspenska_veja.jpg in Resources */,
@@ -1012,7 +1015,7 @@
 				8484EFE6194B2F3D005C07A7 /* hatka_small.jpg in Resources */,
 				8484EFD2194B2F2B005C07A7 /* _vokzal.jpg in Resources */,
 				8484EFCC194B2F2B005C07A7 /* _budynok_vchenyh2.jpg in Resources */,
-				846E4B2B194AF79A00E397EA /* WLAudioPlayerVC.xib in Resources */,
+				846E4B2B194AF79A00E397EA /* WLAudioPlayerVCSw.xib in Resources */,
 				8484EF69194B2ED3005C07A7 /* rynok_big.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1031,22 +1034,31 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84D0C9C419796DAD00EFA1EE /* AudioFile.m in Sources */,
+				84991E5C196EAED700433FA0 /* LocalizedText.m in Sources */,
+				84991E5B196EAED700433FA0 /* Image.m in Sources */,
+				84991E5E196EAED700433FA0 /* PointBlock.m in Sources */,
+				84991E5F196EAED700433FA0 /* PointOfBlock.m in Sources */,
+				84991E5D196EAED700433FA0 /* Place.m in Sources */,
+				84991E60196EAED700433FA0 /* TextBlock.m in Sources */,
+				8484EF41194B2E8A005C07A7 /* MMDrawerVisualState.m in Sources */,
+				8484EF3F194B2E8A005C07A7 /* MMDrawerBarButtonItem.m in Sources */,
+				8484EF40194B2E8A005C07A7 /* MMDrawerController.m in Sources */,
+				8484EF42194B2E8A005C07A7 /* UIViewController+MMDrawerController.m in Sources */,
 				84D1417E1951BA540080CBD8 /* UIScreen+SSToolkitAdditions.swift in Sources */,
-				84991E5A196EAED700433FA0 /* AudioFile.m in Sources */,
 				84D141761951B99F0080CBD8 /* UIImage+Alpha.swift in Sources */,
 				84CFBB7E195316CB000D0267 /* WLTextBlock.swift in Sources */,
-				846F886E194B0325001717F1 /* WLPointBlockView.swift in Sources */,
+				846F886E194B0325001717F1 /* WLPointBlockViewSw.swift in Sources */,
 				8484EFFB194B36EC005C07A7 /* WLImageView.swift in Sources */,
-				8484EF45194B2E98005C07A7 /* UIImage+Additions.m in Sources */,
 				8484EF20194B1E40005C07A7 /* WLFontManager.swift in Sources */,
-				84991E5C196EAED700433FA0 /* LocalizedText.m in Sources */,
+				8449A66719795647003752D2 /* WLTimelineImageViewSw.swift in Sources */,
 				84CFBB781953161E000D0267 /* WLPlace.swift in Sources */,
 				84CFBB5419530C2C000D0267 /* WLDataManager.swift in Sources */,
 				8484EFF7194B369C005C07A7 /* WLColumnLabelSw.swift in Sources */,
-				8484EF41194B2E8A005C07A7 /* MMDrawerVisualState.m in Sources */,
 				8484EF35194B2E23005C07A7 /* Weekend_In_Lviv.xcdatamodeld in Sources */,
 				846F8874194B03C5001717F1 /* WLHomeItemSw.swift in Sources */,
 				846F887C194B046B001717F1 /* WLMenuCellSw.swift in Sources */,
+				8449A665197955FD003752D2 /* WLCoreTextLabelSw.swift in Sources */,
 				8489E26A19503F5500B47916 /* Constants.swift in Sources */,
 				841E990B194B11EC002B2B9A /* WLMapVCSw.swift in Sources */,
 				84639B43194AFF5900F6C5B8 /* WLDetailVCSw.swift in Sources */,
@@ -1057,27 +1069,17 @@
 				846F8868194B027E001717F1 /* WLAboutVCSw.swift in Sources */,
 				846F8884194B0515001717F1 /* WLPhotoGalleryVCSw.swift in Sources */,
 				846F8872194B0389001717F1 /* WLAudioPlayerVCSw.swift in Sources */,
-				84991E5E196EAED700433FA0 /* PointBlock.m in Sources */,
-				8484EFFD194B3707005C07A7 /* WLTimelineImageView.swift in Sources */,
-				84991E5D196EAED700433FA0 /* Place.m in Sources */,
 				846F8886194B0539001717F1 /* WLTimelineSw.swift in Sources */,
-				84991E60196EAED700433FA0 /* TextBlock.m in Sources */,
-				84991E5B196EAED700433FA0 /* Image.m in Sources */,
-				84991E5F196EAED700433FA0 /* PointOfBlock.m in Sources */,
 				846F886A194B02EC001717F1 /* WLArticleBlockSw.swift in Sources */,
 				8484F001194B3759005C07A7 /* WLMenuButton.swift in Sources */,
 				846F888A194B05CC001717F1 /* WLHomeVCSw.swift in Sources */,
 				846F8882194B04EB001717F1 /* WLMenuVCSw.swift in Sources */,
-				8484EF42194B2E8A005C07A7 /* UIViewController+MMDrawerController.m in Sources */,
-				8484EF40194B2E8A005C07A7 /* MMDrawerController.m in Sources */,
 				846E49FC1949CC6500E397EA /* WLAppDelegate.swift in Sources */,
 				84CFBB7A19531670000D0267 /* WLPoint.swift in Sources */,
 				8484EFFF194B372D005C07A7 /* WLNavigationController.swift in Sources */,
-				8484EF3F194B2E8A005C07A7 /* MMDrawerBarButtonItem.m in Sources */,
 				846F8870194B033C001717F1 /* WLPointVCSw.swift in Sources */,
 				84D1417C1951BA3E0080CBD8 /* UIImage+Resize.swift in Sources */,
 				846F8888194B0557001717F1 /* WLTopTimelineViewSw.swift in Sources */,
-				8484EFF9194B36C3005C07A7 /* WLCoreTextLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1207,6 +1209,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -1222,6 +1225,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

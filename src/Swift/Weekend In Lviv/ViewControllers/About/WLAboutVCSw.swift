@@ -40,9 +40,10 @@ class WLAboutVCSw: UIViewController, UIWebViewDelegate {
         
         var leftDrawerButton = WLMenuButton(target: self, action: Selector("btnMenuTouch:"))
         self.navigationItem.setLeftBarButtonItem(leftDrawerButton, animated:true)
-        
+     
         self.lblTitle.text = "Über ELEKS"
-        let aboutURL:NSURL = NSBundle.mainBundle()!.URLForResource("about", withExtension: "html")
+        let aboutURL:NSURL = NSBundle.mainBundle().URLForResource("about", withExtension: "html")
+        
         var aboutText = String.stringWithContentsOfFile(aboutURL.path, encoding: NSUTF8StringEncoding, error: nil)
         self.webView.backgroundColor = UIColor.clearColor()!
         self.webView.opaque = false

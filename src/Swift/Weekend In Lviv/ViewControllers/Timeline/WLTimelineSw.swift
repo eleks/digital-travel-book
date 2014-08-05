@@ -8,7 +8,7 @@
 
 import UIKit
 
-class WLTimelineSw: UIViewController, UIScrollViewDelegate, WLTimelineImageViewDelegate {
+class WLTimelineSw: UIViewController, UIScrollViewDelegate, WLTimelineImageViewSwDelegate {
 
     // Outlets
     @IBOutlet weak var scrollTimeline:UIScrollView
@@ -36,27 +36,27 @@ class WLTimelineSw: UIViewController, UIScrollViewDelegate, WLTimelineImageViewD
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let leftDrawerButton = WLMenuButton(target: self, action: Selector("btnMenuTouch"))
+        let leftDrawerButton = WLMenuButton(target: self, action: Selector("btnMenuTouch:"))
         self.navigationItem!.setLeftBarButtonItem(leftDrawerButton, animated:true)
         
         var playerVC:WLAudioPlayerVCSw = WLAudioPlayerVCSw.playerVC
         playerVC.view!.removeFromSuperview()
         self.navigationItem!.rightBarButtonItems = playerVC.toolbar!.items!.reverse()
         
-        let panOnPoints = UIPanGestureRecognizer(target: self, action: Selector("panOnPoints"))
+        let panOnPoints = UIPanGestureRecognizer(target: self, action: Selector("panOnPoints:"))
         self.imgBottom!.addGestureRecognizer(panOnPoints)
         
-        var tap = UITapGestureRecognizer(target: self, action: Selector("tapOnPoints"))
+        var tap = UITapGestureRecognizer(target: self, action: Selector("tapOnPoints:"))
         tap.numberOfTapsRequired = 1
         tap.numberOfTouchesRequired = 1
         self.imgBottom!.addGestureRecognizer(tap)
         
-        self.topView = NSBundle.mainBundle()!.loadNibNamed("WLTopTimelineView", owner:nil, options:nil)[0] as? WLTopTimelineViewSw
+        self.topView = NSBundle.mainBundle()!.loadNibNamed("WLTopTimelineViewSw", owner:nil, options:nil)[0] as? WLTopTimelineViewSw
         
         self.topView!.frame = CGRectMake(0, 0, self.topView!.frame.size.width, 500)
         
         for i:Int in 501...525 {
-            let imgView = (self.viewTimelinePoints!.viewWithTag(i)) as WLTimelineImageView
+            let imgView = (self.viewTimelinePoints!.viewWithTag(i)) as WLTimelineImageViewSw
             imgView.delegate = self
         }
         
@@ -170,12 +170,12 @@ class WLTimelineSw: UIViewController, UIScrollViewDelegate, WLTimelineImageViewD
         let viewTimelinePoint:CGPoint = self.viewTimelinePoints!.convertPoint(currentPoint, fromView:self.navigationView)
     
         for tag:Int in 501...525 {
-            let imgView = self.viewTimelinePoints!.viewWithTag(tag) as WLTimelineImageView
+            let imgView = self.viewTimelinePoints!.viewWithTag(tag) as WLTimelineImageViewSw
     
             if CGRectGetMinX(imgView.frame) <= viewTimelinePoint.x &&
                CGRectGetMaxX(imgView.frame) >= viewTimelinePoint.x {
                     
-                var activeImgView = self.viewTimelinePoints!.viewWithTag(tag) as WLTimelineImageView
+                var activeImgView = self.viewTimelinePoints!.viewWithTag(tag) as WLTimelineImageViewSw
                 activeImgView.becomeFirstResponder()
                 break;
             }
@@ -209,7 +209,7 @@ class WLTimelineSw: UIViewController, UIScrollViewDelegate, WLTimelineImageViewD
     }
     
     
-    func imageViewDidTouch(imageView:WLTimelineImageView)
+    func imageViewDidTouch(imageView:WLTimelineImageViewSw)
     {
         let delta = CGFloat(self.scrollTimeline.contentSize.width - self.scrollTimeline.bounds.size.width) / (self.imgBottom.frame.size.width - 18)
     

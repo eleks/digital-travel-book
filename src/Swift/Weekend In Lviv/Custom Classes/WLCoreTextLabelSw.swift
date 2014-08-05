@@ -1,5 +1,5 @@
 //
-//  WLCoreTextLabel.swift
+//  WLCoreTextLabelSw.swift
 //  Weekend In Lviv
 //
 //  Created by Admin on 13.06.14.
@@ -9,14 +9,20 @@
 import UIKit
 import CoreText
 
-class WLCoreTextLabel: UILabel {
+class WLCoreTextLabelSw: UILabel {
 
     init(frame: CGRect)
     {
         super.init(frame: frame)
         // Initialization code
     }
-
+    
+    init(coder aDecoder: NSCoder!)
+    {
+        super.init(coder: aDecoder)
+        // Initialization code
+    }
+/*
     override func drawRect(rect: CGRect)
     {
         let fontName:CFStringRef = CFStringCreateWithCString(kCFAllocatorDefault, self.font.fontName.bridgeToObjectiveC().UTF8String, kCFStringEncodingUTF8)
@@ -29,24 +35,29 @@ class WLCoreTextLabel: UILabel {
         var alignment:CTTextAlignment = CTTextAlignment.TextAlignmentLeft
         var lineBreak:CTLineBreakMode = CTLineBreakMode.ByWordWrapping
         var lineSpace:CGFloat = 0
-        
-        var buffer:Any = alignment
-        var pointer1:COpaquePointer = buffer as COpaquePointer
-        buffer = lineBreak
-        var pointer2:COpaquePointer = buffer as COpaquePointer
-        buffer = lineSpace
-        var pointer3:COpaquePointer = buffer as COpaquePointer
+
+        withUnsafePointer(&alignment) { (pointer1: UnsafePointer<CTTextAlignment>) -> (CTTextAlignment) in
+            
+            
+        }
+        var lineBreakPointer = withUnsafePointer(&lineBreak) { (pointer2: UnsafePointer<CTLineBreakMode>) -> (CTLineBreakMode) in
+            return lineBreak
+        }
+        var lineSpacePointer = withUnsafePointer(&lineSpace) { (pointer3: UnsafePointer<CGFloat>) -> (CGFloat) in
+            return lineSpace
+        }
         
         let _settings:CTParagraphStyleSetting[] = [CTParagraphStyleSetting(spec: CTParagraphStyleSpecifier.Alignment,
                                                                             valueSize: sizeofValue(alignment).asUnsigned(),
-                                                                            value: pointer1),
+                                                                            value: alignmentPointer),
                                                     CTParagraphStyleSetting(spec: CTParagraphStyleSpecifier.LineBreakMode,
                                                                             valueSize: sizeofValue(lineBreak).asUnsigned(),
-                                                                            value: pointer2),
+                                                                            value: lineBreakPointer),
                                                     CTParagraphStyleSetting(spec: CTParagraphStyleSpecifier.LineSpacing,
                                                                             valueSize: sizeofValue(lineSpace).asUnsigned(),
-                                                                            value: pointer3)
+                                                                            value: lineSpacePointer)
                                                     ]
+        
         let paragraphStyle:CTParagraphStyleRef  = CTParagraphStyleCreate(_settings, UInt(_settings.count))
 
         CFAttributedStringSetAttribute(attrStr, CFRangeMake(0, CFAttributedStringGetLength(attrStr)), kCTParagraphStyleAttributeName, paragraphStyle)
@@ -107,5 +118,5 @@ class WLCoreTextLabel: UILabel {
         CFRelease(stringRef)
         CFRelease(fontName)
     }
-
+*/
 }

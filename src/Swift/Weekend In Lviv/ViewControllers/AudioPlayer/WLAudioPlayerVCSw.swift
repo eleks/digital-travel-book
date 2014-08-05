@@ -10,7 +10,7 @@ import UIKit
 import MediaPlayer
 
 // Singleton shared instance of class
-let _singletonPlayerVCSharedInstance:WLAudioPlayerVCSw = WLAudioPlayerVCSw.init(nibName: "WLAudioPlayerVC", bundle: nil)
+let _singletonPlayerVCSharedInstance:WLAudioPlayerVCSw = WLAudioPlayerVCSw.init(nibName: "WLAudioPlayerVCSw", bundle: nil)
 
 class WLAudioPlayerVCSw: UIViewController {
 
@@ -96,10 +96,16 @@ class WLAudioPlayerVCSw: UIViewController {
         }
         else {
             for item:UIBarButtonItem in self.toolbar.items as UIBarButtonItem[] {
-                if (item.customView.tag == 1) {
-                    item.customView = nil
+                
+                if item.customView {
+                    if (item.customView.tag == 1) {
+                        item.customView = nil
+                    }
                 }
-                item.customView.hidden = false
+                
+                if item.customView {
+                    item.customView.hidden = false
+                }
             }
         }
     }
@@ -134,10 +140,20 @@ class WLAudioPlayerVCSw: UIViewController {
             return;
         }
 
-        if self.player!.currentPlaybackTime == 0 || (self.player!.currentPlaybackTime).isNaN {
+        if let player_ = self.player? {
+            
+            if (player_.currentPlaybackTime == 0 ||
+                (player_.currentPlaybackTime).isNaN){
+                    self.playCurrentAudioFile()
+                    player_.prepareToPlay()
+            }
+        }
+        else{
             self.playCurrentAudioFile()
             self.player!.prepareToPlay()
         }
+        
+        
     
         self.updateTimer = NSTimer( timeInterval:NSTimeInterval(1.0),
                                     target:self,
@@ -151,8 +167,13 @@ class WLAudioPlayerVCSw: UIViewController {
     
     func minutesAndSecondsFromNSTimeInterval(time:NSTimeInterval) -> String
     {
-        let minutes:UInt  = min(UInt(time / 60), 99)
-        let seconds = UInt(time % 60)
+        var minutes:UInt = 0
+        var time_ = abs(time)
+        if !time_.isNaN {
+            
+            minutes = min(UInt(time_ / 60), 99)
+        }
+        let seconds = UInt(time_ % 60)
     
         return String(format:" %lu:%02lu", CUnsignedLong(minutes), CUnsignedLong(seconds))
     }

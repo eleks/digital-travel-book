@@ -21,32 +21,44 @@ class WLArticleBlockSw: UIView {
     // Outlets
     @IBOutlet weak var lblSubtitle:UILabel
     @IBOutlet weak var lblTitle:UILabel
-    @IBOutlet weak var lblFirstColumn:WLCoreTextLabel
+    @IBOutlet weak var lblFirstColumn:WLCoreTextLabelSw
     @IBOutlet weak var scrollImages:UIScrollView
     @IBOutlet weak var textLayer:UIView
  
     // Variables
-    weak var delegate:WLDetailBlockDelegate? = nil
+    weak var delegate:WLArticleVCSw? = nil
     var loadedImages:UIImage[] = []
     var imageViews:UIImageView[] = []
     
-    // Instance methods
+    // Designated initializers
     init(frame: CGRect)
     {
         super.init(frame: frame)
         // Initialization code
     }
+    
+    init(coder aDecoder: NSCoder!)
+    {
+        super.init(coder: aDecoder)
+        // Initialization code
+    }
 
+    
+    // Override methods
     override func awakeFromNib()
     {
         super.awakeFromNib()
         
-        self.lblFirstColumn.font = WLFontManager.sharedManager.palatinoRegular20
-        self.lblTitle.font = WLFontManager.sharedManager.bebasRegular36
-        self.lblSubtitle.font = WLFontManager.sharedManager.palatinoRegular17
+        self.lblFirstColumn.font    = WLFontManager.sharedManager.palatinoRegular20
+        self.lblTitle.font          = WLFontManager.sharedManager.bebasRegular36
+        self.lblSubtitle.font       = WLFontManager.sharedManager.palatinoRegular17
         self.scrollImages.pagingEnabled = true
     }
     
+    
+    
+    
+    // Instance methods
     func setDescriptionText(text:String)
     {
         if (text.bridgeToObjectiveC().length > 0) {
@@ -60,7 +72,7 @@ class WLArticleBlockSw: UIView {
                 lblWidth = 688;
             }
     
-            let firstSize:CGSize  = text.bridgeToObjectiveC().boundingRectWithSize(CGSizeMake(lblWidth / 2 - 40, MAXFLOAT),
+            let firstSize:CGSize  = text.bridgeToObjectiveC().boundingRectWithSize(CGSizeMake(lblWidth / 2 - 40, CGFloat(MAXFLOAT)),
                                                                                     options:NSStringDrawingOptions.UsesLineFragmentOrigin,
                                                                                     attributes:[NSFontAttributeName : self.lblFirstColumn.font],
                                                                                     context:nil).size
@@ -121,7 +133,7 @@ class WLArticleBlockSw: UIView {
     func tapOnImage(sender:UITapGestureRecognizer)
     {
         if sender.state == UIGestureRecognizerState.Ended {
-            if self.delegate && self.delegate!.respondsToSelector(Selector("tapOnImageWithPath:")) {
+            if self.delegate && self.delegate!.respondsToSelector(Selector("tapOnImageWithPath:imageContainer:")) {
                 var imageView:WLImageView = sender.view as WLImageView
                 self.delegate!.tapOnImageWithPath(imageView.imagePath!, imageContainer:imageView)
             }
@@ -171,7 +183,7 @@ class WLArticleBlockSw: UIView {
                 lblWidth = 688
             }
     
-            let firstSize:CGSize = self.lblFirstColumn.text.bridgeToObjectiveC().boundingRectWithSize(CGSizeMake(lblWidth / 2 - 40, MAXFLOAT),
+            let firstSize:CGSize = self.lblFirstColumn.text.bridgeToObjectiveC().boundingRectWithSize(CGSizeMake(lblWidth / 2 - 40, CGFloat(MAXFLOAT)),
                                                                                                       options:NSStringDrawingOptions.UsesLineFragmentOrigin,
                                                                                                       attributes:[NSFontAttributeName : self.lblFirstColumn.font],
                                                                                                       context:nil).size

@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.iPad.XIB" version="3.0" toolsVersion="6154.17" systemVersion="13D65" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none">
     <dependencies>
+        <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6153.11"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WLTimelineSw" customModule="Weekend_In_Lviv" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WLTimelineSw" customModule="Weekend_In_Lviv">
             <connections>
                 <outlet property="btnBefreiungskampf" destination="8zx-EL-ZTI" id="RO9-pH-CuX"/>
                 <outlet property="btnExpansion" destination="zU4-1O-9ga" id="YMs-VV-6fZ"/>
@@ -123,103 +124,103 @@
                             <rect key="frame" x="0.0" y="184" width="768" height="13"/>
                             <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                             <subviews>
-                                <imageView tag="501" contentMode="scaleToFill" image="TimelinePointN" highlightedImage="TimelinePointH" id="49" customClass="WLTimelineImageView">
+                                <imageView tag="501" contentMode="scaleToFill" image="TimelinePointN" highlightedImage="TimelinePointH" id="49" customClass="WLTimelineImageViewSw" customModule="Weekend_In_Lviv">
                                     <rect key="frame" x="3" y="0.0" width="13" height="13"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </imageView>
-                                <imageView tag="502" contentMode="scaleToFill" image="TimelinePointN" highlightedImage="TimelinePointH" id="50" customClass="WLTimelineImageView">
+                                <imageView tag="502" contentMode="scaleToFill" image="TimelinePointN" highlightedImage="TimelinePointH" id="50" customClass="WLTimelineImageViewSw" customModule="Weekend_In_Lviv">
                                     <rect key="frame" x="42" y="0.0" width="13" height="13"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </imageView>
-                                <imageView tag="503" contentMode="scaleToFill" image="TimelinePointN" highlightedImage="TimelinePointH" id="51" customClass="WLTimelineImageView">
+                                <imageView tag="503" contentMode="scaleToFill" image="TimelinePointN" highlightedImage="TimelinePointH" id="51" customClass="WLTimelineImageViewSw" customModule="Weekend_In_Lviv">
                                     <rect key="frame" x="56" y="0.0" width="13" height="13"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </imageView>
-                                <imageView tag="506" contentMode="scaleToFill" image="TimelinePointN" highlightedImage="TimelinePointH" id="52" customClass="WLTimelineImageView">
+                                <imageView tag="506" contentMode="scaleToFill" image="TimelinePointN" highlightedImage="TimelinePointH" id="52" customClass="WLTimelineImageViewSw" customModule="Weekend_In_Lviv">
                                     <rect key="frame" x="125" y="0.0" width="13" height="13"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </imageView>
-                                <imageView tag="504" contentMode="scaleToFill" image="TimelinePointN" highlightedImage="TimelinePointH" id="53" customClass="WLTimelineImageView">
+                                <imageView tag="504" contentMode="scaleToFill" image="TimelinePointN" highlightedImage="TimelinePointH" id="53" customClass="WLTimelineImageViewSw" customModule="Weekend_In_Lviv">
                                     <rect key="frame" x="80" y="0.0" width="13" height="13"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </imageView>
-                                <imageView tag="505" contentMode="scaleToFill" image="TimelinePointN" highlightedImage="TimelinePointH" id="54" customClass="WLTimelineImageView">
+                                <imageView tag="505" contentMode="scaleToFill" image="TimelinePointN" highlightedImage="TimelinePointH" id="54" customClass="WLTimelineImageViewSw" customModule="Weekend_In_Lviv">
                                     <rect key="frame" x="106" y="0.0" width="13" height="13"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </imageView>
-                                <imageView tag="507" contentMode="scaleToFill" image="TimelinePointN" highlightedImage="TimelinePointH" id="55" customClass="WLTimelineImageView">
+                                <imageView tag="507" contentMode="scaleToFill" image="TimelinePointN" highlightedImage="TimelinePointH" id="55" customClass="WLTimelineImageViewSw" customModule="Weekend_In_Lviv">
                                     <rect key="frame" x="157" y="0.0" width="13" height="13"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </imageView>
-                                <imageView tag="508" contentMode="scaleToFill" image="TimelinePointN" highlightedImage="TimelinePointH" id="56" customClass="WLTimelineImageView">
+                                <imageView tag="508" contentMode="scaleToFill" image="TimelinePointN" highlightedImage="TimelinePointH" id="56" customClass="WLTimelineImageViewSw" customModule="Weekend_In_Lviv">
                                     <rect key="frame" x="187" y="0.0" width="13" height="13"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </imageView>
-                                <imageView tag="509" contentMode="scaleToFill" image="TimelinePointN" highlightedImage="TimelinePointH" id="57" customClass="WLTimelineImageView">
+                                <imageView tag="509" contentMode="scaleToFill" image="TimelinePointN" highlightedImage="TimelinePointH" id="57" customClass="WLTimelineImageViewSw" customModule="Weekend_In_Lviv">
                                     <rect key="frame" x="207" y="0.0" width="13" height="13"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </imageView>
-                                <imageView tag="510" contentMode="scaleToFill" image="TimelinePointN" highlightedImage="TimelinePointH" id="58" customClass="WLTimelineImageView">
+                                <imageView tag="510" contentMode="scaleToFill" image="TimelinePointN" highlightedImage="TimelinePointH" id="58" customClass="WLTimelineImageViewSw" customModule="Weekend_In_Lviv">
                                     <rect key="frame" x="227" y="0.0" width="13" height="13"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </imageView>
-                                <imageView tag="512" contentMode="scaleToFill" image="TimelinePointN" highlightedImage="TimelinePointH" id="59" customClass="WLTimelineImageView">
+                                <imageView tag="512" contentMode="scaleToFill" image="TimelinePointN" highlightedImage="TimelinePointH" id="59" customClass="WLTimelineImageViewSw" customModule="Weekend_In_Lviv">
                                     <rect key="frame" x="295" y="0.0" width="13" height="13"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </imageView>
-                                <imageView tag="513" contentMode="scaleToFill" image="TimelinePointN" highlightedImage="TimelinePointH" id="60" customClass="WLTimelineImageView">
+                                <imageView tag="513" contentMode="scaleToFill" image="TimelinePointN" highlightedImage="TimelinePointH" id="60" customClass="WLTimelineImageViewSw" customModule="Weekend_In_Lviv">
                                     <rect key="frame" x="327" y="0.0" width="13" height="13"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </imageView>
-                                <imageView tag="511" contentMode="scaleToFill" image="TimelinePointN" highlightedImage="TimelinePointH" id="61" customClass="WLTimelineImageView">
+                                <imageView tag="511" contentMode="scaleToFill" image="TimelinePointN" highlightedImage="TimelinePointH" id="61" customClass="WLTimelineImageViewSw" customModule="Weekend_In_Lviv">
                                     <rect key="frame" x="280" y="0.0" width="13" height="13"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </imageView>
-                                <imageView tag="514" contentMode="scaleToFill" image="TimelinePointN" highlightedImage="TimelinePointH" id="62" customClass="WLTimelineImageView">
+                                <imageView tag="514" contentMode="scaleToFill" image="TimelinePointN" highlightedImage="TimelinePointH" id="62" customClass="WLTimelineImageViewSw" customModule="Weekend_In_Lviv">
                                     <rect key="frame" x="406" y="0.0" width="13" height="13"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </imageView>
-                                <imageView tag="524" contentMode="scaleToFill" image="TimelinePointN" highlightedImage="TimelinePointH" id="63" customClass="WLTimelineImageView">
+                                <imageView tag="524" contentMode="scaleToFill" image="TimelinePointN" highlightedImage="TimelinePointH" id="63" customClass="WLTimelineImageViewSw" customModule="Weekend_In_Lviv">
                                     <rect key="frame" x="719" y="0.0" width="13" height="13"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </imageView>
-                                <imageView tag="521" contentMode="scaleToFill" image="TimelinePointN" highlightedImage="TimelinePointH" id="64" customClass="WLTimelineImageView">
+                                <imageView tag="521" contentMode="scaleToFill" image="TimelinePointN" highlightedImage="TimelinePointH" id="64" customClass="WLTimelineImageViewSw" customModule="Weekend_In_Lviv">
                                     <rect key="frame" x="641" y="0.0" width="13" height="13"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </imageView>
-                                <imageView tag="523" contentMode="scaleToFill" image="TimelinePointN" highlightedImage="TimelinePointH" id="65" customClass="WLTimelineImageView">
+                                <imageView tag="523" contentMode="scaleToFill" image="TimelinePointN" highlightedImage="TimelinePointH" id="65" customClass="WLTimelineImageViewSw" customModule="Weekend_In_Lviv">
                                     <rect key="frame" x="698" y="0.0" width="13" height="13"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </imageView>
-                                <imageView tag="515" contentMode="scaleToFill" image="TimelinePointN" highlightedImage="TimelinePointH" id="66" customClass="WLTimelineImageView">
+                                <imageView tag="515" contentMode="scaleToFill" image="TimelinePointN" highlightedImage="TimelinePointH" id="66" customClass="WLTimelineImageViewSw" customModule="Weekend_In_Lviv">
                                     <rect key="frame" x="436" y="0.0" width="13" height="13"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </imageView>
-                                <imageView tag="517" contentMode="scaleToFill" image="TimelinePointN" highlightedImage="TimelinePointH" id="67" customClass="WLTimelineImageView">
+                                <imageView tag="517" contentMode="scaleToFill" image="TimelinePointN" highlightedImage="TimelinePointH" id="67" customClass="WLTimelineImageViewSw" customModule="Weekend_In_Lviv">
                                     <rect key="frame" x="519" y="0.0" width="13" height="13"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </imageView>
-                                <imageView tag="522" contentMode="scaleToFill" image="TimelinePointN" highlightedImage="TimelinePointH" id="68" customClass="WLTimelineImageView">
+                                <imageView tag="522" contentMode="scaleToFill" image="TimelinePointN" highlightedImage="TimelinePointH" id="68" customClass="WLTimelineImageViewSw" customModule="Weekend_In_Lviv">
                                     <rect key="frame" x="675" y="0.0" width="13" height="13"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </imageView>
-                                <imageView tag="516" contentMode="scaleToFill" image="TimelinePointN" highlightedImage="TimelinePointH" id="69" customClass="WLTimelineImageView">
+                                <imageView tag="516" contentMode="scaleToFill" image="TimelinePointN" highlightedImage="TimelinePointH" id="69" customClass="WLTimelineImageViewSw" customModule="Weekend_In_Lviv">
                                     <rect key="frame" x="480" y="0.0" width="13" height="13"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </imageView>
-                                <imageView tag="518" contentMode="scaleToFill" image="TimelinePointN" highlightedImage="TimelinePointH" id="70" customClass="WLTimelineImageView">
+                                <imageView tag="518" contentMode="scaleToFill" image="TimelinePointN" highlightedImage="TimelinePointH" id="70" customClass="WLTimelineImageViewSw" customModule="Weekend_In_Lviv">
                                     <rect key="frame" x="548" y="0.0" width="13" height="13"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </imageView>
-                                <imageView tag="520" contentMode="scaleToFill" image="TimelinePointN" highlightedImage="TimelinePointH" id="71" customClass="WLTimelineImageView">
+                                <imageView tag="520" contentMode="scaleToFill" image="TimelinePointN" highlightedImage="TimelinePointH" id="71" customClass="WLTimelineImageViewSw" customModule="Weekend_In_Lviv">
                                     <rect key="frame" x="595" y="0.0" width="13" height="13"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </imageView>
-                                <imageView tag="519" contentMode="scaleToFill" image="TimelinePointN" highlightedImage="TimelinePointH" id="72" customClass="WLTimelineImageView">
+                                <imageView tag="519" contentMode="scaleToFill" image="TimelinePointN" highlightedImage="TimelinePointH" id="72" customClass="WLTimelineImageViewSw" customModule="Weekend_In_Lviv">
                                     <rect key="frame" x="578" y="0.0" width="13" height="13"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </imageView>
-                                <imageView tag="525" contentMode="scaleToFill" image="TimelinePointN" highlightedImage="TimelinePointH" id="73" customClass="WLTimelineImageView">
+                                <imageView tag="525" contentMode="scaleToFill" image="TimelinePointN" highlightedImage="TimelinePointH" id="73" customClass="WLTimelineImageViewSw" customModule="Weekend_In_Lviv">
                                     <rect key="frame" x="750" y="0.0" width="13" height="13"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </imageView>

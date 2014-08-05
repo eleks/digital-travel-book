@@ -43,13 +43,13 @@ class WLMenuVCSw: UITableViewController, UISearchDisplayDelegate, UISearchBarDel
         self.searchBar = UISearchBar(frame:CGRectMake(0, 0, 320, 40))
         self.searchBar!.delegate = self
 
-        self.tableView!.separatorStyle = UITableViewCellSeparatorStyle.None
-        self.navigationItem!.titleView = self.searchBar!
+        self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
+        self.navigationItem.titleView = self.searchBar!
 
         NSNotificationCenter.defaultCenter()!.addObserver(self.tableView!, selector:Selector("reloadData"), name:"ArticleStatusChanged", object:nil)
         
-        self.tableView!.backgroundView = UIView()
-        self.tableView!.backgroundView.backgroundColor = RGB(48, 23, 0)
+        self.tableView.backgroundView = UIView()
+        self.tableView.backgroundView.backgroundColor = RGB(48, 23, 0)
     }
 
     override func preferredStatusBarStyle() -> UIStatusBarStyle
@@ -91,7 +91,7 @@ class WLMenuVCSw: UITableViewController, UISearchDisplayDelegate, UISearchBarDel
         if let cell_ = cell? {
         }
         else{
-            cell = NSBundle.mainBundle()!.loadNibNamed("WLMenuCell", owner:nil, options:nil)[0] as? WLMenuCellSw
+            cell = NSBundle.mainBundle()!.loadNibNamed("WLMenuCellSw", owner:nil, options:nil)[0] as? WLMenuCellSw
         }
         
         if indexPath!.section == WLMenuSection.Home.toRaw() {
@@ -147,11 +147,11 @@ class WLMenuVCSw: UITableViewController, UISearchDisplayDelegate, UISearchBarDel
             switch menuSection {
                 
             case .Articles:
-                headerView = NSBundle.mainBundle()!.loadNibNamed("WLMenuHeaderView", owner:nil, options:nil)[0] as? WLMenuHeaderViewSw
+                headerView = NSBundle.mainBundle()!.loadNibNamed("WLMenuHeaderViewSw", owner:nil, options:nil)[0] as? WLMenuHeaderViewSw
                 headerView!.setTitle("Architecture")
                 
             case .About:
-                headerView = NSBundle.mainBundle()!.loadNibNamed("WLMenuHeaderView", owner:nil, options:nil)[0] as? WLMenuHeaderViewSw
+                headerView = NSBundle.mainBundle()!.loadNibNamed("WLMenuHeaderViewSw", owner:nil, options:nil)[0] as? WLMenuHeaderViewSw
                 headerView!.setTitle("About")
                 
             case .Home:
@@ -166,7 +166,7 @@ class WLMenuVCSw: UITableViewController, UISearchDisplayDelegate, UISearchBarDel
         return headerView
     }
     
-    override func tableView(tableView: UITableView!, didDeselectRowAtIndexPath indexPath: NSIndexPath!)
+    override func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!)
     {
         var newPlace:WLPlace? = nil
         
@@ -186,7 +186,7 @@ class WLMenuVCSw: UITableViewController, UISearchDisplayDelegate, UISearchBarDel
             
         case WLMenuSection.About.toRaw():
             if !(self.detailView!.navigationController!.topViewController!.isMemberOfClass(WLAboutVCSw)) {
-                let aboutVC = WLAboutVCSw(nibName: "WLAboutVC", bundle: nil)
+                let aboutVC = WLAboutVCSw(nibName: "WLAboutVCSw", bundle: nil)
                 self.detailView!.navigationController!.pushViewController(aboutVC, animated:true)
             }
             
@@ -194,7 +194,7 @@ class WLMenuVCSw: UITableViewController, UISearchDisplayDelegate, UISearchBarDel
             println("\(indexPath!.section) is not a menuSection")
         }
         
-        self.tableView!.deselectRowAtIndexPath(indexPath, animated:false)
+        self.tableView.deselectRowAtIndexPath(indexPath, animated:false)
         self.mm_drawerController!.toggleDrawerSide(MMDrawerSide.Left, animated:true, completion:nil)
     }
     

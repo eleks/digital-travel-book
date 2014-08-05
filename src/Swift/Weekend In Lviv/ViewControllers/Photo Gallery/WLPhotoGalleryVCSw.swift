@@ -60,7 +60,7 @@ class WLPhotoGalleryVCSw: UIViewController, UIScrollViewDelegate, UIPageViewCont
         self.pageController = UIPageViewController(transitionStyle: UIPageViewControllerTransitionStyle.Scroll,
                                                     navigationOrientation: UIPageViewControllerNavigationOrientation.Horizontal,
                                                     options:nil)
-        let initialViewController:UIViewController? = self.viewControllerAtIndex(self.selectedImageIndex)
+        let initialViewController:UIViewController? = self.viewControllerAtIndex(Int(self.selectedImageIndex))
         
         if let initVC_ = initialViewController? {
             
@@ -85,6 +85,7 @@ class WLPhotoGalleryVCSw: UIViewController, UIScrollViewDelegate, UIPageViewCont
         self.view!.addSubview(self.pageController!.view!)
     
         self.view!.bringSubviewToFront(self.btnClose!)
+        self.btnClose!.enabled = true
         self.view!.bringSubviewToFront(self.lblSwipe!)
     
         self.navigationItem!.leftBarButtonItem = UIBarButtonItem(customView: UIView())
@@ -121,25 +122,25 @@ class WLPhotoGalleryVCSw: UIViewController, UIScrollViewDelegate, UIPageViewCont
     func pageViewController(pageViewController: UIPageViewController!, viewControllerBeforeViewController viewController: UIViewController!) -> UIViewController!
     {
         let imageController = viewController! as ImageViewController
-        return self.viewControllerAtIndex(imageController.index - 1)
+        return self.viewControllerAtIndex(Int(imageController.index) - 1)
     }
     
     func pageViewController(pageViewController: UIPageViewController!, viewControllerAfterViewController viewController: UIViewController!) -> UIViewController!
     {
         let imageController = viewController! as ImageViewController
-        return self.viewControllerAtIndex(imageController.index + 1)
+        return self.viewControllerAtIndex(Int(imageController.index) + 1)
     }
     
-    func viewControllerAtIndex(index:UInt) -> ImageViewController
+    func viewControllerAtIndex(index:Int) -> ImageViewController?
     {
         var photoVC:ImageViewController? = nil
     
-        if index < UInt(self.imagePathList.count) {
+        if index >= 0 && index < self.imagePathList.count {
             photoVC = ImageViewController()
             photoVC!.imagePath = self.imagePathList[Int(index)]
-            photoVC!.index = index
+            photoVC!.index = UInt(index)
         }
-        return photoVC!
+        return photoVC
     }
 
     // Actions

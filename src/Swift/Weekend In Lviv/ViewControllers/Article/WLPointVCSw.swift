@@ -14,6 +14,10 @@ class WLPointVCSw: UIViewController {
     @IBOutlet weak var imgMain:UIImageView
     @IBOutlet weak var lblDescription:UILabel
     
+    init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!)
+    {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
     
     // Instance methods
     func setDetailWithPoint(point:WLPoint)
@@ -30,7 +34,7 @@ class WLPointVCSw: UIViewController {
             self.imgMain.frame = CGRectMake(0, 0, image.size.width, image.size.height)
         }
         
-        let lblSize:CGSize = point.text.bridgeToObjectiveC().boundingRectWithSize(CGSizeMake(self.imgMain.frame.size.width - 40,MAXFLOAT),
+        let lblSize:CGSize = point.text.bridgeToObjectiveC().boundingRectWithSize(CGSizeMake(self.imgMain.frame.size.width - 40, CGFloat(MAXFLOAT)),
                                                                                   options:NSStringDrawingOptions.UsesLineFragmentOrigin,
                                                                                   attributes:[NSFontAttributeName : self.lblDescription.font],
                                                                                   context:nil).size

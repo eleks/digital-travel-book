@@ -1,5 +1,5 @@
 //
-//  WLTimelineImageView.swift
+//  WLTimelineImageViewSw.swift
 //  Weekend In Lviv
 //
 //  Created by Admin on 13.06.14.
@@ -9,20 +9,26 @@
 import UIKit
 
 // Class protocol
-protocol WLTimelineImageViewDelegate:NSObjectProtocol{
+protocol WLTimelineImageViewSwDelegate:NSObjectProtocol{
     
-    func imageViewDidTouch(imageView:WLTimelineImageView)
+    func imageViewDidTouch(imageView:WLTimelineImageViewSw)
 }
 
 
-class WLTimelineImageView: UIImageView{
+class WLTimelineImageViewSw: UIImageView{
 
     // Delegate of class instance
-    var delegate:WLTimelineImageViewDelegate? = nil
+    var delegate:WLTimelineImageViewSwDelegate? = nil
     
     init(frame: CGRect)
     {
         super.init(frame: frame)
+        // Initialization code
+    }
+    
+    init(coder aDecoder: NSCoder!)
+    {
+        super.init(coder: aDecoder)
         // Initialization code
     }
     
