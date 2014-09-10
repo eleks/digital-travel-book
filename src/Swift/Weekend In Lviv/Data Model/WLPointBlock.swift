@@ -12,6 +12,6 @@ class WLPointBlock : NSObject {
     
     var blockText:String            = ""
     var blockImagePath:String       = ""
-    var blockPoints:WLPoint[]  = []
+    var blockPoints:[WLPoint]  = []
     
 }

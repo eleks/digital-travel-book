@@ -12,14 +12,14 @@ import QuartzCore
 class WLArticleVCSw: UIViewController, UIPopoverControllerDelegate, WLDetailBlockDelegate {
 
     // Outlets
-    @IBOutlet weak var btnAddToFavourites:UIButton
-    @IBOutlet weak var scrollDetail:UIScrollView
-    @IBOutlet weak var lblFirst:WLCoreTextLabelSw
-    @IBOutlet weak var swipeLayer:UIView
-    @IBOutlet weak var lblSwipe:UILabel
-    @IBOutlet weak var imgTop:UIImageView
-    @IBOutlet weak var lblPlaceTitle:UILabel
-    @IBOutlet weak var btnPlayAudio:UIButton
+    @IBOutlet weak var btnAddToFavourites:UIButton?
+    @IBOutlet weak var scrollDetail:UIScrollView?
+    @IBOutlet weak var lblFirst:WLCoreTextLabelSw?
+    @IBOutlet weak var swipeLayer:UIView?
+    @IBOutlet weak var lblSwipe:UILabel?
+    @IBOutlet weak var imgTop:UIImageView?
+    @IBOutlet weak var lblPlaceTitle:UILabel?
+    @IBOutlet weak var btnPlayAudio:UIButton?
 
     var textBlocks = Dictionary<Int, WLArticleBlockSw>()
     var pointBlocks = Dictionary<Int, WLPointBlockViewSw>()
@@ -42,22 +42,22 @@ class WLArticleVCSw: UIViewController, UIPopoverControllerDelegate, WLDetailBloc
     {
         super.viewDidLoad()
         
-        self.scrollDetail.contentInset = UIEdgeInsetsMake(64, 0, 0, 0)
+        self.scrollDetail!.contentInset = UIEdgeInsetsMake(64, 0, 0, 0)
         self.galleryPresented = false
         
-        self.lblSwipe.font = WLFontManager.sharedManager.gentiumItalic15
-        self.lblFirst.font = WLFontManager.sharedManager.palatinoRegular20
-        self.lblPlaceTitle.font = WLFontManager.sharedManager.bebasRegular100
-        self.btnPlayAudio.titleLabel.font = WLFontManager.sharedManager.bebasRegular16
+        self.lblSwipe!.font = WLFontManager.sharedManager.gentiumItalic15
+        self.lblFirst!.font = WLFontManager.sharedManager.palatinoRegular20
+        self.lblPlaceTitle!.font = WLFontManager.sharedManager.bebasRegular100
+        self.btnPlayAudio!.titleLabel!.font = WLFontManager.sharedManager.bebasRegular16
         
-        self.lblPlaceTitle.text = self.place!.title
+        self.lblPlaceTitle!.text = self.place!.title
         
         var moPlace:Place = WLDataManager.sharedManager.placeWithIdentifier(self.place!.moIdentificator)
         if moPlace.favourite.boolValue {
-            self.btnAddToFavourites.setImage(UIImage(named:"BtnFavoriteBkg"), forState: UIControlState.Normal)
+            self.btnAddToFavourites!.setImage(UIImage(named:"BtnFavoriteBkg"), forState: UIControlState.Normal)
         }
         else {
-            self.btnAddToFavourites.setImage(UIImage(named:"BtnFavoriteBkg_inactive"), forState:UIControlState.Normal)
+            self.btnAddToFavourites!.setImage(UIImage(named:"BtnFavoriteBkg_inactive"), forState:UIControlState.Normal)
         }
         
         self.setupSwipeTip()
@@ -76,14 +76,15 @@ class WLArticleVCSw: UIViewController, UIPopoverControllerDelegate, WLDetailBloc
         self.setScrollLayoutForOrientation(UIApplication.sharedApplication().statusBarOrientation)
     }
     
+    /* Unavailable on Swift
     override func shouldAutorotateToInterfaceOrientation(toInterfaceOrientation: UIInterfaceOrientation) -> Bool
     {
         return true
-    }
+    }*/
     
     override func willRotateToInterfaceOrientation(toInterfaceOrientation: UIInterfaceOrientation, duration: NSTimeInterval)
     {
-        NSNotificationCenter.defaultCenter()!.postNotificationName(kRotateNotification, object: nil)
+        NSNotificationCenter.defaultCenter().postNotificationName(kRotateNotification, object: nil)
     }
     
     override func willAnimateRotationToInterfaceOrientation(toInterfaceOrientation: UIInterfaceOrientation, duration: NSTimeInterval)
@@ -95,31 +96,48 @@ class WLArticleVCSw: UIViewController, UIPopoverControllerDelegate, WLDetailBloc
     {
         var topImage:UIImage? = WLDataManager.sharedManager.imageWithPath(self.place!.placeTopImagePath)
         if let topImage_ = topImage? {
-            self.imgTop.image = topImage_
+            self.imgTop!.image = topImage_
         }
         if (UIInterfaceOrientationIsLandscape(orientation)) {
             self.view.frame = CGRectMake(0, 0, 1024, 768)
-            self.imgTop.frame = CGRectMake(0, 0, 1024, 452)
-            self.lblPlaceTitle!.frame = CGRectMake(self.lblPlaceTitle.frame.origin.x, 40, self.lblPlaceTitle.frame.size.width, self.lblPlaceTitle.frame.size.height)
-            self.btnPlayAudio.frame = CGRectMake(self.btnPlayAudio.frame.origin.x, 340, self.btnPlayAudio.frame.size.width, self.btnPlayAudio.frame.size.height)
+            self.imgTop!.frame = CGRectMake(0, 0, 1024, 452)
+            self.lblPlaceTitle!.frame = CGRectMake(self.lblPlaceTitle!.frame.origin.x,
+                                                   40,
+                                                   self.lblPlaceTitle!.frame.size.width,
+                                                   self.lblPlaceTitle!.frame.size.height)
+            self.btnPlayAudio!.frame = CGRectMake(self.btnPlayAudio!.frame.origin.x,
+                                                  340,
+                                                  self.btnPlayAudio!.frame.size.width,
+                                                  self.btnPlayAudio!.frame.size.height)
         }
         else {
             self.view.frame = CGRectMake(0, 0, 768, 1024);
-            self.imgTop.frame = CGRectMake(0, 0, 768, 452 * 0.75)
-            self.lblPlaceTitle.frame = CGRectMake(self.lblPlaceTitle.frame.origin.x, 20, self.lblPlaceTitle.frame.size.width, self.lblPlaceTitle.frame.size.height)
-            self.btnPlayAudio.frame = CGRectMake(self.btnPlayAudio.frame.origin.x, 270, self.btnPlayAudio.frame.size.width, self.btnPlayAudio.frame.size.height)
+            self.imgTop!.frame = CGRectMake(0, 0, 768, 452 * 0.75)
+            self.lblPlaceTitle!.frame = CGRectMake(self.lblPlaceTitle!.frame.origin.x,
+                                                   20,
+                                                   self.lblPlaceTitle!.frame.size.width,
+                                                   self.lblPlaceTitle!.frame.size.height)
+            self.btnPlayAudio!.frame = CGRectMake(self.btnPlayAudio!.frame.origin.x,
+                                                  270,
+                                                  self.btnPlayAudio!.frame.size.width,
+                                                  self.btnPlayAudio!.frame.size.height)
         }
-        self.lblFirst.frame = CGRectMake(self.lblFirst.frame.origin.x, self.imgTop.frame.size.height + 40, self.lblFirst.frame.size.width, self.lblFirst.frame.size.height);
+        self.lblFirst!.frame = CGRectMake(self.lblFirst!.frame.origin.x,
+                                          self.imgTop!.frame.size.height + 40,
+                                          self.lblFirst!.frame.size.width,
+                                          self.lblFirst!.frame.size.height);
     
-        let textBoundingRec:CGRect = self.lblPlaceTitle.text.bridgeToObjectiveC().boundingRectWithSize(self.lblPlaceTitle.frame.size,
-                                                                                                        options: NSStringDrawingOptions.UsesLineFragmentOrigin,
-                                                                                                        attributes: [NSFontAttributeName : self.lblPlaceTitle.font],
-                                                                                                        context: nil)
+        let textBoundingRec:CGRect = (self.lblPlaceTitle!.text! as NSString).boundingRectWithSize(self.lblPlaceTitle!.frame.size,
+                                                                                                  options: NSStringDrawingOptions.UsesLineFragmentOrigin,
+                                                                                                  attributes: [NSFontAttributeName : self.lblPlaceTitle!.font],
+                                                                                                  context: nil)
         let textSize:CGSize = !CGRectIsNull(textBoundingRec) ? textBoundingRec.size : CGSizeZero
-    
-        let textRect:CGRect = CGRectMake(self.lblPlaceTitle.frame.origin.x, self.lblPlaceTitle.frame.origin.y, self.lblPlaceTitle.frame.size.width, textSize.height)
-        self.lblPlaceTitle.frame = textRect
-        self.lblPlaceTitle.setNeedsDisplay()
+        let textRect:CGRect = CGRectMake(self.lblPlaceTitle!.frame.origin.x,
+                                         self.lblPlaceTitle!.frame.origin.y,
+                                         self.lblPlaceTitle!.frame.size.width,
+                                         textSize.height)
+        self.lblPlaceTitle!.frame = textRect
+        self.lblPlaceTitle!.setNeedsDisplay()
     
         self.setDescriptionText(self.place!.placeText)
     
@@ -127,80 +145,84 @@ class WLArticleVCSw: UIViewController, UIPopoverControllerDelegate, WLDetailBloc
         let thumbWidth:CGFloat = self.scrollDetail!.frame.size.width
         let x = CGFloat(0)
         var y = CGFloat(self.lblFirst!.frame.origin.y + self.lblFirst!.frame.size.height + 40)
- 
-        for i:Int in 1...rowsCount {
-  
-            var itemView:WLArticleBlockSw? = self.textBlocks[i]
-            
-            if let itemView_ = itemView? {
-                itemView_.layout()
+
+        if rowsCount > 0 {
+            for i:Int in 1...rowsCount {
+
+                var itemView:WLArticleBlockSw? = self.textBlocks[i]
+                
+                if let itemView_ = itemView? {
+                    itemView_.layout()
+                }
+                else {
+                    var textBlock:WLTextBlock? = (self.place!.placesTextBlocks)[i - 1]
+                    itemView = NSBundle.mainBundle().loadNibNamed("WLArticleBlockSw", owner: nil, options: nil)[0] as? WLArticleBlockSw
+                    itemView!.setLayoutWithTextBlock(textBlock!)
+                    itemView!.delegate = self
+                    
+                    self.textBlocks[i] = itemView!
+                }
+                
+                itemView!.frame = CGRectMake(x, y, thumbWidth, itemView!.frame.size.height)
+                self.scrollDetail!.addSubview(itemView!)
+                y += itemView!.frame.size.height
             }
-            else {
-                var textBlock:WLTextBlock? = (self.place!.placesTextBlocks)[i - 1]
-                itemView = NSBundle.mainBundle()!.loadNibNamed("WLArticleBlockSw", owner: nil, options: nil)[0] as? WLArticleBlockSw
-                itemView!.setLayoutWithTextBlock(textBlock!)
-                itemView!.delegate = self
-            
-                self.textBlocks[i] = itemView!
-            }
-    
-            itemView!.frame = CGRectMake(x, y, thumbWidth, itemView!.frame.size.height)
-            self.scrollDetail!.addSubview(itemView)
-            y += itemView!.frame.size.height
         }
     
         let pointBlockCount:Int = self.place!.placesPointBlocks.count
-        
-        for i:Int in 1...pointBlockCount {
-            
-            var itemView:WLPointBlockViewSw? = self.pointBlocks[i]
-            
-            if let itemView_ = itemView? {
+
+        if pointBlockCount > 0 {
+            for i:Int in 1...pointBlockCount {
                 
-                itemView_.layout()
+                var itemView:WLPointBlockViewSw? = self.pointBlocks[i]
+                
+                if let itemView_ = itemView? {
+                    
+                    itemView_.layout()
+                }
+                else {
+                    var pointBlock:WLPointBlock = (self.place!.placesPointBlocks)[i - 1]
+                    itemView = NSBundle.mainBundle().loadNibNamed("WLPointBlockViewSw", owner: nil, options: nil)[0] as? WLPointBlockViewSw
+                    
+                    itemView!.setLayoutWithPointBlock(pointBlock)
+                    
+                    self.pointBlocks[i] = itemView!
+                }
+                
+                itemView!.frame = CGRectMake(x, y, thumbWidth, itemView!.frame.size.height)
+                self.scrollDetail!.addSubview(itemView!)
+                y += itemView!.frame.size.height
             }
-            else {
-                var pointBlock:WLPointBlock = (self.place!.placesPointBlocks)[i - 1]
-                itemView = NSBundle.mainBundle()!.loadNibNamed("WLPointBlockViewSw", owner: nil, options: nil)[0] as? WLPointBlockViewSw
-                
-                itemView!.setLayoutWithPointBlock(pointBlock)
-                
-                self.pointBlocks[i] = itemView!
-            }
-    
-            itemView!.frame = CGRectMake(x, y, thumbWidth, itemView!.frame.size.height)
-            self.scrollDetail.addSubview(itemView)
-            y += itemView!.frame.size.height
         }
     
-        self.swipeLayer.frame = CGRectMake(0, y, self.swipeLayer.frame.size.width, self.swipeLayer.frame.size.height)
-        y += self.swipeLayer.frame.size.height;
+        self.swipeLayer!.frame = CGRectMake(0, y, self.swipeLayer!.frame.size.width, self.swipeLayer!.frame.size.height)
+        y += self.swipeLayer!.frame.size.height;
     
         let contentWidth:CGFloat = self.scrollDetail!.frame.size.width
         let contentHeight:CGFloat  = y
-        self.scrollDetail.contentSize = CGSizeMake(contentWidth, contentHeight)
+        self.scrollDetail!.contentSize = CGSizeMake(contentWidth, contentHeight)
     }
     
     func setDescriptionText(text:String)
     {
-        if text.bridgeToObjectiveC().length > 0 {
+        if text.utf16Count > 0 {
             var lblWidth:CGFloat
-            if (UIInterfaceOrientationIsLandscape(UIApplication.sharedApplication()!.statusBarOrientation)) {
+            if (UIInterfaceOrientationIsLandscape(UIApplication.sharedApplication().statusBarOrientation)) {
                 lblWidth = CGFloat(944)
             }
             else{
                 lblWidth = CGFloat(688)
             }
             
-            let firstSize:CGSize = text.bridgeToObjectiveC().boundingRectWithSize(CGSizeMake(lblWidth / 2 - 40, CGFloat(MAXFLOAT)),
+            let firstSize:CGSize = (text as NSString).boundingRectWithSize(CGSizeMake(lblWidth / 2 - 40, CGFloat(MAXFLOAT)),
                 options:NSStringDrawingOptions.UsesLineFragmentOrigin,
-                attributes:[NSFontAttributeName : self.lblFirst.font],
+                attributes:[NSFontAttributeName : self.lblFirst!.font],
                 context:nil).size
-            self.lblFirst.text = text
-            self.lblFirst.frame = CGRectMake(self.lblFirst.frame.origin.x, self.lblFirst.frame.origin.y, lblWidth, firstSize.height / 2 + 40)
+            self.lblFirst!.text = text
+            self.lblFirst!.frame = CGRectMake(self.lblFirst!.frame.origin.x, self.lblFirst!.frame.origin.y, lblWidth, firstSize.height / 2 + 40)
         }
         else {
-            self.lblFirst.text = ""
+            self.lblFirst!.text = ""
         }
     }
     
@@ -210,7 +232,7 @@ class WLArticleVCSw: UIViewController, UIPopoverControllerDelegate, WLDetailBloc
         
         var  transitionView:UIImageView = UIImageView(frame:view.frame)
         transitionView.image = (view as UIImageView).image
-        view.superview.addSubview(transitionView)
+        view.superview!.addSubview(transitionView)
         view.hidden = true
         UIView.animateWithDuration(kPushAnimationDuration,
             animations: {
@@ -266,21 +288,21 @@ class WLArticleVCSw: UIViewController, UIPopoverControllerDelegate, WLDetailBloc
             var photoVC:WLPhotoGalleryVCSw? = WLPhotoGalleryVCSw(nibName: "WLPhotoGalleryVCSw", bundle: nil)
             
             photoVC!.imagePathList = WLDataManager.sharedManager.imageListWithPlace(self.place!)
-            let index:Int? = photoVC!.imagePathList.bridgeToObjectiveC().indexOfObject(imagePath)
+            let index:Int? = (photoVC!.imagePathList as NSArray).indexOfObject(imagePath)
             
             if let index_ = index? {
                 photoVC!.selectedImageIndex = UInt(index_)
             }
-            photoVC!.view!.frame = self.view!.frame
+            photoVC!.view.frame = self.view.frame
     
-            NSNotificationCenter.defaultCenter()!.postNotificationName("HidePlayer", object:nil)
+            NSNotificationCenter.defaultCenter().postNotificationName("HidePlayer", object:nil)
             self.pushControllerWithAnimation(photoVC!, view:imageView)
         }
     }
     
     func setupSwipeTip()
     {
-        let index:Int = WLDataManager.sharedManager.placesList.bridgeToObjectiveC().indexOfObject(self.place!)
+        let index:Int = (WLDataManager.sharedManager.placesList as NSArray).indexOfObject(self.place!)
 
         if let swipeLabel = self.lblSwipe? {
             
@@ -301,12 +323,12 @@ class WLArticleVCSw: UIViewController, UIPopoverControllerDelegate, WLDetailBloc
     // Actions
     @IBAction func btnPlayAudioTouch(sender:UIButton)
     {
-        NSNotificationCenter.defaultCenter()!.postNotificationName("playAudioFile", object: self, userInfo: ["file": self.place!.placeAudioPath])
+        NSNotificationCenter.defaultCenter().postNotificationName("playAudioFile", object: self, userInfo: ["file": self.place!.placeAudioPath])
     }
     
     @IBAction func btnBackwardTouch(sender:AnyObject)
     {
-        var detailController:WLDetailVCSw? = self.parentViewController.parentViewController as? WLDetailVCSw
+        var detailController:WLDetailVCSw? = self.parentViewController!.parentViewController as? WLDetailVCSw
 
         if let detailController_ = detailController? {
             detailController_.switchToPreviousViewControllerAnimated(true)
@@ -315,7 +337,7 @@ class WLArticleVCSw: UIViewController, UIPopoverControllerDelegate, WLDetailBloc
     
     @IBAction func btnForwardTouch(sender:AnyObject)
     {
-        var detailController:WLDetailVCSw? = self.parentViewController.parentViewController as? WLDetailVCSw
+        var detailController:WLDetailVCSw? = self.parentViewController!.parentViewController as? WLDetailVCSw
  
         if let detailController_ = detailController? {
             detailController_.switchToNextViewControllerAnimated(true)
@@ -329,15 +351,15 @@ class WLArticleVCSw: UIViewController, UIPopoverControllerDelegate, WLDetailBloc
             if moPlace_.favourite.boolValue {
                 moPlace_.favourite = NSNumber(bool: false)
                 self.place!.placeFavourite = false
-                self.btnAddToFavourites.setImage(UIImage(named:"BtnFavoriteBkg_inactive"), forState:UIControlState.Normal)
+                self.btnAddToFavourites!.setImage(UIImage(named:"BtnFavoriteBkg_inactive"), forState:UIControlState.Normal)
             }
             else {
                 moPlace_.favourite = NSNumber(bool: true)
                 self.place!.placeFavourite = true
-                self.btnAddToFavourites.setImage(UIImage(named:"BtnFavoriteBkg"), forState:UIControlState.Normal)
+                self.btnAddToFavourites!.setImage(UIImage(named:"BtnFavoriteBkg"), forState:UIControlState.Normal)
             }
             WLDataManager.sharedManager.saveContext()
-            NSNotificationCenter.defaultCenter()!.postNotificationName("ArticleStatusChanged", object:nil)
+            NSNotificationCenter.defaultCenter().postNotificationName("ArticleStatusChanged", object:nil)
         }
     }
  

@@ -8,7 +8,7 @@
 
 import UIKit
 
-// Singleton shared instance of class
+// Singleton's shared instance of class
 let _singletonFontManagerSharedInstance = WLFontManager()
 
 class WLFontManager: NSObject{

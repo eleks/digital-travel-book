@@ -15,8 +15,8 @@ class WLPlace : NSObject {
     var placeTopImagePath:String            = ""
     var placeMenuImagePath:String           = ""
     var listImagePath:String                = ""
-    var placesTextBlocks:WLTextBlock[]      = []
-    var placesPointBlocks:WLPointBlock[]    = []
+    var placesTextBlocks:[WLTextBlock]      = []
+    var placesPointBlocks:[WLPointBlock]    = []
     var placeAudioPath:String               = ""
     var placeFavourite:Bool                 = false
     var moIdentificator:NSNumber            = 0

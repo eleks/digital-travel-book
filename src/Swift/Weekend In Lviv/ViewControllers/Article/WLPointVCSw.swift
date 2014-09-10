@@ -11,39 +11,44 @@ import UIKit
 class WLPointVCSw: UIViewController {
 
     // Outlets
-    @IBOutlet weak var imgMain:UIImageView
-    @IBOutlet weak var lblDescription:UILabel
+    @IBOutlet weak var imgMain:UIImageView?
+    @IBOutlet weak var lblDescription:UILabel?
     
-    init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!)
+    override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!)
     {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
+
+    required init(coder aDecoder: NSCoder)
+    {
+        super.init(coder: aDecoder)
     }
     
     // Instance methods
     func setDetailWithPoint(point:WLPoint)
     {
         self.view.setNeedsDisplay()
-        self.lblDescription.font = WLFontManager.sharedManager.gentiumRegular16
+        self.lblDescription!.font = WLFontManager.sharedManager.gentiumRegular16
         let image:UIImage = WLDataManager.sharedManager.imageWithPath(point.imagePath)
-        self.imgMain.image = image
+        self.imgMain!.image = image
         
         if UIScreen.mainScreen().isRetinaDisplay() {
-            self.imgMain.frame = CGRectMake(0, 0, image.size.width / 2, image.size.height / 2)
+            self.imgMain!.frame = CGRectMake(0, 0, image.size.width / 2, image.size.height / 2)
         }
         else {
-            self.imgMain.frame = CGRectMake(0, 0, image.size.width, image.size.height)
+            self.imgMain!.frame = CGRectMake(0, 0, image.size.width, image.size.height)
         }
         
-        let lblSize:CGSize = point.text.bridgeToObjectiveC().boundingRectWithSize(CGSizeMake(self.imgMain.frame.size.width - 40, CGFloat(MAXFLOAT)),
-                                                                                  options:NSStringDrawingOptions.UsesLineFragmentOrigin,
-                                                                                  attributes:[NSFontAttributeName : self.lblDescription.font],
-                                                                                  context:nil).size
+        let lblSize:CGSize = (point.text as NSString).boundingRectWithSize(CGSizeMake(self.imgMain!.frame.size.width - 40, CGFloat(MAXFLOAT)),
+                                                                                      options:NSStringDrawingOptions.UsesLineFragmentOrigin,
+                                                                                      attributes:[NSFontAttributeName : self.lblDescription!.font],
+                                                                                      context:nil).size
         
-        let lblRect = CGRectMake(20, self.imgMain.frame.size.height + 20, self.imgMain.frame.size.width - 40, lblSize.height)
-        self.lblDescription.text = point.text
-        self.lblDescription.frame = lblRect
+        let lblRect = CGRectMake(20, self.imgMain!.frame.size.height + 20, self.imgMain!.frame.size.width - 40, lblSize.height)
+        self.lblDescription!.text  = point.text
+        self.lblDescription!.frame = lblRect
         
-        self.view.frame = CGRectMake(0, 0, self.imgMain.frame.size.width, self.imgMain.frame.size.height)
+        self.view.frame = CGRectMake(0, 0, self.imgMain!.frame.size.width, self.imgMain!.frame.size.height)
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle
@@ -51,11 +56,11 @@ class WLPointVCSw: UIViewController {
         return UIStatusBarStyle.LightContent
     }
     
-    
+    /* Unavailable in Swift !!!
     override func shouldAutorotateToInterfaceOrientation(toInterfaceOrientation:UIInterfaceOrientation) -> Bool
     {
         return true
-    }
+    }*/
 
 
 }

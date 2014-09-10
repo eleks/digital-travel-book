@@ -10,13 +10,13 @@ import UIKit
 
 class WLColumnLabelSw: UILabel {
 
-    init(frame: CGRect)
+    override init(frame: CGRect)
     {
         super.init(frame: frame)
         // Initialization code
     }
     
-    init(coder aDecoder: NSCoder!)
+    required init(coder aDecoder: NSCoder)
     {
         super.init(coder: aDecoder)
         // Initialization code

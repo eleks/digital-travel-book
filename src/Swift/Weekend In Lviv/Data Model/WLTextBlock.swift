@@ -13,6 +13,6 @@ class WLTextBlock:NSObject {
     var blockTitle:String           = ""
     var blockSubtitle:String        = ""
     var blockText:String            = ""
-    var blockImagesPath:String[]    = []
+    var blockImagesPath:[String]    = []
     
 }

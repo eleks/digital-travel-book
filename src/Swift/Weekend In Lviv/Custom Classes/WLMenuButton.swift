@@ -26,9 +26,13 @@ class WLMenuButton: UIBarButtonItem {
         buttonView .setBackgroundImage(buttonBackground, forState: UIControlState.Normal)
     }
 
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+
     func touchUpInside(sender:AnyObject)
     {
-        var timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self.target, selector: self.action, userInfo: nil, repeats: false)
+        var timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self.target!, selector: self.action, userInfo: nil, repeats: false)
     }
 
     // Class method

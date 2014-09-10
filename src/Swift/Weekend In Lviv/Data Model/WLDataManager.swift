@@ -8,7 +8,7 @@
 
 import Foundation
 
-// Singleton shared instance of class
+// Singleton's shared instance of class
 let _singletonDataManagerSharedInstance = WLDataManager()
 
 class WLDataManager : NSObject {
@@ -19,12 +19,10 @@ class WLDataManager : NSObject {
     var _dataFolder:String? = nil
     var dataFolder:String? {
         get {
-            if let dataFolder_ = _dataFolder? {
-            }
-            else{
+            if _dataFolder == nil {
                 let appDelegate = UIApplication.sharedApplication().delegate as WLAppDelegate
                 let url:NSURL = appDelegate.applicationDocumentsDirectory()
-                let documentPath:String = url.path
+                let documentPath:String = url.path!
                 _dataFolder = documentPath.stringByAppendingPathComponent(".localData")
             }
             
@@ -34,7 +32,7 @@ class WLDataManager : NSObject {
                                                                     withIntermediateDirectories: true,
                                                                     attributes: nil,
                                                                     error: error)
-                if error {
+                if error != nil {
                     println("Data manager: local data document folder creation error :\(error)")
                 }
             }
@@ -45,7 +43,7 @@ class WLDataManager : NSObject {
         }
     }
     
-    var placesList:WLPlace[] = []
+    var placesList:[WLPlace] = []
     
     
     
@@ -56,9 +54,9 @@ class WLDataManager : NSObject {
     }
     
     // Instance methods
-    init()
+    override init()
     {
-        let appDelegate:WLAppDelegate = UIApplication.sharedApplication()!.delegate! as WLAppDelegate
+        let appDelegate:WLAppDelegate = UIApplication.sharedApplication().delegate! as WLAppDelegate
         managedObjectContext = appDelegate.managedObjectContext
         
         super.init()
@@ -66,10 +64,10 @@ class WLDataManager : NSObject {
     
     func fillPlacesList()
     {
-        var places:Place[] = self.places()
+        var places:[Place] = self.places()
        
-        let _array:AnyObject[] = NSLocale.preferredLanguages()
-        let language = _array[0] as String
+        let array:[AnyObject] = NSLocale.preferredLanguages()
+        let language = array[0] as String
         self.placesList = []
         let sortByTimestamp:Array<NSSortDescriptor> = [NSSortDescriptor(key: "timestamp", ascending: true)]
         
@@ -86,16 +84,16 @@ class WLDataManager : NSObject {
             newPlace.moIdentificator    = place.identificator
             newPlace.placeFavourite     = place.favourite.boolValue
             
-            var textBlocks:TextBlock[] = place.blocks.sortedArrayUsingDescriptors(sortByTimestamp)! as TextBlock[]
-            var texts:WLTextBlock[] = []
+            var textBlocks:[TextBlock] = place.blocks.sortedArrayUsingDescriptors(sortByTimestamp) as [TextBlock]
+            var texts:[WLTextBlock] = []
             
             for block in textBlocks {
                 texts.append(self.placeTextBlockWithLocale(locale: language, textBlock: block as TextBlock))
             }
             newPlace.placesTextBlocks = texts
         
-            let pointBlocks:PointBlock[] = place.pointBlocks.sortedArrayUsingDescriptors(sortByTimestamp)!  as PointBlock[]
-            var points:WLPointBlock[] = []
+            let pointBlocks:[PointBlock] = place.pointBlocks.sortedArrayUsingDescriptors(sortByTimestamp) as [PointBlock]
+            var points:[WLPointBlock] = []
             
             for pointBlock in pointBlocks {
                 points.append(self.pointBlockWithLocale(locale: language, pointBlock: pointBlock))
@@ -108,11 +106,11 @@ class WLDataManager : NSObject {
     
     func clearPlacesData()
     {
-        var places:Place[] = self.places()
+        var places:[Place] = self.places()
         if places.count > 0 {
-            if NSFileManager.defaultManager().fileExistsAtPath(self.dataFolder) {
+            if NSFileManager.defaultManager().fileExistsAtPath(self.dataFolder!) {
                 var error:NSErrorPointer = nil
-                let result = NSFileManager.defaultManager().removeItemAtPath(self.dataFolder, error:error)
+                let result = NSFileManager.defaultManager().removeItemAtPath(self.dataFolder!, error:error)
                 if !result {
                     println("Data manager: folder deleting error:\(error)")
                 }
@@ -144,9 +142,7 @@ class WLDataManager : NSObject {
     func addPlaceWithOptions(options:Dictionary<String, AnyObject>) -> Place
     {
         var entity:NSEntityDescription? = NSEntityDescription.entityForName("Place", inManagedObjectContext: self.managedObjectContext!)
-        
         var newPlace = Place(entity: entity!, insertIntoManagedObjectContext: self.managedObjectContext!)
-        
         var mutableOptions:Dictionary<String, AnyObject> = options
       
         for (property: String, object_ : AnyObject) in mutableOptions {
@@ -155,7 +151,6 @@ class WLDataManager : NSObject {
                 
                 case "topImageName":
                     if let image = self.addImageWithFileName(object_ as String)? {
-                        
                         newPlace.topImage = image
                     }
                     else{
@@ -164,7 +159,6 @@ class WLDataManager : NSObject {
                 
                 case "lictIconImageName":
                     if let image = self.addImageWithFileName(object_ as String)? {
-                        
                         newPlace.listIcon = image
                     }
                     else{
@@ -173,7 +167,6 @@ class WLDataManager : NSObject {
                 
                 case "menuIconImageName":
                     if let image = self.addImageWithFileName(object_ as String)? {
-                        
                         newPlace.menuIcon = image
                     }
                     else{
@@ -184,9 +177,7 @@ class WLDataManager : NSObject {
                     var titles:Dictionary<String, String> = object_ as Dictionary<String, String>
             
                     for (key: String, object: String) in titles {
-                        
                         if let localizetText = self.addLocalizedTextWithLocale(locale: key, text: object)? {
-                            
                             newPlace.addTitlesObject(localizetText)
                         }
                         else{
@@ -198,9 +189,7 @@ class WLDataManager : NSObject {
                     var texts:Dictionary<String, String> = object_ as Dictionary<String, String>
                 
                     for (key: String, object: String) in texts {
-                
                         if let localizetText = self.addLocalizedTextWithLocale(locale: key, text: object)? {
-                            
                             newPlace.addTextObject(localizetText)
                         }
                         else{
@@ -212,9 +201,7 @@ class WLDataManager : NSObject {
                     var texts:Array<AnyObject> = object_ as Array<AnyObject>
                 
                     for object : AnyObject in texts {
-          
                         if let textObject = self.addTextBlockWithOptions(object as Dictionary<String, AnyObject>)? {
-                            
                             newPlace.addBlocksObject(textObject)
                         }
                         else{
@@ -227,9 +214,7 @@ class WLDataManager : NSObject {
                     var points:Array<AnyObject> = object_ as Array<AnyObject>
                 
                     for object : AnyObject in points {
-                        
                         if let pointBlock = self.addPointBlockWithOptions(object as Dictionary<String, AnyObject>)? {
-                            
                             newPlace.addPointBlocksObject(pointBlock)
                         }
                         else{
@@ -241,7 +226,6 @@ class WLDataManager : NSObject {
                     var audios:Dictionary<String, String> = object_ as Dictionary<String, String>
                     
                     for (key: String, object: String) in audios {
-
                         if let audioFile = self.addAudioFileWithLocale(locale: key, fileName: object)? {
                             
                             newPlace.addAudioFilesObject(audioFile)
@@ -255,8 +239,7 @@ class WLDataManager : NSObject {
                     println("Data manager: unrecognized property")
             }
         }
-        newPlace.identificator = NSNumber(double: NSDate.timeIntervalSinceReferenceDate() )
-        //println("Data manager: newPlace = \(newPlace)")
+        newPlace.identificator = NSNumber(double: NSDate.timeIntervalSinceReferenceDate())
         return newPlace
     }
     
@@ -268,9 +251,9 @@ class WLDataManager : NSObject {
         request.predicate = predicate
         
         var error:NSError? = nil
-        var array:Array<Place> = self.managedObjectContext!.executeFetchRequest(request, error: &error) as Place[]
+        var array:Array<Place> = self.managedObjectContext!.executeFetchRequest(request, error: &error) as [Place]
         
-        if(error){
+        if error != nil {
             println("Place fetching error: \(error)")
         }
         
@@ -283,15 +266,14 @@ class WLDataManager : NSObject {
         let file:String         = fileNameComponents[0]
         let type:String         = fileNameComponents[fileNameComponents.endIndex - 1]
         
-        let imagePath:String    = NSBundle.mainBundle().pathForResource(file, ofType: type)
+        let imagePath:String    = NSBundle.mainBundle().pathForResource(file, ofType: type)!
         var imageData:NSData    = NSData.dataWithContentsOfFile(imagePath, options: nil, error: nil)
         
         var image:UIImage?      = UIImage(data: imageData)
         var savedImage:UIImage? = nil
 
         if(!UIScreen.mainScreen().isRetinaDisplay()){
-
-            let newSize = CGSizeMake(image!.size.width, image!.size.height)
+            let newSize = CGSizeMake(image!.size.width / 2, image!.size.height / 2)
             savedImage  = image!.resizeImage(newSize: newSize, interpolationQuality: kCGInterpolationHigh)
         }
         else{
@@ -303,7 +285,7 @@ class WLDataManager : NSObject {
         savedImageData!.writeToFile(filePath, atomically: true)
         
         var entity = NSEntityDescription.entityForName("Image", inManagedObjectContext: self.managedObjectContext!)
-        var returnedImage = Image(entity: NSEntityDescription.entityForName("Image", inManagedObjectContext: self.managedObjectContext!),
+        var returnedImage = Image(entity: NSEntityDescription.entityForName("Image", inManagedObjectContext: self.managedObjectContext!)!,
                                   insertIntoManagedObjectContext: self.managedObjectContext!)
         returnedImage.pathToFile = filePath
         returnedImage.timestamp  = NSDate.date()
@@ -313,8 +295,13 @@ class WLDataManager : NSObject {
     
     func imageWithPath(path:String) -> UIImage
     {
-        var imgData:NSData = NSData.dataWithContentsOfFile(path, options: nil, error: nil)
-        return UIImage(data: imgData)
+        var imgData:NSData? = NSData.dataWithContentsOfFile (path, options: nil, error: nil)
+        if imgData != nil {
+            return UIImage(data: imgData!)
+        }
+        else{
+            return UIImage()
+        }
     }
     
     func imageListWithPlace(place:WLPlace) -> Array<String>
@@ -326,14 +313,13 @@ class WLDataManager : NSObject {
                 result.append(item)
             }
         }
-        
         return result
     }
     
     func addLocalizedTextWithLocale(#locale:String?, text:String?) -> LocalizedText!
     {
         var entityDescription   = NSEntityDescription.entityForName("LocalizedText", inManagedObjectContext: self.managedObjectContext!)
-        var localizedText       = LocalizedText(entity: entityDescription, insertIntoManagedObjectContext: self.managedObjectContext!)
+        var localizedText       = LocalizedText(entity: entityDescription!, insertIntoManagedObjectContext: self.managedObjectContext!)
         
         localizedText.locale    = locale!
         localizedText.text      = text!
@@ -387,9 +373,7 @@ class WLDataManager : NSObject {
     {
         var predicate               = NSPredicate(format: "locale == %@", locale)
         var title:LocalizedText?    = localizedStrings.filteredSetUsingPredicate(predicate).anyObject() as? LocalizedText
- 
-        //println("localizedStrings = \(localizedStrings)")
-        
+
         if let title_ = title? {
             return title_.text
         }
@@ -417,7 +401,7 @@ class WLDataManager : NSObject {
     {
         var entity = NSEntityDescription.entityForName("TextBlock", inManagedObjectContext: self.managedObjectContext!)
         
-        var newTextBlock = TextBlock(entity: entity, insertIntoManagedObjectContext: self.managedObjectContext!)
+        var newTextBlock = TextBlock(entity: entity!, insertIntoManagedObjectContext: self.managedObjectContext!)
         newTextBlock.timestamp = NSDate()
         
         var mutableOptions:Dictionary<String, AnyObject> = options
@@ -448,7 +432,7 @@ class WLDataManager : NSObject {
                 }
                 
             case "images":
-                for fileName:String in object_ as String[] {
+                for fileName:String in object_ as [String] {
                     println("\(fileName)")
                     newTextBlock.addImagesObject(self.addImageWithFileName(fileName))
                 }
@@ -458,7 +442,6 @@ class WLDataManager : NSObject {
             }
 
         }
-        
         return newTextBlock
     }
     
@@ -469,10 +452,9 @@ class WLDataManager : NSObject {
         newTextBlock.blockSubtitle = self.textBlockSubtitleWithLocale(locale:locale, textBlock:block)
         newTextBlock.blockText = self.textBlockTextWithLocale(locale:locale, textBlock:block)
         
-        var temporaryImages:String[] = []
+        var temporaryImages:[String] = []
         let dateSortDescriptor:Array<NSSortDescriptor> = [NSSortDescriptor(key: "timestamp", ascending: true)]
-        
-        var array:Image[] = block.images.sortedArrayUsingDescriptors(dateSortDescriptor)!  as Image[]
+        var array:[Image] = block.images.sortedArrayUsingDescriptors(dateSortDescriptor)  as [Image]
         
         for image in array {
             temporaryImages.append(image.pathToFile)
@@ -485,8 +467,7 @@ class WLDataManager : NSObject {
     func addPointBlockWithOptions(options:Dictionary<String, AnyObject>) -> PointBlock?
     {
         var entity = NSEntityDescription.entityForName("PointBlock", inManagedObjectContext: self.managedObjectContext!)
-        
-        var pointBlock = PointBlock(entity: entity, insertIntoManagedObjectContext: self.managedObjectContext!)
+        var pointBlock = PointBlock(entity: entity!, insertIntoManagedObjectContext: self.managedObjectContext!)
         
         pointBlock.timestamp = NSDate()
         var mutableOptions:Dictionary<String, AnyObject> = options
@@ -516,19 +497,17 @@ class WLDataManager : NSObject {
                 println("Data manager: unrecognized property")
             }
         }
-        
         return pointBlock
     }
     
     func pointBlockWithLocale(#locale:String, pointBlock block:PointBlock) -> WLPointBlock
     {
         var pointBlock:WLPointBlock = WLPointBlock()
+        var points:[WLPoint]        = []
+        var set:NSSet               = block.points
         
         pointBlock.blockImagePath   = block.image.pathToFile
         pointBlock.blockText        = self.pointBlockTextWithLocale(locale:locale, pointBlock:block)
-        var points:WLPoint[]        = []
-        
-        var set:NSSet = block.points
 
         for point : AnyObject in set {
             points.append(self.pointWithLocale(locale:locale, pointOfBlock:point as PointOfBlock))
@@ -543,9 +522,9 @@ class WLDataManager : NSObject {
         var point:WLPoint = WLPoint()
         
         point.imagePath = pointOfBlock.image.pathToFile
-        point.x = CGFloat(pointOfBlock.x.floatValue)
-        point.y = CGFloat(pointOfBlock.y.floatValue)
-        point.text = self.pointTextWithLocale(locale:locale, point:pointOfBlock)
+        point.x         = CGFloat(pointOfBlock.x.floatValue)
+        point.y         = CGFloat(pointOfBlock.y.floatValue)
+        point.text      = self.pointTextWithLocale(locale:locale, point:pointOfBlock)
         
         return point
     }
@@ -553,7 +532,7 @@ class WLDataManager : NSObject {
     func addPointOfBlockWithOptions(options:Dictionary<String, AnyObject>) -> PointOfBlock?
     {
         var entity       = NSEntityDescription.entityForName("PointOfBlock", inManagedObjectContext: self.managedObjectContext!)
-        var pointOfBlock = PointOfBlock(entity: entity, insertIntoManagedObjectContext: self.managedObjectContext!)
+        var pointOfBlock = PointOfBlock(entity: entity!, insertIntoManagedObjectContext: self.managedObjectContext!)
         
         var mutableOptions:Dictionary<String, AnyObject> = options
         
@@ -588,20 +567,19 @@ class WLDataManager : NSObject {
     {
         let file = fileName.lastPathComponent.stringByDeletingPathExtension
         let type = fileName.pathExtension
-        
-        let filePath    = NSBundle.mainBundle()!.pathForResource(file, ofType: type)
+        let filePath    = NSBundle.mainBundle().pathForResource(file, ofType: type)
         let newFilePath = self.dataFolder!.stringByAppendingPathComponent(String(format:"%@%f.%@", file, NSDate.timeIntervalSinceReferenceDate(), type))
         
         var error:NSError? = nil
-        NSFileManager.defaultManager()!.copyItemAtPath(filePath, toPath: newFilePath, error: &error)
+        NSFileManager.defaultManager().copyItemAtPath(filePath!, toPath: newFilePath, error: &error)
 
         if let error_ = error? {
-            println("Data manager: audio file copy error: \(error)")
+            println("Data manager: audio file copy error: \(error_)")
             return nil
         }
         
         var entity      = NSEntityDescription.entityForName("AudioFile", inManagedObjectContext: self.managedObjectContext!)
-        var audioFile   = AudioFile(entity: entity, insertIntoManagedObjectContext: self.managedObjectContext!)
+        var audioFile   = AudioFile(entity: entity!, insertIntoManagedObjectContext: self.managedObjectContext!)
 
         audioFile.path   = newFilePath
         audioFile.locale = locale
@@ -609,12 +587,12 @@ class WLDataManager : NSObject {
         return audioFile
     }
     
-    func places() -> Place[]
+    func places() -> [Place]
     {
         var request = NSFetchRequest(entityName:"Place")
         var error: NSError? = nil
         
-        return self.managedObjectContext!.executeFetchRequest(request, error: &error) as Place[]
+        return self.managedObjectContext!.executeFetchRequest(request, error: &error) as [Place]
     }
 
 }

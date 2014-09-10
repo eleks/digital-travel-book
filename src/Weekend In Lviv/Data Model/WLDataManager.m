@@ -207,7 +207,7 @@ static WLDataManager *sharedManager = nil;
     NSString *filePath = [self.dataFolder stringByAppendingPathComponent:[NSString stringWithFormat:@"%@%f.jpeg", file, [NSDate timeIntervalSinceReferenceDate]]];
     NSData *savedImageData = UIImageJPEGRepresentation(savedImage, 0.5);
     [savedImageData writeToFile:filePath atomically:YES];
-
+    //NSLog(@"IMAGE = %@", filePath);
 
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"Image" inManagedObjectContext:self.managedObjectContext];
     Image *returnedImage = [[Image alloc] initWithEntity:entity insertIntoManagedObjectContext:self.managedObjectContext];

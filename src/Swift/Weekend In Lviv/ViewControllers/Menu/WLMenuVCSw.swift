@@ -17,9 +17,9 @@ enum WLMenuSection: Int {
 class WLMenuVCSw: UITableViewController, UISearchDisplayDelegate, UISearchBarDelegate {
 
     // Instance variables
-    var filteredSource:WLPlace[] = []
-    var detailView:WLHomeVCSw? = nil
-    var searchBar:UISearchBar? = nil
+    var filteredSource:[WLPlace] = []
+    var detailView:WLHomeVCSw?   = nil
+    var searchBar:UISearchBar?   = nil
     var searchDisplayControllerCustom:UISearchDisplayController? = nil
     var searchActive:Bool = false
     
@@ -28,15 +28,18 @@ class WLMenuVCSw: UITableViewController, UISearchDisplayDelegate, UISearchBarDel
     }
     
     // Instance methods
-    init(style: UITableViewStyle) {
+    override init(style: UITableViewStyle) {
         super.init(style: style)
     }
-    
-    init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!)
+    override init(nibName nibNameOrNil: String!, bundle nibBundleOrNil: NSBundle!)
     {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
 
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -46,10 +49,10 @@ class WLMenuVCSw: UITableViewController, UISearchDisplayDelegate, UISearchBarDel
         self.tableView.separatorStyle = UITableViewCellSeparatorStyle.None
         self.navigationItem.titleView = self.searchBar!
 
-        NSNotificationCenter.defaultCenter()!.addObserver(self.tableView!, selector:Selector("reloadData"), name:"ArticleStatusChanged", object:nil)
+        NSNotificationCenter.defaultCenter().addObserver(self.tableView!, selector:Selector("reloadData"), name:"ArticleStatusChanged", object:nil)
         
         self.tableView.backgroundView = UIView()
-        self.tableView.backgroundView.backgroundColor = RGB(48, 23, 0)
+        self.tableView.backgroundView!.backgroundColor = RGB(48, 23, 0)
     }
 
     override func preferredStatusBarStyle() -> UIStatusBarStyle
@@ -84,53 +87,53 @@ class WLMenuVCSw: UITableViewController, UISearchDisplayDelegate, UISearchBarDel
         return WLDataManager.sharedManager.placesList.count
     }
 
-    override func tableView(tableView: UITableView?, cellForRowAtIndexPath indexPath: NSIndexPath?) -> UITableViewCell?
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell
     {
-        var cell:WLMenuCellSw? = tableView!.dequeueReusableCellWithIdentifier(Static.cellIdentifier) as? WLMenuCellSw
-
+        var cell:WLMenuCellSw? = tableView.dequeueReusableCellWithIdentifier(Static.cellIdentifier) as? WLMenuCellSw
+        
         if let cell_ = cell? {
         }
         else{
-            cell = NSBundle.mainBundle()!.loadNibNamed("WLMenuCellSw", owner:nil, options:nil)[0] as? WLMenuCellSw
+            cell = NSBundle.mainBundle().loadNibNamed("WLMenuCellSw", owner:nil, options:nil)[0] as? WLMenuCellSw
         }
         
-        if indexPath!.section == WLMenuSection.Home.toRaw() {
-            cell!.imgFavoriteFlag.hidden = true
-            cell!.imgIcon.image = UIImage(named:"FakeMenuItem")
-            cell!.lblTitle.text = "Home"
+        if indexPath.section == WLMenuSection.Home.toRaw() {
+            cell!.imgFavoriteFlag!.hidden = true
+            cell!.imgIcon!.image = UIImage(named:"FakeMenuItem")
+            cell!.lblTitle!.text = "Home"
         }
-        else if indexPath!.section == WLMenuSection.About.toRaw() {
-            cell!.imgFavoriteFlag.hidden = true
-            cell!.imgIcon.image = UIImage(named:"image_about")
-            cell!.lblTitle.text = "About"
+        else if indexPath.section == WLMenuSection.About.toRaw() {
+            cell!.imgFavoriteFlag!.hidden = true
+            cell!.imgIcon!.image = UIImage(named:"image_about")
+            cell!.lblTitle!.text = "About"
         }
         else {
             var place:WLPlace? = nil
             
             if self.searchActive {
-                place = (self.filteredSource)[indexPath!.row]
+                place = (self.filteredSource)[indexPath.row]
             }
             else {
-                place = (WLDataManager.sharedManager.placesList)[indexPath!.row]
+                place = (WLDataManager.sharedManager.placesList)[indexPath.row]
             }
-            cell!.lblTitle.text = place!.title.capitalizedString
-            cell!.imgIcon.image = WLDataManager.sharedManager.imageWithPath(place!.placeMenuImagePath)
-            cell!.imgFavoriteFlag.hidden = !(place!.placeFavourite)
+            cell!.lblTitle!.text = place!.title.capitalizedString
+            cell!.imgIcon!.image = WLDataManager.sharedManager.imageWithPath(place!.placeMenuImagePath)
+            cell!.imgFavoriteFlag!.hidden = !(place!.placeFavourite)
         }
         
         var selectedView = UIView()
         selectedView.backgroundColor = RGB(58, 33, 10)
         cell!.selectedBackgroundView = selectedView
-
-        return cell
+        
+        return cell!
     }
     
-    override func tableView(tableView: UITableView!, heightForRowAtIndexPath indexPath: NSIndexPath!) -> CGFloat
+    override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
     {
         return 75
     }
     
-    override func tableView(tableView: UITableView!, heightForHeaderInSection section: Int) -> CGFloat
+    override func tableView(tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat
     {
         if section == WLMenuSection.Home.toRaw() {
             return 0
@@ -138,7 +141,7 @@ class WLMenuVCSw: UITableViewController, UISearchDisplayDelegate, UISearchBarDel
         return 50
     }
 
-    override func tableView(tableView: UITableView!, viewForHeaderInSection section: Int) -> UIView!
+    override func tableView(tableView: UITableView, viewForHeaderInSection section: Int) -> UIView
     {
         var headerView:WLMenuHeaderViewSw? = nil
         
@@ -147,11 +150,11 @@ class WLMenuVCSw: UITableViewController, UISearchDisplayDelegate, UISearchBarDel
             switch menuSection {
                 
             case .Articles:
-                headerView = NSBundle.mainBundle()!.loadNibNamed("WLMenuHeaderViewSw", owner:nil, options:nil)[0] as? WLMenuHeaderViewSw
+                headerView = NSBundle.mainBundle().loadNibNamed("WLMenuHeaderViewSw", owner:nil, options:nil)[0] as? WLMenuHeaderViewSw
                 headerView!.setTitle("Architecture")
                 
             case .About:
-                headerView = NSBundle.mainBundle()!.loadNibNamed("WLMenuHeaderViewSw", owner:nil, options:nil)[0] as? WLMenuHeaderViewSw
+                headerView = NSBundle.mainBundle().loadNibNamed("WLMenuHeaderViewSw", owner:nil, options:nil)[0] as? WLMenuHeaderViewSw
                 headerView!.setTitle("About")
                 
             case .Home:
@@ -163,22 +166,22 @@ class WLMenuVCSw: UITableViewController, UISearchDisplayDelegate, UISearchBarDel
 
         }
         
-        return headerView
+        return headerView!
     }
     
-    override func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!)
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
     {
         var newPlace:WLPlace? = nil
         
-        switch (indexPath!.section) {
+        switch (indexPath.section) {
         case WLMenuSection.Articles.toRaw():
             if self.searchActive {
                 newPlace = (self.filteredSource)[indexPath.row]
-                let index:UInt = UInt(WLDataManager.sharedManager.placesList.bridgeToObjectiveC().indexOfObject(newPlace))
+                let index:UInt = UInt((WLDataManager.sharedManager.placesList as NSArray).indexOfObject(newPlace!))
                 self.detailView!.switchToViewControllerWithIndex(index: index, animated:true)
             }
             else {
-                self.detailView!.switchToViewControllerWithIndex(index: UInt(indexPath!.row), animated: true)
+                self.detailView!.switchToViewControllerWithIndex(index: UInt(indexPath.row), animated: true)
             }
             
         case WLMenuSection.Home.toRaw():
@@ -191,7 +194,7 @@ class WLMenuVCSw: UITableViewController, UISearchDisplayDelegate, UISearchBarDel
             }
             
         default:
-            println("\(indexPath!.section) is not a menuSection")
+            println("\(indexPath.section) is not a menuSection")
         }
         
         self.tableView.deselectRowAtIndexPath(indexPath, animated:false)
@@ -201,21 +204,18 @@ class WLMenuVCSw: UITableViewController, UISearchDisplayDelegate, UISearchBarDel
     //pragma mark - UISearchBarDelegate
     func searchBar(searchBar:UISearchBar, textDidChange searchText:String)
     {
-        if searchText.bridgeToObjectiveC().length > 0 {
-            
+        if searchText.utf16Count > 0 {
             self.searchActive = true
             self.filteredSource.removeAll(keepCapacity: false)
-            
+
             var predicate = NSPredicate(format: "SELF CONTAINS[cd] %@", argumentArray: [searchText])
             
             for place in WLDataManager.sharedManager.placesList {
-                
                 if predicate.evaluateWithObject(place.title) {
                     self.filteredSource.append(place)
                 }
                 else {
                     for block in place.placesTextBlocks {
-                        
                         if predicate.evaluateWithObject(block.blockTitle) {
                             self.filteredSource.append(place)
                             break

@@ -43,7 +43,7 @@ extension UIImage {
         
         // Create a CGImage from the context
         let clippedImage:CGImageRef = CGBitmapContextCreateImage(context)
-        CGContextRelease(context)
+        //CGContextRelease(context)
         
         // Create a UIImage from the CGImage
         let roundedImage:UIImage = UIImage(CGImage:clippedImage)

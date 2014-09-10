@@ -11,5 +11,4 @@ import UIKit
 class WLImageView: UIImageView {
 
     var imagePath:String? = nil
-
 }

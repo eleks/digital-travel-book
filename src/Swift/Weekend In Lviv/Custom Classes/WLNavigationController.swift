@@ -16,16 +16,20 @@ class WLNavigationController: UINavigationController, UINavigationControllerDele
     
     
     // Instance methods
-    init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?)
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?)
     {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         // Custom initialization
         self.delegate = self
     }
     
-    init(rootViewController: UIViewController!)
+    override init(rootViewController: UIViewController)
     {
         super.init(rootViewController: rootViewController)
+    }
+
+    required init(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle
@@ -37,13 +41,14 @@ class WLNavigationController: UINavigationController, UINavigationControllerDele
         didShowViewController viewController: UIViewController!,
         animated: Bool)
     {
-        if self.completionBlock && self.pushedVC {
+        if self.completionBlock != nil && self.pushedVC != nil {
             
             self.completionBlock!()
             self.completionBlock = nil
             self.pushedVC = nil
         }
-        else if self.completionBlock && viewController == self.viewControllers[0] as UIViewController {
+        else if self.completionBlock != nil &&
+                viewController == self.viewControllers[0] as UIViewController {
             
             self.completionBlock!()
             self.completionBlock = nil
@@ -51,11 +56,10 @@ class WLNavigationController: UINavigationController, UINavigationControllerDele
     }
     
     func navigationController(navigationController: UINavigationController!,
-                                willShowViewController viewController: UIViewController!,
-                                animated: Bool)
+                              willShowViewController viewController: UIViewController!,
+                              animated: Bool)
     {
-        if self.pushedVC != viewController && viewController != self.viewControllers[0] as UIViewController {
-            
+        if self.pushedVC != viewController && viewController != self.viewControllers[0] as? UIViewController {
             self.pushedVC = nil
             self.completionBlock = nil
         }

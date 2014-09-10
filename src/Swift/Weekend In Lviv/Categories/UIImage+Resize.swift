@@ -58,11 +58,18 @@ extension UIImage {
             /*NSException.raise(NSInvalidArgumentException,
                 format: "Unsupported content mode: \(CLong(contentMode))",
                 arguments: CVaListPointer(fromUnsafePointer: UnsafePointer()))*/
-            NSException.raise(NSInvalidArgumentException, format: "Unsupported content mode: %@", arguments: CVaListPointer(fromUnsafePointer: UnsafePointer()))
+            /*NSException.raise(NSInvalidArgumentException, format: "Unsupported content mode: %@", arguments: CVaListPointer(fromUnsafePointer: UnsafePointer()))*/
+            // To DO !!! PROBLEM WITH CVaListPointer !!!
+            self.foo()
         }
         let newSize:CGSize = CGSizeMake(self.size.width * ratio, self.size.height * ratio)
         
         return self.resizeImage(newSize:newSize, interpolationQuality:quality)
+    }
+    
+    func foo()
+    {
+        
     }
 
     // Returns a copy of the image that has been transformed using the given affine transform and scaled to the new size

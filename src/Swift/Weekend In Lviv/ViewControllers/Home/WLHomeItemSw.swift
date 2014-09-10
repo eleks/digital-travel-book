@@ -11,15 +11,15 @@ import UIKit
 class WLHomeItemSw: UIView {
     
     // Outlets
-    @IBOutlet weak var lblCategory : UILabel
-    @IBOutlet weak var lblTitle : UILabel
-    @IBOutlet weak var imgPhoto : UIImageView
+    @IBOutlet weak var lblCategory:UILabel?
+    @IBOutlet weak var lblTitle:UILabel?
+    @IBOutlet weak var imgPhoto:UIImageView?
     
     // Instance methods
     override func awakeFromNib()
     {
-        self.lblCategory.font = WLFontManager.sharedManager.palatinoRegular12
-        self.lblTitle.font = WLFontManager.sharedManager.bebasRegular32
+        self.lblCategory!.font  = WLFontManager.sharedManager.palatinoRegular12
+        self.lblTitle!.font     = WLFontManager.sharedManager.bebasRegular32
     }
 
 }

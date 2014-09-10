@@ -12,27 +12,26 @@ import QuartzCore
 class WLHomeVCSw: UIViewController {
 
     // Outlets
-    @IBOutlet weak var lblMainSubtitle:UILabel
-    @IBOutlet weak var lblMainTitle:UILabel
-    @IBOutlet weak var imgMainTitle:UIImageView
-    @IBOutlet weak var viewTimeLine:UIView
+    @IBOutlet weak var lblMainSubtitle:UILabel?
+    @IBOutlet weak var lblMainTitle:UILabel?
+    @IBOutlet weak var imgMainTitle:UIImageView?
+    @IBOutlet weak var viewTimeLine:UIView?
     
-    @IBOutlet weak var scrollHome:UIScrollView
+    @IBOutlet weak var scrollHome:UIScrollView?
+    @IBOutlet weak var imgHeaderImage:UIImageView?
     
-    @IBOutlet weak var imgHeaderImage:UIImageView
-    
-    @IBOutlet weak var viewTimelineLeft:UIView
-    @IBOutlet weak var viewTimelineRight:UIView
-    @IBOutlet weak var lblTimelineTop:UILabel
-    @IBOutlet weak var lblTimelineTitle:UILabel
-    @IBOutlet weak var lblTimelineSubtitle:UILabel
+    @IBOutlet weak var viewTimelineLeft:UIView?
+    @IBOutlet weak var viewTimelineRight:UIView?
+    @IBOutlet weak var lblTimelineTop:UILabel?
+    @IBOutlet weak var lblTimelineTitle:UILabel?
+    @IBOutlet weak var lblTimelineSubtitle:UILabel?
    
-    @IBOutlet weak var yearPoints1642:UIImageView
-    @IBOutlet weak var yearPoints1721:UIImageView
-    @IBOutlet weak var yearPoints1841:UIImageView
-    @IBOutlet weak var yearPointRight1867:UIImageView
-    @IBOutlet weak var yearPointRight1941:UIImageView
-    @IBOutlet weak var yearPointRight1992:UIImageView
+    @IBOutlet weak var yearPoints1642:UIImageView?
+    @IBOutlet weak var yearPoints1721:UIImageView?
+    @IBOutlet weak var yearPoints1841:UIImageView?
+    @IBOutlet weak var yearPointRight1867:UIImageView?
+    @IBOutlet weak var yearPointRight1941:UIImageView?
+    @IBOutlet weak var yearPointRight1992:UIImageView?
     
     
     // Instance variables
@@ -50,18 +49,18 @@ class WLHomeVCSw: UIViewController {
         super.viewDidLoad()
 
         var playerVC = WLAudioPlayerVCSw.playerVC
-        playerVC.view!.removeFromSuperview()
-        self.navigationItem!.rightBarButtonItems = playerVC.toolbar!.items!.reverse()
+        playerVC.view.removeFromSuperview()
+        self.navigationItem.rightBarButtonItems = playerVC.toolbar!.items!.reverse()
         
         var leftDrawerButton = WLMenuButton(target: self, action: Selector("btnMenuTouch"))
-        self.navigationItem!.setLeftBarButtonItem(leftDrawerButton, animated:true)
+        self.navigationItem.setLeftBarButtonItem(leftDrawerButton, animated:true)
     
         self.detailShowing = false
     
         self.setLabelsLayout()
         var tapOnTimeline = UITapGestureRecognizer(target: self, action: Selector("tapOnTimeline:"))
-        tapOnTimeline.numberOfTapsRequired = 1
-        tapOnTimeline.numberOfTouchesRequired = 1
+        tapOnTimeline.numberOfTapsRequired      = 1
+        tapOnTimeline.numberOfTouchesRequired   = 1
         self.viewTimeLine!.addGestureRecognizer(tapOnTimeline)
         
         self.startAnimation()
@@ -79,10 +78,11 @@ class WLHomeVCSw: UIViewController {
         self.setScrollLayout()
     }
     
+    /* Unavailable in Swift
     override func shouldAutorotateToInterfaceOrientation(toInterfaceOrientation: UIInterfaceOrientation) -> Bool
     {
         return true
-    }
+    }*/
 
     override func willAnimateRotationToInterfaceOrientation(toInterfaceOrientation: UIInterfaceOrientation, duration: NSTimeInterval)
     {
@@ -96,8 +96,8 @@ class WLHomeVCSw: UIViewController {
     
     func setLabelsLayout()
     {
-        self.lblMainTitle.font = WLFontManager.sharedManager.bebasRegular120
-        self.lblMainSubtitle.font = WLFontManager.sharedManager.gentiumRegular12
+        self.lblMainTitle!.font = WLFontManager.sharedManager.bebasRegular120
+        self.lblMainSubtitle!.font = WLFontManager.sharedManager.gentiumRegular12
     
         for i:Int in 601...603{
             var lbl = self.viewTimelineLeft!.viewWithTag(i)! as UILabel
@@ -108,8 +108,7 @@ class WLHomeVCSw: UIViewController {
             var lbl = self.viewTimelineRight!.viewWithTag(i)! as UILabel
             lbl.font = WLFontManager.sharedManager.palatinoItalic20
         }
-    
-        self.lblMainTitle.userInteractionEnabled = true
+        self.lblMainTitle!.userInteractionEnabled = true
     }
     
     func setScrollLayout()
@@ -118,91 +117,94 @@ class WLHomeVCSw: UIViewController {
         if UIInterfaceOrientationIsPortrait(self.interfaceOrientation) {
             columnsCount = 2
             
-            self.imgHeaderImage.frame = CGRectMake(0, 0, self.imgHeaderImage.frame.size.width, 329 * 0.75)
+            self.imgHeaderImage!.frame = CGRectMake(0, 0, self.imgHeaderImage!.frame.size.width, 329 * 0.75)
             let delta = CGFloat(329 * 0.25 / 2)
     
-            self.imgMainTitle.frame     = CGRectMake(self.imgMainTitle.frame.origin.x,
-                                                    65 - delta,
-                                                    self.imgMainTitle.frame.size.width,
-                                                    self.imgMainTitle.frame.size.height)
-            self.lblMainTitle.frame     = CGRectMake(self.lblMainTitle.frame.origin.x,
-                                                    126 - delta,
-                                                    self.lblMainTitle.frame.size.width,
-                                                    self.lblMainTitle.frame.size.height)
-            self.lblMainSubtitle.frame  = CGRectMake(self.lblMainSubtitle.frame.origin.x,
-                                                    102 - delta,
-                                                    self.lblMainSubtitle.frame.size.width,
-                                                    self.lblMainSubtitle.frame.size.height)
+            self.imgMainTitle!.frame     = CGRectMake(self.imgMainTitle!.frame.origin.x,
+                                                      65 - delta,
+                                                      self.imgMainTitle!.frame.size.width,
+                                                      self.imgMainTitle!.frame.size.height)
+            self.lblMainTitle!.frame     = CGRectMake(self.lblMainTitle!.frame.origin.x,
+                                                      126 - delta,
+                                                      self.lblMainTitle!.frame.size.width,
+                                                      self.lblMainTitle!.frame.size.height)
+            self.lblMainSubtitle!.frame  = CGRectMake(self.lblMainSubtitle!.frame.origin.x,
+                                                      102 - delta,
+                                                      self.lblMainSubtitle!.frame.size.width,
+                                                      self.lblMainSubtitle!.frame.size.height)
         }
         else {
             columnsCount = 3
-            self.imgHeaderImage.frame   = CGRectMake(0,
-                                                    0,
-                                                    self.imgHeaderImage.frame.size.width,
-                                                    329)
-            self.imgMainTitle.frame     = CGRectMake(self.imgMainTitle.frame.origin.x,
-                                                    65,
-                                                    self.imgMainTitle.frame.size.width,
-                                                    self.imgMainTitle.frame.size.height)
-            self.lblMainTitle.frame     = CGRectMake(self.lblMainTitle.frame.origin.x,
-                                                    126,
-                                                    self.lblMainTitle.frame.size.width,
-                                                    self.lblMainTitle.frame.size.height)
-            self.lblMainSubtitle.frame  = CGRectMake(self.lblMainSubtitle.frame.origin.x,
-                                                    102,
-                                                    self.lblMainSubtitle.frame.size.width,
-                                                    self.lblMainSubtitle.frame.size.height)
+            self.imgHeaderImage!.frame   = CGRectMake(0,
+                                                      0,
+                                                      self.imgHeaderImage!.frame.size.width,
+                                                      329)
+            self.imgMainTitle!.frame     = CGRectMake(self.imgMainTitle!.frame.origin.x,
+                                                      65,
+                                                      self.imgMainTitle!.frame.size.width,
+                                                      self.imgMainTitle!.frame.size.height)
+            self.lblMainTitle!.frame     = CGRectMake(self.lblMainTitle!.frame.origin.x,
+                                                      126,
+                                                      self.lblMainTitle!.frame.size.width,
+                                                      self.lblMainTitle!.frame.size.height)
+            self.lblMainSubtitle!.frame  = CGRectMake(self.lblMainSubtitle!.frame.origin.x,
+                                                      102,
+                                                      self.lblMainSubtitle!.frame.size.width,
+                                                      self.lblMainSubtitle!.frame.size.height)
         }
-        self.viewTimeLine.frame         = CGRectMake(0,
-                                                    self.imgHeaderImage.frame.size.height,
-                                                    self.viewTimeLine.frame.size.width,
-                                                    self.viewTimeLine.frame.size.height)
+        self.viewTimeLine!.frame         = CGRectMake(0,
+                                                      self.imgHeaderImage!.frame.size.height,
+                                                      self.viewTimeLine!.frame.size.width,
+                                                      self.viewTimeLine!.frame.size.height)
         self.setTimelineLayer()
         
         let itemCount:Int = WLDataManager.sharedManager.placesList.count
     
         // Space between each thumbnail
-        let thumbWidth = (self.scrollHome.frame.size.width - CGFloat(columnsCount - 1) * CGFloat(kColumnIndent)) / CGFloat(columnsCount)
+        let thumbWidth = (self.scrollHome!.frame.size.width - CGFloat(columnsCount - 1) * CGFloat(kColumnIndent)) / CGFloat(columnsCount)
         let thumbHeight = CGFloat(thumbWidth * 0.73529412)
         var x = CGFloat(0)
-        var y = CGFloat(self.viewTimeLine.frame.origin.y + self.viewTimeLine.frame.size.height)
+        var y = CGFloat(self.viewTimeLine!.frame.origin.y + self.viewTimeLine!.frame.size.height)
   
-        for i:Int in 1...itemCount {
-            var place:WLPlace = (WLDataManager.sharedManager.placesList)[i - 1]
-
-            var itemView:WLHomeItemSw? = nil
+        if itemCount > 1 {
             
-            if let itemView_ = self.itemViews[i] {
-                itemView = itemView_
-            }
-            else{
-                itemView = NSBundle.mainBundle()!.loadNibNamed("WLHomeItemSw", owner:nil, options:nil)[0] as? WLHomeItemSw
-                itemView!.imgPhoto!.image = WLDataManager.sharedManager.imageWithPath(place.listImagePath)
-                self.itemViews[i] = itemView!
-            }
-            itemView!.lblCategory!.text = "Architecture"
-            itemView!.lblTitle!.text = place.title
-            itemView!.frame = CGRectMake(x, y, thumbWidth, thumbHeight)
-    
-            var tap = UITapGestureRecognizer(target: self, action: Selector("tapOnItem:"))
-            tap.numberOfTapsRequired = 1
-            tap.numberOfTouchesRequired = 1
-            itemView!.addGestureRecognizer(tap)
-    
-            itemView!.tag = i
-    
-            self.scrollHome!.addSubview(itemView!)
-            if i % columnsCount == 0 {
-                y += CGFloat(kColumnIndent) + CGFloat(thumbHeight)
-                x = 0
-            }
-            else {
-                x += CGFloat(kColumnIndent) + CGFloat(thumbWidth)
+            for i:Int in 1...itemCount {
+                var place:WLPlace = (WLDataManager.sharedManager.placesList)[i - 1]
+                
+                var itemView:WLHomeItemSw? = nil
+                
+                if let itemView_ = self.itemViews[i] {
+                    itemView = itemView_
+                }
+                else{
+                    itemView = NSBundle.mainBundle().loadNibNamed("WLHomeItemSw", owner:nil, options:nil)[0] as? WLHomeItemSw
+                    itemView!.imgPhoto!.image = WLDataManager.sharedManager.imageWithPath(place.listImagePath)
+                    self.itemViews[i] = itemView!
+                }
+                itemView!.lblCategory!.text = "Architecture"
+                itemView!.lblTitle!.text = place.title
+                itemView!.frame = CGRectMake(x, y, thumbWidth, thumbHeight)
+                
+                var tap = UITapGestureRecognizer(target: self, action: Selector("tapOnItem:"))
+                tap.numberOfTapsRequired    = 1
+                tap.numberOfTouchesRequired = 1
+                itemView!.addGestureRecognizer(tap)
+                
+                itemView!.tag = i
+                
+                self.scrollHome!.addSubview(itemView!)
+                if i % columnsCount == 0 {
+                    y += CGFloat(kColumnIndent) + CGFloat(thumbHeight)
+                    x = 0
+                }
+                else {
+                    x += CGFloat(kColumnIndent) + CGFloat(thumbWidth)
+                }
             }
         }
         
         let contentWidth = CGFloat(columnsCount) * (CGFloat(kColumnIndent) + thumbWidth) - CGFloat(kColumnIndent)
-        self.scrollHome.contentSize = CGSizeMake(contentWidth, y)
+        self.scrollHome!.contentSize = CGSizeMake(contentWidth, y)
     }
     
     func setTimelineLayer()
@@ -212,29 +214,29 @@ class WLHomeVCSw: UIViewController {
         self.lblTimelineSubtitle!.font   = WLFontManager.sharedManager.palatinoItalic15
         
         self.lblTimelineSubtitle!.sizeToFit()
-        self.lblTimelineTitle.sizeToFit()
-        self.lblTimelineTop.sizeToFit()
+        self.lblTimelineTitle!.sizeToFit()
+        self.lblTimelineTop!.sizeToFit()
         
-        self.lblTimelineTitle.frame     = CGRectMake((self.viewTimeLine.frame.size.width - self.lblTimelineTitle.frame.size.width) / 2,
-                                                    (self.viewTimeLine.frame.size.height - self.lblTimelineTitle.frame.size.height) / 2,
-                                                    self.lblTimelineTitle.frame.size.width,
-                                                    self.lblTimelineTitle.frame.size.height)
-        self.lblTimelineTop.frame       = CGRectMake((self.viewTimeLine.frame.size.width - self.lblTimelineTop.frame.size.width) / 2,
-                                                    self.lblTimelineTitle.frame.origin.y - self.lblTimelineTop.frame.size.height,
-                                                    self.lblTimelineTop.frame.size.width,
-                                                    self.lblTimelineTop.frame.size.height)
-        self.lblTimelineSubtitle.frame  = CGRectMake((self.viewTimeLine.frame.size.width - self.lblTimelineSubtitle.frame.size.width) / 2,
-                                                    self.lblTimelineTitle.frame.origin.y + self.lblTimelineTitle.frame.size.height,
-                                                    self.lblTimelineSubtitle.frame.size.width,
-                                                    self.lblTimelineSubtitle.frame.size.height)
-        self.viewTimelineLeft.frame     = CGRectMake(0,
+        self.lblTimelineTitle!.frame    = CGRectMake((self.viewTimeLine!.frame.size.width - self.lblTimelineTitle!.frame.size.width) / 2,
+                                                    (self.viewTimeLine!.frame.size.height - self.lblTimelineTitle!.frame.size.height) / 2,
+                                                    self.lblTimelineTitle!.frame.size.width,
+                                                    self.lblTimelineTitle!.frame.size.height)
+        self.lblTimelineTop!.frame      = CGRectMake((self.viewTimeLine!.frame.size.width - self.lblTimelineTop!.frame.size.width) / 2,
+                                                    self.lblTimelineTitle!.frame.origin.y - self.lblTimelineTop!.frame.size.height,
+                                                    self.lblTimelineTop!.frame.size.width,
+                                                    self.lblTimelineTop!.frame.size.height)
+        self.lblTimelineSubtitle!.frame = CGRectMake((self.viewTimeLine!.frame.size.width - self.lblTimelineSubtitle!.frame.size.width) / 2,
+                                                    self.lblTimelineTitle!.frame.origin.y + self.lblTimelineTitle!.frame.size.height,
+                                                    self.lblTimelineSubtitle!.frame.size.width,
+                                                    self.lblTimelineSubtitle!.frame.size.height)
+        self.viewTimelineLeft!.frame    = CGRectMake(0,
                                                     0,
-                                                    self.lblTimelineTitle.frame.origin.x - 20,
-                                                    self.viewTimelineLeft.frame.size.height)
-        self.viewTimelineRight.frame    = CGRectMake(self.lblTimelineTitle.frame.origin.x + self.lblTimelineTitle.frame.size.width + 20,
+                                                    self.lblTimelineTitle!.frame.origin.x - 20,
+                                                    self.viewTimelineLeft!.frame.size.height)
+        self.viewTimelineRight!.frame   = CGRectMake(self.lblTimelineTitle!.frame.origin.x + self.lblTimelineTitle!.frame.size.width + 20,
                                                     0,
-                                                    self.viewTimeLine.frame.size.width - (self.lblTimelineTitle.frame.origin.x + self.lblTimelineTitle.frame.size.width + 20),
-                                                    self.viewTimelineRight.frame.size.height)
+                                                    self.viewTimeLine!.frame.size.width - (self.lblTimelineTitle!.frame.origin.x + self.lblTimelineTitle!.frame.size.width + 20),
+                                                    self.viewTimelineRight!.frame.size.height)
     }
 
     func tapOnItem(sender:UITapGestureRecognizer)
@@ -242,7 +244,7 @@ class WLHomeVCSw: UIViewController {
         if sender.state == UIGestureRecognizerState.Ended && !self.detailShowing {
             self.detailShowing = true
             self.view.userInteractionEnabled = false
-            let index = UInt(sender.view.tag - 1)
+            let index = UInt(sender.view!.tag - 1)
             self.detailVC = WLDetailVCSw(itemIndex:index)
             self.pushControllerWithAnimation(controller: self.detailVC!, fromView:sender.view!)
         }
@@ -265,7 +267,7 @@ class WLHomeVCSw: UIViewController {
     {
         weak var weakSelf = self
     
-        var transitionView = UIImageView(frame: view.frame)
+        var transitionView   = UIImageView(frame: view.frame)
         transitionView.image = (view as WLHomeItemSw).imgPhoto!.image!
         view.superview!.addSubview(transitionView)
         view.hidden = true
@@ -274,23 +276,20 @@ class WLHomeVCSw: UIViewController {
     
         UIView.animateWithDuration(kPushAnimationDuration,
             animations: {
-                
                 let moveY             = CATransform3DMakeTranslation(0, 0, transitionView.frame.size.height)
                 let rotateView        = CATransform3DMakeRotation(0.0174532925 * -90, 1, 0, 0)
                 let finishedTransform = CATransform3DConcat(rotateView, moveY)
                 transitionView.layer.transform = finishedTransform
             },
             completion: {(value: Bool) in
-               
                 var strongSelf = weakSelf
                 let viewTransform   = transitionView.layer.transform
                 let controllerScale = CATransform3DMakeScale(transitionView.frame.size.width / controller.view.frame.size.width,
                                                              transitionView.frame.size.height / controller.view.frame.size.height, 0)
-                
                 let controllerFinishedTransform = CATransform3DConcat(viewTransform, controllerScale)
                 controller.view.layer.transform = controllerFinishedTransform
                 
-                let viewRect:CGRect = transitionView.convertRect(transitionView.bounds, toView: strongSelf!.view)
+                let viewRect:CGRect       = transitionView.convertRect(transitionView.bounds, toView: strongSelf!.view)
                 let controllerRect:CGRect = controller.view.frame
                 
                 let controllerTransY:CGFloat = viewRect.origin.y - controllerRect.origin.y
@@ -300,7 +299,7 @@ class WLHomeVCSw: UIViewController {
                 
                 controller.view.layer.transform = controllerTransform
                 
-                strongSelf!.view!.addSubview(controller.view)
+                strongSelf!.view.addSubview(controller.view)
                 
                 UIView.animateWithDuration(kPushAnimationDuration,
                     animations: {
@@ -310,7 +309,7 @@ class WLHomeVCSw: UIViewController {
                     completion: {(value: Bool) in
 
                         strongSelf!.navigationController!.pushViewController(controller, animated:false)// Without casting !!!
-                        strongSelf!.view!.userInteractionEnabled = true
+                        strongSelf!.view.userInteractionEnabled = true
                         strongSelf!.detailShowing = false
                         view.hidden = false
                 
@@ -321,11 +320,11 @@ class WLHomeVCSw: UIViewController {
     func switchToViewControllerWithIndex(#index:UInt, animated:Bool)
     {
         if let detailVC_ = self.detailVC? {
-            self.navigationController.popToViewController(detailVC_, animated:false)
+            self.navigationController!.popToViewController(detailVC_, animated:false)
             detailVC_.switchToViewControllerWithIndex(index:Int(index), animated:animated)
         }
         else{
-            self.view!.userInteractionEnabled = false
+            self.view.userInteractionEnabled = false
             var sender:WLHomeItemSw? = self.itemViews[Int(index+1)] as WLHomeItemSw?
             self.detailVC = WLDetailVCSw(itemIndex:index)            
             self.pushControllerWithAnimation(controller: self.detailVC!, fromView:sender!)
@@ -346,58 +345,58 @@ class WLHomeVCSw: UIViewController {
         var delay = CGFloat(0.0)
         
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(Double(delay) * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
-            self.flashOn(self.yearPoints1642)
+            self.flashOn(self.yearPoints1642!)
         });
             
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(Double(delay) * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
-            self.flashOn(self.yearPointRight1867)
+            self.flashOn(self.yearPointRight1867!)
         });
             
         delay += CGFloat(0.8)
         
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(Double(delay) * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
-            self.flashOn(self.yearPoints1721)
+            self.flashOn(self.yearPoints1721!)
             });
         
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(Double(delay) * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
-            self.flashOn(self.yearPointRight1941)
+            self.flashOn(self.yearPointRight1941!)
             });
         
         delay += CGFloat(0.8)
         
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(Double(delay) * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
-            self.flashOn(self.yearPoints1841)
+            self.flashOn(self.yearPoints1841!)
             });
         
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(Double(delay) * Double(NSEC_PER_SEC))), dispatch_get_main_queue(), {
-            self.flashOn(self.yearPointRight1992)
+            self.flashOn(self.yearPointRight1992!)
             });
     }
     
-    func flashOff(v:UIView)
+    func flashOff(view:UIView)
     {
         UIView.animateWithDuration(NSTimeInterval(1),
                                     delay: NSTimeInterval(0),
                                     options: UIViewAnimationOptions.AllowUserInteraction,
             animations: {
-                v.alpha = CGFloat(0.2) //don't animate alpha to 0, otherwise you won't be able to interact with it
+                view.alpha = CGFloat(0.2) //don't animate alpha to 0, otherwise you won't be able to interact with it
             },
             completion: {(value: Bool) in
-                self.flashOn(v)
+                self.flashOn(view)
         })
     }
     
-    func flashOn(v:UIView)
+    func flashOn(view:UIView)
     {
         UIView.animateWithDuration(NSTimeInterval(1),
-            delay: NSTimeInterval(0),
-            options: UIViewAnimationOptions.AllowUserInteraction,
+                                   delay: NSTimeInterval(0),
+                                   options: UIViewAnimationOptions.AllowUserInteraction,
             animations: {
-                v.alpha = CGFloat(1)
+                view.alpha = CGFloat(1)
             },
             completion: {(value: Bool) in
-                self.flashOff(v)
-            })
+                self.flashOff(view)
+        })
     }
 }
 

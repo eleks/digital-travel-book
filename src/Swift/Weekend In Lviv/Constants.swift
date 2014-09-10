@@ -6,16 +6,6 @@
 //  Copyright (c) 2014 rnd. All rights reserved.
 //
 
-// TO DO !!!!
-// Imports
-/*import Availability
-import UIKit/UIKit
-import Foundation/Foundation
-import CoreData/CoreData
-import CoreData/CoreText
-import MediaPlayer/MediaPlayer
-import QuartzCore/QuartzCore
-*/
 
 // Global definitions
 let kRotateNotification:String              = "WillRotate"

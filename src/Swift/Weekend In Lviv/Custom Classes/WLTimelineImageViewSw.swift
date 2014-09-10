@@ -20,13 +20,13 @@ class WLTimelineImageViewSw: UIImageView{
     // Delegate of class instance
     var delegate:WLTimelineImageViewSwDelegate? = nil
     
-    init(frame: CGRect)
+    override init(frame: CGRect)
     {
         super.init(frame: frame)
         // Initialization code
     }
     
-    init(coder aDecoder: NSCoder!)
+    required init(coder aDecoder: NSCoder)
     {
         super.init(coder: aDecoder)
         // Initialization code
@@ -50,9 +50,9 @@ class WLTimelineImageViewSw: UIImageView{
         return true
     }
 
-    override func touchesBegan(touches: NSSet!, withEvent event: UIEvent!)
+    override func touchesBegan(touches: NSSet, withEvent event: UIEvent)
     {
-        if touches.count == 1 && self.delegate! != nil{
+        if touches.count == 1 && self.delegate != nil{
             if self.delegate!.respondsToSelector(Selector("imageViewDidTouch:")) {
                 self.delegate!.imageViewDidTouch(self)
             }

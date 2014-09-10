@@ -16,20 +16,17 @@ class ImageViewController:UIViewController {
     
     var _imagePath:String = ""
     var imagePath:String {
-    
         get {
             return _imagePath
         }
         set (imagePath) {
-            
             _imagePath = imagePath
             
             if let imageView_ = imageView? {
                 imageView_.removeFromSuperview()
             }
-            
-            self.imageView = UIImageView(image: UIImage(contentsOfFile: self.imagePath))
-            self.imageView!.frame = self.view!.bounds
+            self.imageView              = UIImageView(image: UIImage(contentsOfFile: self.imagePath))
+            self.imageView!.frame       = self.view.bounds
             self.imageView!.contentMode = UIViewContentMode.ScaleAspectFit
             self.view = self.imageView!
         }
@@ -40,13 +37,13 @@ class ImageViewController:UIViewController {
 class WLPhotoGalleryVCSw: UIViewController, UIScrollViewDelegate, UIPageViewControllerDataSource {
 
     // Outlets
-    @IBOutlet weak var scrollImages:UIScrollView
-    @IBOutlet weak var lblSwipe:UILabel
-    @IBOutlet weak var btnClose:UIButton
+    @IBOutlet weak var scrollImages:UIScrollView?
+    @IBOutlet weak var lblSwipe:UILabel?
+    @IBOutlet weak var btnClose:UIButton?
     
     
     // Instance variables
-    var imagePathList: String[] = []
+    var imagePathList: [String] = []
     var selectedImageIndex:UInt = 0
     var pageController:UIPageViewController? = nil
     
@@ -56,21 +53,19 @@ class WLPhotoGalleryVCSw: UIViewController, UIScrollViewDelegate, UIPageViewCont
         super.viewDidLoad()
 
         self.lblSwipe!.font = WLFontManager.sharedManager.gentiumItalic15
-        
         self.pageController = UIPageViewController(transitionStyle: UIPageViewControllerTransitionStyle.Scroll,
-                                                    navigationOrientation: UIPageViewControllerNavigationOrientation.Horizontal,
-                                                    options:nil)
+                                                  navigationOrientation: UIPageViewControllerNavigationOrientation.Horizontal,
+                                                  options:nil)
         let initialViewController:UIViewController? = self.viewControllerAtIndex(Int(self.selectedImageIndex))
         
         if let initVC_ = initialViewController? {
-            
             self.pageController!.setViewControllers([initVC_],
                                                     direction:UIPageViewControllerNavigationDirection.Forward,
                                                     animated:false,
                                                     completion:nil)
         }
         self.addChildViewController(self.pageController!)
-        self.view!.addSubview(self.pageController!.view!)
+        self.view.addSubview(self.pageController!.view)
         self.pageController!.didMoveToParentViewController(self)
     }
 
@@ -79,23 +74,22 @@ class WLPhotoGalleryVCSw: UIViewController, UIScrollViewDelegate, UIPageViewCont
         super.viewWillAppear(animated)
     
         self.pageController!.dataSource = self
-        self.pageController!.view!.frame = self.view!.bounds
+        self.pageController!.view.frame = self.view.bounds
+        self.pageController!.view.frame = self.scrollImages!.frame
+        self.view.addSubview(self.pageController!.view)
     
-        self.pageController!.view!.frame = self.scrollImages!.frame
-        self.view!.addSubview(self.pageController!.view!)
-    
-        self.view!.bringSubviewToFront(self.btnClose!)
+        self.view.bringSubviewToFront(self.btnClose!)
         self.btnClose!.enabled = true
-        self.view!.bringSubviewToFront(self.lblSwipe!)
-    
-        self.navigationItem!.leftBarButtonItem = UIBarButtonItem(customView: UIView())
+        self.view.bringSubviewToFront(self.lblSwipe!)
+        
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(customView: UIView())
     }
     
     override func viewWillDisappear(animated: Bool)
     {
         super.viewWillDisappear(animated)
         
-        NSNotificationCenter.defaultCenter()!.postNotificationName("ShowPlayer", object:nil)
+        NSNotificationCenter.defaultCenter().postNotificationName("ShowPlayer", object:nil)
     }
     
     override func preferredStatusBarStyle() -> UIStatusBarStyle
@@ -103,11 +97,11 @@ class WLPhotoGalleryVCSw: UIViewController, UIScrollViewDelegate, UIPageViewCont
         return UIStatusBarStyle.LightContent
     }
     
+    /* Unavailable in Swift
     override func shouldAutorotateToInterfaceOrientation(toInterfaceOrientation:UIInterfaceOrientation) -> Bool
     {
         return true
-    }
-    
+    }*/
     
     func btnMenuTouch(sender:AnyObject)
     {
@@ -118,16 +112,14 @@ class WLPhotoGalleryVCSw: UIViewController, UIScrollViewDelegate, UIPageViewCont
     
     
     //#pragma mark - Page view controller delegate
-    
-    func pageViewController(pageViewController: UIPageViewController!, viewControllerBeforeViewController viewController: UIViewController!) -> UIViewController!
-    {
-        let imageController = viewController! as ImageViewController
+    func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
+        let imageController = viewController as ImageViewController
         return self.viewControllerAtIndex(Int(imageController.index) - 1)
     }
     
-    func pageViewController(pageViewController: UIPageViewController!, viewControllerAfterViewController viewController: UIViewController!) -> UIViewController!
+    func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController?
     {
-        let imageController = viewController! as ImageViewController
+        let imageController = viewController as ImageViewController
         return self.viewControllerAtIndex(Int(imageController.index) + 1)
     }
     
@@ -142,6 +134,10 @@ class WLPhotoGalleryVCSw: UIViewController, UIScrollViewDelegate, UIPageViewCont
         }
         return photoVC
     }
+    
+    //#pragma mark - Page view controller data source
+    
+    
 
     // Actions
     @IBAction func btnCloseTouch(sender:AnyObject)

@@ -12,22 +12,34 @@
 	<dict>
 		<key>17475C6E-0809-4A1D-A4BA-6041502CE247</key>
 		<string>https://github.com/eleks/digital-travel-book.git</string>
+		<key>6F2A407B0968AAE85F914FD309D4025816A34B9F</key>
+		<string>https://github.com/eleks/digital-travel-book.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>src/Weekend In Lviv.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>17475C6E-0809-4A1D-A4BA-6041502CE247</key>
+		<string>../../../WeekendLviv</string>
+		<key>6F2A407B0968AAE85F914FD309D4025816A34B9F</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/eleks/digital-travel-book.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>17475C6E-0809-4A1D-A4BA-6041502CE247</string>
+	<string>6F2A407B0968AAE85F914FD309D4025816A34B9F</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>6F2A407B0968AAE85F914FD309D4025816A34B9F</string>
+			<key>IDESourceControlWCCName</key>
+			<string>digital-travel-book</string>
+		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>

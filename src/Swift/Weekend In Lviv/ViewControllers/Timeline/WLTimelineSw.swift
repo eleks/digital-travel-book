@@ -11,18 +11,18 @@ import UIKit
 class WLTimelineSw: UIViewController, UIScrollViewDelegate, WLTimelineImageViewSwDelegate {
 
     // Outlets
-    @IBOutlet weak var scrollTimeline:UIScrollView
-    @IBOutlet weak var viewCentury:UIView
-    @IBOutlet weak var imgBottom:UIImageView
-    @IBOutlet weak var imgArrow:UIImageView
-    @IBOutlet weak var viewTimelinePoints:UIView
+    @IBOutlet weak var scrollTimeline:UIScrollView?
+    @IBOutlet weak var viewCentury:UIView?
+    @IBOutlet weak var imgBottom:UIImageView?
+    @IBOutlet weak var imgArrow:UIImageView?
+    @IBOutlet weak var viewTimelinePoints:UIView?
     
-    @IBOutlet weak var btnFurstenhalter:UIButton
-    @IBOutlet weak var btnExpansion:UIButton
-    @IBOutlet weak var btnBefreiungskampf:UIButton
-    @IBOutlet weak var btnNeueGeschitchte:UIButton
+    @IBOutlet weak var btnFurstenhalter:UIButton?
+    @IBOutlet weak var btnExpansion:UIButton?
+    @IBOutlet weak var btnBefreiungskampf:UIButton?
+    @IBOutlet weak var btnNeueGeschitchte:UIButton?
     
-    @IBOutlet weak var navigationView:UIView
+    @IBOutlet weak var navigationView:UIView?
     
     
     // Instance variables
@@ -37,30 +37,29 @@ class WLTimelineSw: UIViewController, UIScrollViewDelegate, WLTimelineImageViewS
         super.viewDidLoad()
 
         let leftDrawerButton = WLMenuButton(target: self, action: Selector("btnMenuTouch:"))
-        self.navigationItem!.setLeftBarButtonItem(leftDrawerButton, animated:true)
+        self.navigationItem.setLeftBarButtonItem(leftDrawerButton, animated:true)
         
         var playerVC:WLAudioPlayerVCSw = WLAudioPlayerVCSw.playerVC
-        playerVC.view!.removeFromSuperview()
-        self.navigationItem!.rightBarButtonItems = playerVC.toolbar!.items!.reverse()
+        playerVC.view.removeFromSuperview()
+        self.navigationItem.rightBarButtonItems = playerVC.toolbar!.items!.reverse()
         
         let panOnPoints = UIPanGestureRecognizer(target: self, action: Selector("panOnPoints:"))
         self.imgBottom!.addGestureRecognizer(panOnPoints)
         
         var tap = UITapGestureRecognizer(target: self, action: Selector("tapOnPoints:"))
-        tap.numberOfTapsRequired = 1
+        tap.numberOfTapsRequired    = 1
         tap.numberOfTouchesRequired = 1
         self.imgBottom!.addGestureRecognizer(tap)
         
-        self.topView = NSBundle.mainBundle()!.loadNibNamed("WLTopTimelineViewSw", owner:nil, options:nil)[0] as? WLTopTimelineViewSw
-        
+        self.topView = NSBundle.mainBundle().loadNibNamed("WLTopTimelineViewSw", owner:nil, options:nil)[0] as? WLTopTimelineViewSw
         self.topView!.frame = CGRectMake(0, 0, self.topView!.frame.size.width, 500)
         
         for i:Int in 501...525 {
-            let imgView = (self.viewTimelinePoints!.viewWithTag(i)) as WLTimelineImageViewSw
+            let imgView      = (self.viewTimelinePoints!.viewWithTag(i)) as WLTimelineImageViewSw
             imgView.delegate = self
         }
         
-        self.scrollTimeline!.addSubview(self.topView)
+        self.scrollTimeline!.addSubview(self.topView!)
         
         self.oldFrame = CGRectMake(0, 0, 768, 1024);
     }
@@ -70,15 +69,14 @@ class WLTimelineSw: UIViewController, UIScrollViewDelegate, WLTimelineImageViewS
         super.viewWillAppear(animated)
         
         for i:Int in 101...104 {
-            var lblView = self.viewCentury!.viewWithTag(i) as UILabel
-            lblView.font = WLFontManager.sharedManager.bebasRegular20
-            lblView.textColor = RGB(161, 106, 46)
+            var lblView         = self.viewCentury!.viewWithTag(i) as UILabel
+            lblView.font        = WLFontManager.sharedManager.bebasRegular20
+            lblView.textColor   = RGB(161, 106, 46)
             
-            var btnView = self.viewCentury!.viewWithTag(i * 2) as UIButton
-            btnView.titleLabel.font = WLFontManager.sharedManager.bebasRegular20
+            var btnView              = self.viewCentury!.viewWithTag(i * 2) as UIButton
+            btnView.titleLabel!.font = WLFontManager.sharedManager.bebasRegular20
             btnView.setTitleColor(RGB(161, 106, 46), forState: UIControlState.Normal)
         }
-        
         self.setupScrollLayer()
         self.setBottomImage()
         self.setArrowPositionOnScrollView()
@@ -93,7 +91,6 @@ class WLTimelineSw: UIViewController, UIScrollViewDelegate, WLTimelineImageViewS
     {
         self.setBottomImage()
         self.setupScrollLayer()
-        
         self.setArrowPositionOnScrollView()
     }
     
@@ -105,38 +102,37 @@ class WLTimelineSw: UIViewController, UIScrollViewDelegate, WLTimelineImageViewS
     override func willRotateToInterfaceOrientation(toInterfaceOrientation: UIInterfaceOrientation, duration: NSTimeInterval)
     {
         self.oldFrame  = self.view.frame
-        self.oldOffset = self.scrollTimeline.contentOffset
+        self.oldOffset = self.scrollTimeline!.contentOffset
     }
     
     func setupScrollLayer()
     {
         let viewFrame:CGRect = self.view.frame
-        self.scrollTimeline.contentSize = self.topView!.frame.size
+        self.scrollTimeline!.contentSize = self.topView!.frame.size
     
-        self.viewCentury.frame = CGRectMake(0,
-                                            viewFrame.size.height - self.viewCentury.frame.size.height,
-                                            viewFrame.size.width,
-                                            self.viewCentury.frame.size.height)
-        self.navigationView.frame = CGRectMake(0,
-                                               self.viewCentury.frame.origin.y - self.navigationView.frame.size.height,
-                                               viewFrame.size.width,
-                                               self.navigationView.frame.size.height);
-        self.scrollTimeline.frame = CGRectMake(0,
-                                               64,
-                                               viewFrame.size.width,
-                                               self.navigationView.frame.origin.y)
-        let scale:CGFloat = self.topView!.frame.size.height / self.navigationView.frame.origin.y
-        self.topView!.setHeight(self.navigationView.frame.origin.y)
-        self.scrollTimeline.contentSize     = self.topView!.frame.size
-        self.scrollTimeline.contentOffset   = CGPointMake(min(max(((self.oldOffset.x + self.oldFrame.size.width / 2) / scale - self.view.frame.size.width / 2), 0), self.scrollTimeline.contentSize.width - self.scrollTimeline.frame.size.width), 0)
+        self.viewCentury!.frame = CGRectMake(0,
+                                             viewFrame.size.height - self.viewCentury!.frame.size.height,
+                                             viewFrame.size.width,
+                                             self.viewCentury!.frame.size.height)
+        self.navigationView!.frame = CGRectMake(0,
+                                                self.viewCentury!.frame.origin.y - self.navigationView!.frame.size.height,
+                                                viewFrame.size.width,
+                                                self.navigationView!.frame.size.height);
+        self.scrollTimeline!.frame = CGRectMake(0,
+                                                64,
+                                                viewFrame.size.width,
+                                                self.navigationView!.frame.origin.y)
+        let scale:CGFloat = self.topView!.frame.size.height / self.navigationView!.frame.origin.y
+        self.topView!.setHeight(self.navigationView!.frame.origin.y)
+        self.scrollTimeline!.contentSize     = self.topView!.frame.size
+        self.scrollTimeline!.contentOffset   = CGPointMake(min(max(((self.oldOffset.x + self.oldFrame.size.width / 2) / scale - self.view.frame.size.width / 2), 0), self.scrollTimeline!.contentSize.width - self.scrollTimeline!.frame.size.width), 0)
     
         var previousX = CGFloat(0)
         let screenScale = CGFloat(self.oldFrame.size.width / self.view.frame.size.width)
         
         for tag:Int in 101...104 {
-            
-            let lblView = self.viewCentury!.viewWithTag(tag) as UIView
-            let btnView = self.viewCentury!.viewWithTag(tag * 2) as UIView
+            let lblView = self.viewCentury!.viewWithTag(tag) as UIView!
+            let btnView = self.viewCentury!.viewWithTag(tag * 2) as UIView!
             var frame:CGRect = lblView.frame
             
             frame.origin.x   = previousX
@@ -154,19 +150,18 @@ class WLTimelineSw: UIViewController, UIScrollViewDelegate, WLTimelineImageViewS
     
     func scrollViewDidScroll(scrollView:UIScrollView)
     {
-        let delta = CGFloat(scrollView.contentSize.width - scrollView.bounds.size.width) / (self.imgBottom.frame.size.width - 18)
-        self.imgArrow.frame = CGRectMake(scrollView.contentOffset.x / delta - 11,
-                                         self.imgArrow.frame.origin.y,
-                                         self.imgArrow.frame.size.width,
-                                         self.imgArrow.frame.size.height)
-    
+        let delta = CGFloat(scrollView.contentSize.width - scrollView.bounds.size.width) / (self.imgBottom!.frame.size.width - 18)
+        self.imgArrow!.frame = CGRectMake(scrollView.contentOffset.x / delta - 11,
+                                          self.imgArrow!.frame.origin.y,
+                                          self.imgArrow!.frame.size.width,
+                                          self.imgArrow!.frame.size.height)
         self.setArrowPositionOnScrollView()
     }
     
     
     func setArrowPositionOnScrollView()
     {
-        let currentPoint = CGPointMake(CGRectGetMidX(self.imgArrow.frame), CGRectGetMaxY(self.imgArrow.frame));
+        let currentPoint = CGPointMake(CGRectGetMidX(self.imgArrow!.frame), CGRectGetMaxY(self.imgArrow!.frame));
         let viewTimelinePoint:CGPoint = self.viewTimelinePoints!.convertPoint(currentPoint, fromView:self.navigationView)
     
         for tag:Int in 501...525 {
@@ -174,17 +169,15 @@ class WLTimelineSw: UIViewController, UIScrollViewDelegate, WLTimelineImageViewS
     
             if CGRectGetMinX(imgView.frame) <= viewTimelinePoint.x &&
                CGRectGetMaxX(imgView.frame) >= viewTimelinePoint.x {
-                    
+                
                 var activeImgView = self.viewTimelinePoints!.viewWithTag(tag) as WLTimelineImageViewSw
                 activeImgView.becomeFirstResponder()
                 break;
             }
         }
-    
-        let currentPointLbl = CGPointMake(self.imgArrow.frame.origin.x + self.imgArrow.frame.size.width / 2, 60);
+        let currentPointLbl = CGPointMake(self.imgArrow!.frame.origin.x + self.imgArrow!.frame.size.width / 2, 60);
         
         for var tag:Int=101; tag<=104; tag++ {
-            
             var lbl = self.viewCentury!.viewWithTag(tag) as UILabel
             var btn = self.viewCentury!.viewWithTag(tag * 2) as UIButton
             
@@ -211,13 +204,12 @@ class WLTimelineSw: UIViewController, UIScrollViewDelegate, WLTimelineImageViewS
     
     func imageViewDidTouch(imageView:WLTimelineImageViewSw)
     {
-        let delta = CGFloat(self.scrollTimeline.contentSize.width - self.scrollTimeline.bounds.size.width) / (self.imgBottom.frame.size.width - 18)
+        let delta = CGFloat(self.scrollTimeline!.contentSize.width - self.scrollTimeline!.bounds.size.width) / (self.imgBottom!.frame.size.width - 18)
     
         let newRect:CGRect = CGRectMake((imageView.frame.origin.x + imageView.frame.size.width / 2 - 11) * delta,
-                                         self.scrollTimeline.bounds.origin.y,
-                                         self.scrollTimeline.bounds.size.width,
-                                         self.scrollTimeline.bounds.size.height)
-    
+                                         self.scrollTimeline!.bounds.origin.y,
+                                         self.scrollTimeline!.bounds.size.width,
+                                         self.scrollTimeline!.bounds.size.height)
         self.scrollTimeline!.scrollRectToVisible(newRect, animated:true)
     }
     
@@ -225,13 +217,12 @@ class WLTimelineSw: UIViewController, UIScrollViewDelegate, WLTimelineImageViewS
     func panOnPoints(sender:UIPanGestureRecognizer)
     {
         if sender.numberOfTouches() == 1 {
-            
-            let delta = CGFloat(self.scrollTimeline.contentSize.width - self.scrollTimeline.bounds.size.width) / (self.imgBottom.frame.size.width - 18);
+            let delta = CGFloat(self.scrollTimeline!.contentSize.width - self.scrollTimeline!.bounds.size.width) / (self.imgBottom!.frame.size.width - 18);
             let location:CGPoint = sender.locationInView(self.imgBottom!)
-            let newRect = CGRectMake(location.x * delta - self.imgArrow.frame.size.width / 2,
-                                     self.scrollTimeline.bounds.origin.y,
-                                     self.scrollTimeline.bounds.size.width,
-                                     self.scrollTimeline.bounds.size.height)
+            let newRect = CGRectMake(location.x * delta - self.imgArrow!.frame.size.width / 2,
+                                     self.scrollTimeline!.bounds.origin.y,
+                                     self.scrollTimeline!.bounds.size.width,
+                                     self.scrollTimeline!.bounds.size.height)
             self.scrollTimeline!.scrollRectToVisible(newRect, animated:false)
         }
     }
@@ -240,13 +231,12 @@ class WLTimelineSw: UIViewController, UIScrollViewDelegate, WLTimelineImageViewS
     func tapOnPoints(sender:UITapGestureRecognizer)
     {
         if (sender.state == UIGestureRecognizerState.Ended) {
-            
-            let delta = CGFloat(self.scrollTimeline.contentSize.width - self.scrollTimeline.bounds.size.width) / (self.imgBottom.frame.size.width - 18);
-            let location:CGPoint = sender.locationInView(self.imgBottom)
-            let newRect = CGRectMake(location.x * delta - self.imgArrow.frame.size.width / 2,
-                                     self.scrollTimeline.bounds.origin.y,
-                                     self.scrollTimeline.bounds.size.width,
-                                     self.scrollTimeline.bounds.size.height);
+            let delta = CGFloat(self.scrollTimeline!.contentSize.width - self.scrollTimeline!.bounds.size.width) / (self.imgBottom!.frame.size.width - 18);
+            let location:CGPoint = sender.locationInView(self.imgBottom!)
+            let newRect = CGRectMake(location.x * delta - self.imgArrow!.frame.size.width / 2,
+                                     self.scrollTimeline!.bounds.origin.y,
+                                     self.scrollTimeline!.bounds.size.width,
+                                     self.scrollTimeline!.bounds.size.height);
             self.scrollTimeline!.scrollRectToVisible(newRect, animated:true)
         }
     }
@@ -256,13 +246,12 @@ class WLTimelineSw: UIViewController, UIScrollViewDelegate, WLTimelineImageViewS
     @IBAction func scrollToMiddle(sender:UIButton)
     {
         let midPoint:CGFloat = CGRectGetMidX(sender.frame)
-    
-        let delta = CGFloat(self.scrollTimeline.contentSize.width - self.scrollTimeline.bounds.size.width) / (self.imgBottom.frame.size.width - 18)
+        let delta            = CGFloat(self.scrollTimeline!.contentSize.width - self.scrollTimeline!.bounds.size.width) / (self.imgBottom!.frame.size.width - 18)
         let location:CGPoint = CGPointMake(midPoint, 0)
-        let newRect:CGRect = CGRectMake(location.x * delta - self.imgArrow.frame.size.width / 2,
-                                        self.scrollTimeline.bounds.origin.y,
-                                        self.scrollTimeline.bounds.size.width,
-                                        self.scrollTimeline.bounds.size.height)
+        let newRect:CGRect   = CGRectMake(location.x * delta - self.imgArrow!.frame.size.width / 2,
+                                        self.scrollTimeline!.bounds.origin.y,
+                                        self.scrollTimeline!.bounds.size.width,
+                                        self.scrollTimeline!.bounds.size.height)
         self.scrollTimeline!.scrollRectToVisible(newRect, animated:true)
     }
     

@@ -11,13 +11,13 @@ import UIKit
 class WLMenuCellSw: UITableViewCell {
 
     // Outlets
-    @IBOutlet weak var lblTitle:UILabel
-    @IBOutlet weak var imgIcon:UIImageView
-    @IBOutlet weak var imgFavoriteFlag:UIImageView
+    @IBOutlet weak var lblTitle:UILabel?
+    @IBOutlet weak var imgIcon:UIImageView?
+    @IBOutlet weak var imgFavoriteFlag:UIImageView?
     
     // Override methods
-    override func awakeFromNib() {
-        
+    override func awakeFromNib()
+    {
         super.awakeFromNib()
 
         self.lblTitle!.font = WLFontManager.sharedManager.palatinoItalic20

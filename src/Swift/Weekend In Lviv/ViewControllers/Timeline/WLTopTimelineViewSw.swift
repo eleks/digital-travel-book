@@ -11,7 +11,7 @@ import UIKit
 class WLTopTimelineViewSw: UIView {
 
     // Outlets
-    @IBOutlet weak var yearsView:UIView
+    @IBOutlet weak var yearsView:UIView?
     
     
     // Instance methods
@@ -31,12 +31,12 @@ class WLTopTimelineViewSw: UIView {
     func setHeight(height:CGFloat)
     {
         let ratio:CGFloat = self.frame.size.width / self.frame.size.height
-        self.frame = CGRectMake(self.frame.origin.x, self.frame.origin.y, height * ratio, height)
+        self.frame        = CGRectMake(self.frame.origin.x, self.frame.origin.y, height * ratio, height)
     
-        self.yearsView.frame = CGRectMake(0,
-                                          (self.frame.size.height + 10) * 0.88,
-                                          self.frame.size.width,
-                                          self.yearsView.frame.size.height);
+        self.yearsView!.frame = CGRectMake(0,
+                                           (self.frame.size.height + 10) * 0.88,
+                                           self.frame.size.width,
+                                           self.yearsView!.frame.size.height);
     }
 
 }
